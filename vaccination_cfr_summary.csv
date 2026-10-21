@@ -1,0 +1,8 @@
+location,date_reached_10pct_fully_vaccinated,CFR_percent_before_10pct_vaccinated,CFR_percent_after_10pct_vaccinated,CFR_relative_change_pct,total_deaths_per_million_cumulative,total_cases_per_million_cumulative,max_people_fully_vaccinated_per_hundred,data_as_of_date
+United States,2021-03-04,1.828,0.812,-55.6,3493.55,302859.5,69.47,2024-08-04
+United Kingdom,2021-04-09,3.428,0.387,-88.7,3404.43,366308.0,75.19,2024-08-04
+Israel,2021-01-22,0.744,0.203,-72.7,1395.89,531855.56,65.19,2024-08-04
+Germany,2021-05-11,2.618,0.241,-90.8,2080.95,457123.1,76.24,2024-08-04
+Japan,2021-06-22,1.819,0.183,-89.9,597.56,270433.8,83.4,2024-08-04
+Brazil,2021-05-26,2.791,1.204,-56.9,3338.54,178367.94,81.82,2024-08-04
+World,2021-07-18,2.179,0.505,-76.8,883.33,97113.85,64.93,2024-08-04

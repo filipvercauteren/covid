@@ -1,0 +1,167 @@
+[
+  {
+    "claim": "COVID-19 vaccination averted an estimated 14.4M (official-death basis) to 19.8M (excess-mortality basis) deaths globally in the first year of rollout (8 Dec 2020 - 8 Dec 2021), across 185 countries/territories.",
+    "source_title": "Global impact of the first year of COVID-19 vaccination: a mathematical modelling study",
+    "authors": "Watson OJ, Barnsley G, Toor J, Hogan AB, Winskill P, Ghani AC",
+    "journal": "The Lancet Infectious Diseases",
+    "year": 2022,
+    "doi_or_url": "https://doi.org/10.1016/S1473-3099(22)00320-6 (PMC9225255; PMID 35753318)",
+    "trust_tier": "Tier 1 - peer-reviewed, but a MODELLING study, not a direct observational count",
+    "exact_quote_or_stat": "19.8 million deaths averted (of a possible 31.4 million) using excess-mortality-based fitting; 14.4 million deaths averted using official reported COVID-19 death counts. Published Lancet Infect Dis 2022; 22: 1293-1302 (print issue Sept 2022, online 23 June 2022). 79% (15.5M) of averted deaths attributed to direct vaccine protection, 21% (4.3M) to indirect effects (reduced transmission/healthcare burden). Regional: ~7.5 million deaths averted in COVAX-covered countries; modelling suggests up to ~1.5M more deaths (599,300 + 81,750 figures reported by Imperial College press materials) could have been averted had COVAX/WHO coverage targets been met. China excluded from the analysis 'due to its unique position as the origin of the detected epidemic and its large influence on estimates.'",
+    "notes": "This is a COUNTERFACTUAL MATHEMATICAL MODEL (compares actual outcomes to a simulated 'no vaccine' scenario), not a direct causal/observational tally - this is the paper's own framing, not an external caveat. A correction notice was also published by the Lancet (PIIS1473-3099(23)00566-2) - should be checked if reproducing exact figures in a notebook, as it may adjust minor details. A non-peer-reviewed preprint critique (Rancourt & Hickey, Authorea, 'Quantitative evaluation of whether the Nobel-Prize-winning COVID-19 vaccine actually saved millions of lives') argues the model's assumptions are 'highly improbable' - documented below as NOT a credible peer-reviewed counter-source (see counter-evidence entries)."
+  },
+  {
+    "claim": "Follow-up peer-reviewed surveillance-based (not pure modelling) study corroborates large-scale lives-saved estimate for the WHO European Region using actual regional data.",
+    "source_title": "Estimated number of lives directly saved by COVID-19 vaccination programmes in the WHO European Region from December 2020 to March 2023",
+    "authors": "Not independently re-verified in this pass (carried from prior summary)",
+    "journal": "The Lancet Regional Health - Europe",
+    "year": 2024,
+    "doi_or_url": "NOT VERIFIED THIS PASS - exact DOI not re-confirmed; needs direct lookup before citing in final notebook",
+    "trust_tier": "Tier 1 (claimed) - UNVERIFIED CITATION, flag for correction",
+    "exact_quote_or_stat": "Not independently re-confirmed with exact figures this pass.",
+    "notes": "FLAG: carried over from prior summary without independent re-verification in this research pass. Before using in the final notebook, someone should pull the actual DOI/PMID and confirm exact title/authors/numbers - do not cite as-is without that check."
+  },
+  {
+    "claim": "The May 2024 BMJ Public Health paper claiming >3 million excess deaths across 47 Western countries, later used to imply a vaccine-mortality link, was retracted in August 2026.",
+    "source_title": "RETRACTED: Excess mortality across countries in the Western World since the COVID-19 pandemic: 'Our World in Data' estimates of January 2020 to December 2022",
+    "authors": "Mostert S, Hoogland M, Huibers M, Kaspers G",
+    "journal": "BMJ Public Health",
+    "year": 2024,
+    "doi_or_url": "https://doi.org/10.1136/bmjph-2023-000282 (original article DOI, now shows RETRACTED prefix); retraction notice at bmjpublichealth.bmj.com/content/4/3/e000282ret",
+    "trust_tier": "Tier 1 (meta) - official journal retraction notice; original paper's causal framing was found unsound",
+    "exact_quote_or_stat": "Original paper (BMJ Public Health 2024;2:e000282, published 6 May 2024) reported total excess deaths of 3,098,456 across 47 Western-world countries from 1 Jan 2020 to 31 Dec 2022 (1,033,122 in 2020; 1,256,942 in 2021; 808,392 in 2022). Expression of Concern (DOI 10.1136/bmjph-2023-000282eoc, published 14 June 2024) stated: the paper's authors 'looked only at trends in excess mortality over time, not its causes' and the study 'does not support the claim that vaccines are a major contributory factor to excess deaths since the start of the pandemic' - i.e. the paper ITSELF, even before retraction, did not establish the causal vaccine link that was attributed to it in public discourse. Retraction notice (11 Aug 2026) reason: 'misinformation in the discussion regarding the possible causes of excess mortality, and because the limited nature of the original work by the authors was not sufficiently described.' Investigation conducted by the Princess Maxima Center (Netherlands, institution of 3 of 4 authors). Co-authors Kaspers and Huibers supported the retraction; corresponding author Mostert and co-author Hoogland disagreed with it.",
+    "notes": "IMPORTANT PRECISION FIX vs prior summary: (1) original publication date is 6 May 2024 (prior summary said 'May 2024' - correct), but note some outlets list the DOI-visible journal year/volume as 2024;2:e000282 with a retraction record appearing at 4/3/e000282ret in 2026 (BMJ's continuous-volume numbering can look inconsistent across mirrors - use the DOI as the canonical identifier). (2) Exact headline number is 3,098,456 (not merely '>3 million' - use the precise figure). (3) Timeline: expression of concern in June 2024 (triggered by a public retraction request from demographer Ariel Karlinsky), Mostert testified before a US Senate subcommittee 3 June 2026, retraction followed ~2 months later (11 Aug 2026). (4) The investigating committee found NO scientific misconduct or malicious intent - attributed the problems to carelessness, gaps in knowledge, and negligence, not fraud. This nuance should be preserved in the notebook rather than implying deliberate fraud."
+  },
+  {
+    "claim": "Large real-world Israeli cohort found BNT162b2 vaccination effectiveness against death from COVID-19 was 72% in a nationwide mass vaccination setting.",
+    "source_title": "BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting",
+    "authors": "Dagan N, Barda N, Kepten E, Miron O, Perchik S, Katz MA, Hernan MA, Lipsitch M, Reis B, Balicer RD",
+    "journal": "New England Journal of Medicine",
+    "year": 2021,
+    "doi_or_url": "https://doi.org/10.1056/NEJMoa2101765 (N Engl J Med 2021;384:1412-1423, published 24 Feb 2021)",
+    "trust_tier": "Tier 1 - peer-reviewed, large observational cohort (Clalit Health Services, Israel)",
+    "exact_quote_or_stat": "Estimated vaccine effectiveness in preventing death from Covid-19 was 72% (95% CI, 19 to 100) for days 14 through 20 after the first dose. Each of the matched study groups (vaccinated vs unvaccinated) included 596,618 persons. Clalit covers approximately 52% of the Israeli population.",
+    "notes": "This is a matched observational cohort (1:1 propensity matching), not an RCT - a real cohort study as requested by the task brief. This is an early (first-dose-era) effectiveness study; mortality effect size in this specific paper has a wide CI (19-100%) at the early time point examined, reflecting relatively few death events at that point in follow-up. Additional Israeli/Clalit booster-mortality studies exist (e.g. NEJM 2021;385:1393 -- 'BNT162b2 Vaccine Booster and Mortality Due to Covid-19', adjusted HR 0.10 [95% CI 0.07-0.14] for death in booster vs non-booster group) but were not independently re-verified with full citation details this pass."
+  },
+  {
+    "claim": "A large UK OpenSAFELY-platform observational cohort study (18+ million adults in England) found substantially lower COVID-19-related death rates in groups prioritized for vaccination, comparing pre- and post-vaccination pandemic waves.",
+    "source_title": "Changes in COVID-19-related mortality across key demographic and clinical subgroups: an observational cohort study using the OpenSAFELY platform on 18 million adults in England",
+    "authors": "OpenSAFELY Collaborative (specific author list not independently re-verified this pass)",
+    "journal": "Preprint on medRxiv; a related/derived version published in The Lancet Public Health (ScienceDirect record found: 'Changes in COVID-19-related mortality across key demographic and clinical subgroups in England from 2020 to 2022: a retrospective cohort study using the OpenSAFELY platform')",
+    "year": 2022,
+    "doi_or_url": "medRxiv: 10.1101/2022.07.30.22278161 ; journal version at sciencedirect.com/science/article/pii/S2468266723000798 (exact journal DOI not independently re-confirmed this pass)",
+    "trust_tier": "Tier 1 (journal version) / Tier 2 (if only citing the medRxiv preprint) - VERIFY WHICH VERSION BEFORE CITING",
+    "exact_quote_or_stat": "Cohort of ~18.7-18.8 million adults across 3 pandemic waves in England. Crude absolute COVID-19-related death rate per 1,000 person-years fell from 4.48 (wave 1) to 2.70 (wave 2) to 0.64 (wave 3). Comparing wave 3 to wave 1, groups prioritized for early vaccination (age 80+, neurological disease, learning disability, severe mental illness) saw 90-91% decreases in COVID-19 death rates, while immunosuppressed/transplant/CKD/hematological-malignancy groups saw only 0-25% decreases.",
+    "notes": "IMPORTANT CAVEAT authors themselves would raise: this is a before/after wave comparison confounded by the same factors as the OWID CFR trend table already in the base analysis (variant severity change, treatment improvements) - it is not a pure vaccinated-vs-unvaccinated randomized or matched comparison within the same time period. Still valuable as a genuine large-N UK cohort data point requested by the task. Need to confirm final peer-reviewed journal DOI (not just medRxiv) before using as a Tier-1 citation in the notebook."
+  },
+  {
+    "claim": "A Norwegian nationwide cohort study (4.6 million adults, ~133,000 deaths, 2021-2023) found lower all-cause mortality in vaccinated vs unvaccinated adults across all age bands, including ages 18-44.",
+    "source_title": "COVID-19 mRNA vaccination and all-cause mortality in the adult population in Norway during 2021-2023: a population-based cohort study",
+    "authors": "Dahl J, Tapia G, Boas H, Bakken IJL, Gulseth HL",
+    "journal": "BMJ Public Health (peer-reviewed; originally circulated as a medRxiv preprint)",
+    "year": 2026,
+    "doi_or_url": "https://doi.org/10.1136/bmjph-2024-001859 (PMID 41658231; published 5 Feb 2026)",
+    "trust_tier": "Tier 1 - peer-reviewed, large national registry cohort",
+    "exact_quote_or_stat": "N = 4,645,910 adults (18+), 132,963 deaths during follow-up. All-cause mortality rate per 100,000 person-years, fully vaccinated vs unvaccinated: ages 18-44: 51.5 vs 73.6; ages 45-64: 295.1 vs 405.3; ages 65+: 3,620.2 vs 4,783.8 (fully vaccinated lower in every age band, unadjusted rates).",
+    "notes": "Authors explicitly acknowledge 'healthy vaccinee bias' as an inherent limitation of this observational design, and identify low socioeconomic status as the 'main unknown confounding factor' - i.e. people who get vaccinated may be systematically healthier/more health-engaged than those who don't, for reasons unrelated to the vaccine itself, which could partly or fully explain the lower mortality rather than the vaccine causing it. This is exactly the kind of caveat that should travel with the number in the notebook. This is the same journal (BMJ Public Health) that retracted the Mostert paper - included here for completeness and because it is a genuinely distinct, methodologically stronger (large linked national registry, longer follow-up) study."
+  },
+  {
+    "claim": "A large French national cohort (~28.7 million adults total) found no increase in 4-year all-cause mortality among adults aged 18-59 vaccinated against COVID-19 with mRNA vaccines; authors state a causal link to excess long-term mortality 'appears highly unlikely.'",
+    "source_title": "COVID-19 mRNA Vaccination and 4-Year All-Cause Mortality Among Adults Aged 18 to 59 Years in France",
+    "authors": "Semenzato L, Le Vu S, Botton J, Bertrand M, Jabagi MJ, Drouin J, Cuenot F, Olie V, Dray-Spira R, Weill A, Zureik M",
+    "journal": "JAMA Network Open",
+    "year": 2025,
+    "doi_or_url": "https://doi.org/10.1001/jamanetworkopen.2025.46822 (PMID 41343214; published 4 Dec 2025)",
+    "trust_tier": "Tier 1 - peer-reviewed, large national claims-database cohort with long follow-up",
+    "exact_quote_or_stat": "Vaccinated N = 22,767,546; unvaccinated N = 5,932,443 (total ~28.7M, matches the '28-million-adult' figure referenced in the prior summary - THIS IS LIKELY ITS SOURCE, previously uncited). Median follow-up 45 months (IQR 44-46). Deaths: 98,429 (0.4%) in vaccinated vs 32,662 (0.6%) in unvaccinated. Weighted hazard ratio for all-cause mortality: 0.75 (95% CI 0.75-0.76), i.e. 25% LOWER risk in vaccinated. COVID-19-specific mortality wHR 0.26 (95% CI 0.22-0.30), i.e. 74% lower. Short-term (6-month post-vaccination) mortality reduction of 29%. Authors' own conclusion, quoted directly: 'a causal link between mRNA vaccination and excess long-term mortality appears highly unlikely.'",
+    "notes": "RESOLVES A FLAG from the prior summary: that report cited a vague '28-million-adult long-term vaccine safety cohort study... per Gavi/vaccines work summary' without a real citation. This French JAMA Network Open study (published Dec 2025) matches the population size (~28.7M) and the exact 'causal link... highly unlikely' quote almost certainly used in the prior draft - use THIS as the real citation going forward and drop the vague 'per Gavi summary' framing. Authors' own stated limitations: ~300,000 fraudulent health passes in 2022 may introduce misclassification bias; cause-of-death data available for only 59% of deaths; possible residual confounding from vaccine hesitancy/socioeconomic factors; possible healthy-vaccinee and frailty-related bias despite weighting adjustments."
+  },
+  {
+    "claim": "Myocarditis/pericarditis risk after mRNA COVID-19 vaccination, especially in young males, confirmed via large government/registry surveillance, with specific per-million rates by age/sex/dose.",
+    "source_title": "Myocarditis Cases Reported After mRNA-Based COVID-19 Vaccination in the US From December 2020 to August 2021",
+    "authors": "Oster ME, Shay DK, Su JR, et al. (CDC / VAERS-based clinical review working with the COVID-19 Vaccine Safety Technical Work Group)",
+    "journal": "JAMA",
+    "year": 2022,
+    "doi_or_url": "Not independently re-confirmed with a fresh DOI lookup this pass (cited via secondary sources); should be re-verified directly against JAMA before final notebook use",
+    "trust_tier": "Tier 1 (as cited via secondary aggregation) - RECOMMEND DIRECT RE-VERIFICATION before final use",
+    "exact_quote_or_stat": "Rate of myocarditis within 7 days of second-dose mRNA vaccination, boys age 12-15: 42.6 per million doses; boys age 16-17: 71.5 per million doses (figures as reported via secondary sources this pass, matching the '~66.7 per million' range cited in the prior summary).",
+    "notes": "This is the likely underlying source for the '42.6 / 71.5 per million' and '~66.7 per million' figures used in the prior summary, but I was not able to independently pull the JAMA abstract directly (PubMed page returned only a cookie-consent stub in this session) - the exact DOI and full confidence intervals should be pulled directly from JAMA before finalizing the notebook. Treat the specific numbers above as provisionally sourced, not fully hand-verified this pass."
+  },
+  {
+    "claim": "Independent Nordic multi-country registry study (23.1 million residents across Denmark, Finland, Norway, Sweden) confirmed the myocarditis/pericarditis signal after mRNA vaccination, with excess-event rates by vaccine brand and sex, worst in young men after dose 2.",
+    "source_title": "SARS-CoV-2 Vaccination and Myocarditis in a Nordic Cohort Study of 23 Million Residents",
+    "authors": "Karlstad O, Hovi P, Husby A, et al. (Nordic multi-country collaboration)",
+    "journal": "JAMA Cardiology",
+    "year": 2022,
+    "doi_or_url": "https://doi.org/10.1001/jamacardio.2022.0583",
+    "trust_tier": "Tier 1 - peer-reviewed, very large linked national-registry cohort, independently confirms the signal outside the US surveillance system",
+    "exact_quote_or_stat": "Combined population of 23.1 million individuals aged 12+ across Denmark, Finland, Norway, Sweden, followed 27 Dec 2020 to 5 Oct 2021 (or earlier censoring event). Excess myocarditis/pericarditis events within 28 days of vaccination: 4-7 excess events per 100,000 vaccinees for BNT162b2 (Pfizer); 9-28 excess events per 100,000 vaccinees for mRNA-1273 (Moderna). Risk highest in younger men, more pronounced after the second dose.",
+    "notes": "Rates here are expressed per 100,000, not per million as in the CDC/Oster figures used in the prior summary - do the unit conversion carefully if combining these in the notebook (4-7 per 100,000 = 40-70 per million for Pfizer; 9-28 per 100,000 = 90-280 per million for Moderna, which is HIGHER than the '~67-72 per million' figure the prior summary used, likely because the prior figure was Pfizer/BNT162b2-specific and age/sex-stratified rather than an all-vaccinee excess-event rate). This nuance (brand-specific differences, and excess-rate vs age/sex-stratified-incidence-rate are different statistics) should be made explicit in the final notebook rather than collapsing to one number."
+  },
+  {
+    "claim": "TTS (thrombosis with thrombocytopenia syndrome) after the J&J/Janssen (Ad26.COV2.S) adenovirus-vector vaccine occurred at roughly 3.2-3.8 per million doses, versus a much lower background rate after mRNA vaccines; FDA-confirmed death-reporting rate was 0.48 per million doses.",
+    "source_title": "Case Series of Thrombosis With Thrombocytopenia Syndrome After COVID-19 Vaccination - United States, December 2020 to August 2021",
+    "authors": "See I, Su JR, Lale A, et al. (CDC/FDA COVID-19 Vaccine Safety Surveillance working group)",
+    "journal": "Annals of Internal Medicine",
+    "year": 2021,
+    "doi_or_url": "https://doi.org/10.7326/M21-4502",
+    "trust_tier": "Tier 1 - peer-reviewed, based on confirmed/adjudicated cases (not raw unverified VAERS reports)",
+    "exact_quote_or_stat": "Overall TTS reporting rate 3.83 per million doses after Ad26.COV2.S (J&J), vs 0.00855 per million doses after mRNA vaccination. Highest in women aged 30-39 (10.6 per million) and 40-49 (9.02 per million). Separately, FDA determined an overall TTS reporting rate of 3.23 per million doses and a TTS-associated death reporting rate of 0.48 per million doses administered (FDA memorandum, Janssen TTS Review, media/155670).",
+    "notes": "This confirms and refines the '~4 per million' TTS figure and the '9 confirmed deaths through March 2022' figure used in the prior summary - the 0.48-per-million death rate, applied to roughly 18-19 million J&J doses given in the US, is consistent in order of magnitude with a single-digit number of confirmed deaths. The FDA's May 5, 2022 action restricted J&J EUA to adults unable to receive any other vaccine, citing the >3-per-million rate explicitly."
+  },
+  {
+    "claim": "A large multinational Global Vaccine Data Network (GVDN) cohort study of 99 million vaccinated individuals across 8 countries independently confirmed known safety signals (myocarditis, pericarditis, Guillain-Barre syndrome, cerebral venous sinus thrombosis) via observed-vs-expected analysis, without identifying new unexpected large-scale harms.",
+    "source_title": "COVID-19 vaccines and adverse events of special interest: A multinational Global Vaccine Data Network (GVDN) cohort study of 99 million vaccinated individuals",
+    "authors": "Faksova K, Walsh D, Jiang Y, et al.",
+    "journal": "Vaccine",
+    "year": 2024,
+    "doi_or_url": "https://doi.org/10.1016/j.vaccine.2024.01.100 (Vaccine, vol. 42, no. 9, pp. 2200-2211)",
+    "trust_tier": "Tier 1 - peer-reviewed, largest vaccine-safety cohort found in this search (99M people, 23M+ person-years)",
+    "exact_quote_or_stat": "99 million vaccinated individuals, 23+ million person-years of follow-up, 10 collaborator sites across 8 countries. Confirmed pre-established safety signals: myocarditis after 1st, 2nd, and 3rd doses of BNT162b2 and mRNA-1273; pericarditis after 1st and 4th doses of mRNA-1273 and 3rd dose of ChAdOx1; Guillain-Barre syndrome and cerebral venous sinus thrombosis after adenovirus-vector vaccines. Exact observed-to-expected ratios and per-million rates were NOT independently confirmed with precise figures in this research pass - the underlying full-text tables were not directly accessed (ScienceDirect returned 403 Forbidden).",
+    "notes": "This is the single largest vaccine-safety dataset located in this search - stronger than either the CDC VSD figures or the Nordic 23M-person study on sample size alone, and useful as a primary anchor citation for the myocarditis/TTS section. IMPORTANT: exact per-million or observed/expected ratio numbers should be pulled directly from the Vaccine journal tables (or the GVDN's public dashboard, mentioned in press coverage) before quoting precise ratios in the notebook - only the qualitative confirmation of signals was verified this pass, not the exact quantitative ratios."
+  },
+  {
+    "claim": "Official CDC/FDA-run VAERS system explicitly and repeatedly warns that a report of an adverse event (including death) following vaccination does not establish that the vaccine caused the event.",
+    "source_title": "VAERS Frequently Asked Questions",
+    "authors": "U.S. Department of Health and Human Services / CDC / FDA (VAERS program, jointly administered)",
+    "journal": "Official government website (vaers.hhs.gov)",
+    "year": 2026,
+    "doi_or_url": "https://vaers.hhs.gov/faq.html",
+    "trust_tier": "Tier 1 (primary/official source) - directly fetched and quoted verbatim in this pass",
+    "exact_quote_or_stat": "Verbatim quotes pulled directly from vaers.hhs.gov/faq.html: 'Just because an adverse event happened after a person received a vaccine does not mean the vaccine caused the adverse event.' / 'Some adverse events might be caused by vaccination and others might be coincidental and not related to vaccination.' / 'VAERS is not designed to detect if a vaccine caused an adverse event, but it can identify unusual or unexpected patterns of reporting that might indicate possible safety problems requiring a closer look.' / 'It is generally not possible to find out from VAERS data if a vaccine caused the adverse event.' / 'VAERS accepts all reports of adverse health events following vaccinations without judging whether the vaccine caused the adverse health event.' / 'Overall, a causal relationship cannot be established using information from VAERS report alone.' / 'Reports submitted to VAERS often lack details and sometimes contains errors.'",
+    "notes": "This is the exact, directly-fetched, verbatim primary-source language requested by the task (item 5) - can be block-quoted directly in the notebook with this URL as citation. Confirms and sources the caveat already used in the prior summary, which previously paraphrased this without a directly-verified verbatim quote."
+  },
+  {
+    "claim": "A peer-reviewed (non-retracted, non-preprint) paper published in a legitimate journal found a HIGHER rate of serious adverse events of special interest in mRNA-vaccinated randomized trial participants than in placebo recipients - the strongest credible counter-evidence located in this search.",
+    "source_title": "Serious adverse events of special interest following mRNA COVID-19 vaccination in randomized trials in adults",
+    "authors": "Fraiman J, Erviti J, Jones M, Greenland S, Whelan P, Kaplan RM, Doshi P",
+    "journal": "Vaccine",
+    "year": 2022,
+    "doi_or_url": "https://doi.org/10.1016/j.vaccine.2022.08.036 (Vaccine 2022;40(40):5798-5805, published online 31 Aug 2022; PMID 36055877)",
+    "trust_tier": "Tier 1 (formally peer-reviewed, published, NOT retracted) - but with SUBSTANTIVE, SPECIFIC methodological critiques published by other scientists (see notes); include with both sides stated",
+    "exact_quote_or_stat": "Secondary reanalysis of the Pfizer (NCT04368728) and Moderna (NCT04470427) phase III placebo-controlled RCT data, using an adapted Brighton Collaboration list of 'adverse events of special interest.' Found an excess risk of serious adverse events of special interest of 10.1 per 10,000 vaccinated (Pfizer) and 15.1 per 10,000 vaccinated (Moderna), against reported placebo-arm baseline rates of 17.6 and 42.2 per 10,000 respectively (i.e., the excess figures represent the vaccine-minus-placebo difference in serious-AESI rates, not the absolute rate).",
+    "notes": "THIS IS EXACTLY THE KIND OF SOURCE ITEM 6 ASKED FOR - a real, peer-reviewed, non-retracted paper in a mainstream Elsevier journal that reports a vaccine-arm excess of serious adverse events, and it should be included and NOT dismissed. However, fairness requires noting the substantive, specific published criticism it has received: critics (writing in Science-Based Medicine, a science-communication outlet, not itself a peer-reviewed rebuttal) argued the paper (a) compared TOTAL ADVERSE EVENT COUNTS rather than counts of AFFECTED PARTICIPANTS, inflating vaccine-arm totals when one person had multiple related events; (b) applied event-category inclusion/exclusion inconsistently (e.g. diarrhea included, vomiting excluded); (c) compared adverse-event rates against COVID-19 hospitalization rates, which critics call a mismatched comparison. The journal Vaccine reportedly published two critical commentaries (2023, 2024) about the paper; the original authors submitted a response letter in Jan 2025 that the editor-in-chief reportedly rejected without peer review (per secondary reporting, not independently verified with the original correspondence). Present this as: a real, legitimately-published, non-retracted finding of excess serious-AE risk in trial data, WITH documented, specific methodological objections from other researchers - let the reader see both, rather than either uncritically citing it or dismissing it outright."
+  },
+  {
+    "claim": "A non-peer-reviewed preprint (Rancourt & Hickey) claiming the Watson et al. 2022 Lancet lives-saved model is 'highly improbable' and that COVID vaccines caused ~17 million deaths was actively searched for as potential counter-evidence but does NOT meet the credibility bar (not peer-reviewed, and its lead author has a documented history of widely-debunked pandemic claims).",
+    "source_title": "Quantitative evaluation of whether the Nobel-Prize-winning COVID-19 vaccine actually saved millions of lives",
+    "authors": "Rancourt DG, Hickey J (affiliated with 'Correlation Research in the Public Interest')",
+    "journal": "Authorea (preprint server, NOT a peer-reviewed journal)",
+    "year": 2024,
+    "doi_or_url": "https://www.authorea.com/users/891872/articles/1268864 (preprint only)",
+    "trust_tier": "Tier 3 - preprint, not peer-reviewed; author has a documented track record of debunked claims; NOT a credible source, documented here for transparency per the task's request to actively search for counter-evidence",
+    "exact_quote_or_stat": "Preprint claims Watson et al.'s 'results and the associated fantastic claims of millions of lives saved are highly improbable' and have 'no connection to actual mortality.' A related, separate Rancourt-associated analysis has claimed approximately 17 million vaccine-associated deaths worldwide for 2020-2022.",
+    "notes": "Actively searched for as required by item 6 of the task. Denis Rancourt is a former physics professor (PhD condensed matter physics, University of Toronto; former tenured professor, University of Ottawa) with no epidemiology/biostatistics credentials, and has a publicly documented history of widely fact-checked and debunked claims, including that mask-wearing does not work against COVID-19 and that 'there was no pandemic.' Fact-checkers (FactCheck.org, PolitiFact, Science Feedback) have specifically criticized his ~17-million-deaths claim for assuming, without adequate justification, that all-cause mortality spikes during the pandemic were caused by vaccination rather than by COVID-19 infection surges, reduced healthcare access, or other pandemic-era pressures. This work is NOT peer-reviewed (preprint-only on Authorea) and does not meet the task's bar of 'credible peer-reviewed (not retracted, not preprint-only, not predatory-journal).' Included here only to document that the search was conducted and this specific claim was found and evaluated, per the task's explicit instruction to report a genuine search even when no qualifying source is found."
+  },
+  {
+    "claim": "After an actively searched review, no additional credible peer-reviewed (non-retracted, non-preprint-only, non-predatory-journal) study was found claiming NET population-level harm from COVID-19 vaccination, beyond the Fraiman et al. 2022 trial-reanalysis (which shows excess serious-AE risk in trial arms, not net mortality harm) and the now-retracted Mostert et al. 2024 paper.",
+    "source_title": "N/A - negative search result, stated explicitly per task instructions",
+    "authors": "N/A",
+    "journal": "N/A",
+    "year": 2026,
+    "doi_or_url": "N/A",
+    "trust_tier": "N/A",
+    "exact_quote_or_stat": "N/A",
+    "notes": "Searches conducted this pass: 'peer-reviewed journal study COVID-19 vaccine net harm excess mortality NOT retracted 2023 2024 2025 credible'; 'Denis Rancourt credibility retracted discredited vaccine researcher'; general searches for GVDN/CDC VSD/Nordic/Israeli/UK/French cohort studies (all of which found net-benefit or null results, not net-harm). The only two peer-reviewed, non-preprint items found that report ANY vaccine-arm excess of adverse outcomes are: (1) Fraiman et al. 2022 (Vaccine) - excess of serious AEs of special interest in RCT arms, NOT a net-mortality-harm claim, and specifically and substantively critiqued as described above; and (2) the various myocarditis/TTS signal-confirmation studies (Oster et al., Nordic JAMA Cardiology study, GVDN study) - all of which confirm narrow, specific, real harms in specific subgroups without claiming or supporting net population-level harm. No credible peer-reviewed study asserting NET harm (i.e., vaccines killed more than they saved, in aggregate) beyond the retracted Mostert paper and the non-peer-reviewed Rancourt/Hickey preprint was located."
+  }
+]
