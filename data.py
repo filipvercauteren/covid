@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import os
 from pathlib import Path
 
 import pandas as pd
@@ -91,14 +90,13 @@ COMPARE_METRICS: dict[str, str] = {
 def load_data(path: str = DATA_PATH) -> pd.DataFrame:
     """Load the OWID dataset once per session and keep it cached in memory.
 
-    A Parquet mirror of the CSV is kept alongside it and used instead when
-    it's fresher than the CSV - it's ~10x smaller and loads ~10x faster since
-    it skips re-parsing 430k rows of text and keeps column dtypes, so cold
-    Streamlit restarts stay fast. The mirror is (re)built once whenever the
-    CSV changes.
+    Reads from a committed Parquet mirror of the CSV when present - it's
+    ~10x smaller and loads ~10x faster since it skips re-parsing 430k rows
+    of text and keeps column dtypes, so cold Streamlit restarts stay fast.
+    If the CSV is updated, delete the .parquet file so it gets rebuilt.
     """
     parquet_path = Path(path).with_suffix(".parquet")
-    if parquet_path.exists() and parquet_path.stat().st_mtime >= os.path.getmtime(path):
+    if parquet_path.exists():
         return pd.read_parquet(parquet_path)
 
     df = pd.read_csv(path, parse_dates=["date"])
