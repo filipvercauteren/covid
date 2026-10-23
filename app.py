@@ -6,10 +6,13 @@ import plotly.express as px
 import streamlit as st
 
 from data import (
+    ANIMATION_FREQUENCIES,
+    ANIMATION_METRICS,
     COMPARE_METRICS,
     DEMOGRAPHIC_COLUMNS,
     METRIC_GROUPS,
     SPARSE_CATEGORIES,
+    animated_metric_snapshot,
     country_snapshot,
     filter_data,
     has_data,
@@ -107,8 +110,8 @@ else:
     map_locations = None
     region_continents = [loc for loc in selected_locations if loc in continent_names] or None
 
-trends_tab, compare_tab, summary_tab, map_tab, vaccine_tab, brands_tab = st.tabs(
-    ["Trends", "Compare", "Summary", "Map", "Vaccine effect", "Vaccine brands"]
+trends_tab, compare_tab, summary_tab, map_tab, death_anim_tab, vaccine_tab, brands_tab = st.tabs(
+    ["Trends", "Compare", "Summary", "Map", "Death animation", "Vaccine effect", "Vaccine brands"]
 )
 
 with trends_tab:
@@ -216,6 +219,65 @@ with map_tab:
         fig.update_layout(margin={"l": 0, "r": 0, "t": 0, "b": 0})
         if zoomed_to:
             fig.update_geos(fitbounds="locations", visible=False)
+        st.plotly_chart(fig, width="stretch")
+
+with death_anim_tab:
+    "### Deaths over time, animated across the world"
+    st.caption(
+        "Plays through the whole pandemic from first reported data to the latest, country by "
+        "country. Press play on the map below. This covers the full dataset date range, "
+        "regardless of the date slider in the sidebar."
+    )
+
+    with st.container(horizontal=True, gap="medium"):
+        anim_metric = st.selectbox(
+            "Metric to animate",
+            list(ANIMATION_METRICS),
+            format_func=lambda col: ANIMATION_METRICS[col],
+            key="anim_metric",
+        )
+        freq_label = st.selectbox("Step size", list(ANIMATION_FREQUENCIES), key="anim_freq")
+        speed_ms = st.slider(
+            "Frame speed (ms)", min_value=50, max_value=1000, value=250, step=50, key="anim_speed"
+        )
+
+    zoomed_to = map_locations or region_continents
+    if zoomed_to:
+        st.caption(f"Zoomed to {_short_list(zoomed_to)}.")
+    else:
+        st.caption("Shows every country - not limited to the locations chosen in the sidebar.")
+
+    anim_label = ANIMATION_METRICS[anim_metric]
+    anim_snapshot = animated_metric_snapshot(
+        df,
+        anim_metric,
+        freq=ANIMATION_FREQUENCIES[freq_label],
+        continents=region_continents,
+        locations=map_locations,
+    )
+    if anim_snapshot.empty:
+        st.info(
+            f"No {anim_label.lower()} data available for this selection.",
+            icon=":material/info:",
+        )
+    else:
+        fig = px.choropleth(
+            anim_snapshot,
+            locations="iso_code",
+            locationmode="ISO-3",
+            color=anim_metric,
+            hover_name="location",
+            animation_frame="period",
+            color_continuous_scale="YlOrRd",
+            labels={anim_metric: anim_label, "period": "Date"},
+        )
+        fig.update_layout(margin={"l": 0, "r": 0, "t": 0, "b": 0})
+        if zoomed_to:
+            fig.update_geos(fitbounds="locations", visible=False)
+        if fig.layout.updatemenus:
+            play_button = fig.layout.updatemenus[0].buttons[0]
+            play_button.args[1]["frame"]["duration"] = speed_ms
+            play_button.args[1]["transition"]["duration"] = min(speed_ms, 200)
         st.plotly_chart(fig, width="stretch")
 
 with vaccine_tab:

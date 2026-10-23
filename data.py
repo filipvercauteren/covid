@@ -85,6 +85,21 @@ COMPARE_METRICS: dict[str, str] = {
     "stringency_index": "Stringency index",
 }
 
+# Metrics offered on the animated death-heatmap tab.
+ANIMATION_METRICS: dict[str, str] = {
+    "total_deaths": "Total deaths (cumulative)",
+    "total_deaths_per_million": "Total deaths per million (cumulative)",
+    "new_deaths_smoothed": "New deaths (7-day average)",
+}
+
+# Step sizes offered for the animation, in pandas resample frequency codes.
+# Daily is included but discouraged - ~1700 frames is heavy for a browser to animate.
+ANIMATION_FREQUENCIES: dict[str, str] = {
+    "Weekly (recommended)": "W",
+    "Monthly": "MS",
+    "Daily (slow)": "D",
+}
+
 
 @st.cache_data(show_spinner="Loading OWID COVID-19 dataset...")
 def load_data(path: str = DATA_PATH) -> pd.DataFrame:
@@ -184,6 +199,55 @@ def country_snapshot(
     sub = df.loc[mask, ["iso_code", "location", "continent", "date", column]]
     latest = sub.sort_values("date").groupby("location", observed=True).tail(1)
     return latest.drop(columns="date").reset_index(drop=True)
+
+
+def animated_metric_snapshot(
+    df: pd.DataFrame,
+    metric: str,
+    freq: str = "W",
+    continents: list[str] | None = None,
+    locations: list[str] | None = None,
+) -> pd.DataFrame:
+    """Per-country time series of `metric`, resampled to `freq` and
+    forward-filled from each country's latest report through the end of the
+    dataset, for a day-by-day (or week-by-week) animated choropleth.
+
+    Forward-filling means a country keeps showing its latest known value
+    after it stops reporting, rather than disappearing from the map -
+    reasonable for a cumulative metric like total deaths, less so for a
+    flow metric like new deaths, where it reads as "still happening".
+    Excludes OWID aggregates (no single shape to plot).
+    """
+    mask = df["continent"].notna()
+    if continents:
+        mask &= df["continent"].isin(continents)
+    if locations:
+        mask &= df["location"].isin(locations)
+    sub = df.loc[mask, ["iso_code", "location", "continent", "date", metric]].dropna(subset=[metric])
+    if sub.empty:
+        return sub.assign(period=pd.Series(dtype="str"))
+
+    global_end = df["date"].max()
+
+    pieces = []
+    for location, group in sub.groupby("location", observed=True):
+        series = group.set_index("date")[metric].sort_index().resample(freq).last()
+        full_index = pd.date_range(series.index.min(), global_end, freq=freq)
+        series = series.reindex(full_index).ffill().dropna()
+        if series.empty:
+            continue
+        piece = series.rename(metric).rename_axis("date").reset_index()
+        piece["location"] = location
+        piece["iso_code"] = group["iso_code"].iat[0]
+        piece["continent"] = group["continent"].iat[0]
+        pieces.append(piece)
+
+    if not pieces:
+        return sub.assign(period=pd.Series(dtype="str"))
+
+    result = pd.concat(pieces, ignore_index=True)
+    result["period"] = result["date"].dt.strftime("%Y-%m-%d")
+    return result.sort_values("date").reset_index(drop=True)
 
 
 def vaccination_outcome_snapshot(df: pd.DataFrame, start_date, end_date) -> pd.DataFrame:
