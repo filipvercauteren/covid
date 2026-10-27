@@ -1,6 +1,7 @@
 """Exploration dashboard for the OWID COVID-19 dataset."""
 
 import altair as alt
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -30,6 +31,14 @@ def _short_list(names: list[str], limit: int = 6) -> str:
         return ", ".join(names)
     shown = ", ".join(names[:limit])
     return f"{shown}, and {len(names) - limit} more"
+
+
+def _log_color_ticks(max_value: float) -> tuple[list[float], list[str]]:
+    """Round-number tick candidates (in real units) for a log1p color axis,
+    trimmed to the metric's actual range, for a readable colorbar."""
+    candidates = [0, 1, 3, 10, 30, 100, 300, 1_000, 3_000, 10_000, 30_000, 100_000, 300_000, 1_000_000, 3_000_000]
+    ticks = [v for v in candidates if v <= max_value] or [0, max_value]
+    return [np.log1p(v) for v in ticks], [f"{v:,.0f}" for v in ticks]
 
 
 st.set_page_config(
@@ -267,18 +276,30 @@ with death_anim_tab:
             icon=":material/info:",
         )
     else:
+        # Log-scale the color so the scale isn't dominated by a handful of huge
+        # countries - without it, cumulative counts are so skewed that most of
+        # the pandemic looks pale and everything jumps to red only right at the
+        # end. This makes the ramp to red faster and the animation feel punchier.
+        color_col = "_color_value"
+        anim_snapshot[color_col] = np.log1p(anim_snapshot[anim_metric].clip(lower=0))
+        tickvals, ticktext = _log_color_ticks(anim_snapshot[anim_metric].max())
+
         fig = px.choropleth(
             anim_snapshot,
             locations="iso_code",
             locationmode="ISO-3",
-            color=anim_metric,
+            color=color_col,
             hover_name="location",
+            hover_data={anim_metric: ":,.0f", color_col: False, "iso_code": False},
             animation_frame="period",
             color_continuous_scale="YlOrRd",
-            range_color=(anim_snapshot[anim_metric].min(), anim_snapshot[anim_metric].max()),
+            range_color=(0, anim_snapshot[color_col].max()),
             labels={anim_metric: anim_label, "period": "Date"},
         )
         fig.update_layout(margin={"l": 0, "r": 0, "t": 0, "b": 0})
+        fig.update_coloraxes(
+            colorbar_title=anim_label, colorbar_tickvals=tickvals, colorbar_ticktext=ticktext
+        )
         if zoomed_to:
             fig.update_geos(fitbounds="locations", visible=False)
         if fig.layout.updatemenus:
