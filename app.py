@@ -241,19 +241,25 @@ with death_anim_tab:
             "Frame speed (ms)", min_value=50, max_value=1000, value=250, step=50, key="anim_speed"
         )
 
-    zoomed_to = map_locations or region_continents
+    show_world = st.checkbox(
+        "Show whole world", key="anim_world", help="Ignore the sidebar's location filter for this map."
+    )
+    anim_locations = None if show_world else map_locations
+    anim_continents = None if show_world else region_continents
+
+    zoomed_to = anim_locations or anim_continents
     if zoomed_to:
         st.caption(f"Zoomed to {_short_list(zoomed_to)}.")
     else:
-        st.caption("Shows every country - not limited to the locations chosen in the sidebar.")
+        st.caption("Shows every country worldwide.")
 
     anim_label = ANIMATION_METRICS[anim_metric]
     anim_snapshot = animated_metric_snapshot(
         df,
         anim_metric,
         freq=ANIMATION_FREQUENCIES[freq_label],
-        continents=region_continents,
-        locations=map_locations,
+        continents=anim_continents,
+        locations=anim_locations,
     )
     if anim_snapshot.empty:
         st.info(
