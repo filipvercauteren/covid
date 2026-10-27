@@ -269,6 +269,7 @@ with death_anim_tab:
             hover_name="location",
             animation_frame="period",
             color_continuous_scale="YlOrRd",
+            range_color=(anim_snapshot[anim_metric].min(), anim_snapshot[anim_metric].max()),
             labels={anim_metric: anim_label, "period": "Date"},
         )
         fig.update_layout(margin={"l": 0, "r": 0, "t": 0, "b": 0})
