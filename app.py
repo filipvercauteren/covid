@@ -238,7 +238,7 @@ with death_anim_tab:
         )
         freq_label = st.selectbox("Step size", list(ANIMATION_FREQUENCIES), key="anim_freq")
         speed_ms = st.slider(
-            "Frame speed (ms)", min_value=50, max_value=1000, value=250, step=50, key="anim_speed"
+            "Frame speed (ms)", min_value=10, max_value=1000, value=250, step=10, key="anim_speed"
         )
 
     show_world = st.checkbox(
