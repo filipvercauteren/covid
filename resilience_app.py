@@ -13,6 +13,7 @@ import streamlit as st
 
 from resilience import (
     COLUMN_LABELS,
+    COST_CRITERIA,
     CRITERIA_LABELS,
     CUTOFFS,
     DB_PATH,
@@ -24,6 +25,7 @@ from resilience import (
     excess_timeseries,
     load_daily,
     load_gdp_loss,
+    load_society,
     rank_stability,
     score_countries,
     select_peers,
@@ -34,6 +36,7 @@ DEFAULT_HIGHLIGHT = ("Belgium",)
 DEFAULT_PEERS = ("Belgium", "Netherlands", "Germany", "France", "Denmark", "Sweden", "Norway",
                  "United Kingdom", "Austria", "Switzerland", "Italy", "Spain")
 DEFAULT_TIMELINE = ("New Zealand", "Australia", "Japan", "Belgium", "Sweden", "Denmark")
+DEFAULT_WEIGHTS = {"health": 5, "economy": 2, "jobs": 1, "education": 1, "freedom": 1}
 
 
 # ---------------------------------------------------------------- data (cached)
@@ -45,7 +48,7 @@ def cached_daily() -> pd.DataFrame:
 
 @st.cache_data(show_spinner=False)
 def cached_metrics(cutoff: str) -> pd.DataFrame:
-    return country_metrics(cached_daily(), load_gdp_loss(DB_PATH), cutoff)
+    return country_metrics(cached_daily(), load_gdp_loss(DB_PATH), load_society(DB_PATH), cutoff)
 
 
 @st.cache_data(show_spinner=False)
@@ -78,7 +81,7 @@ if not Path(DB_PATH).exists():
 "# Who coped best with COVID-19?"
 st.caption(
     "\"Coped best\" isn't a single number: choose what counts, and the ranking follows. "
-    "Lower is better on every criterion. Data: OWID, OxCGRT (via OWID), World Bank — see `sources.md`."
+    "Lower is better on every criterion. Data: OWID, OxCGRT, World Bank — see `sources.md`."
 )
 
 all_metrics = cached_metrics(CUTOFFS[-1])
@@ -155,22 +158,32 @@ with tabs[0]:
 | **Health** | Excess deaths per million | ✅ main measure | `excess_mortality_cumulative_per_million` |
 | | Age-adjusted excess deaths | ⚠️ rough linear correction on % aged 65+ | `aged_65_older` |
 | | Reported COVID deaths | ✅ for comparison only | `total_deaths_per_million` |
+| | Life-expectancy drop 2019 → worst of 2020–22 | ✅ alternative health measure | `society_covid` (World Bank) |
 | | Hospital overload | ⚠️ shown, not scored — ICU data for ~40 countries | `icu_patients_per_million` |
 | | Years of life lost | ❌ not available | — |
-| **Economy** | GDP loss 2020–23 vs. 2015–19 trend | ✅ | `gdp_covid_loss` (World Bank) |
-| | Unemployment, debt, support costs | ❌ not available | — |
-| **Society** | Restrictions (stringency) | ✅ "freedom" criterion | `stringency_index` (OxCGRT) |
-| | School closures, mental health | ❌ not available | — |
+| **Economy** | GDP loss 2020–23 vs. 2015–19 trend | ✅ "economy" criterion | `gdp_covid_loss` (World Bank) |
+| | Unemployment rise 2019 → worst of 2020–22 | ✅ "jobs" criterion | `society_covid` (World Bank / ILO) |
+| | Government debt, support costs | ❌ debt data for only ~30 of these countries | — |
+| **Society** | Weeks schools fully closed 2020–22 | ✅ "education" criterion | `society_covid` (OxCGRT C1M = 3) |
+| | Restrictions (stringency) | ✅ "freedom" criterion | `stringency_index` (OxCGRT) |
+| | Mobility (actual behaviour) | ❌ Google data missing for ~10% of these countries | — |
+| | Learning loss, mental health | ❌ not available for all countries | — |
 | **Resilience** | Vaccination speed | ✅ shown, not scored | `people_fully_vaccinated_per_hundred` |
 """
     )
     st.markdown("##### Coverage in the current peer group")
-    cols = st.columns(5)
-    cols[0].metric("Countries", len(peers))
-    cols[1].metric("With excess mortality", int(peers["excess_pm"].notna().sum()))
-    cols[2].metric("With GDP loss", int(peers["gdp_loss_pct"].notna().sum()))
-    cols[3].metric("With stringency", int(peers["avg_stringency"].notna().sum()))
-    cols[4].metric("With ICU data", int(peers["peak_icu_pm"].notna().sum()))
+    coverage = {
+        "Countries": len(peers),
+        "Excess mortality": peers["excess_pm"].notna().sum(),
+        "GDP loss": peers["gdp_loss_pct"].notna().sum(),
+        "Unemployment": peers["unemployment_rise_pp"].notna().sum(),
+        "School closures": peers["school_weeks_full"].notna().sum(),
+        "Stringency": peers["avg_stringency"].notna().sum(),
+        "Life expectancy": peers["life_expectancy_drop_years"].notna().sum(),
+        "ICU data": peers["peak_icu_pm"].notna().sum(),
+    }
+    for col, (name, count) in zip(st.columns(len(coverage)), coverage.items()):
+        col.metric(name, int(count))
 
     with st.expander("Methodological pitfalls that change the ranking"):
         st.markdown(
@@ -182,24 +195,28 @@ with tabs[0]:
    or look better than reality. See *Data quality*.
 4. **Weighting** — the weights largely decide the winner. See *Weight sensitivity*.
 
-Also: GDP loss includes non-COVID shocks (energy crisis 2022, wars, oil booms), and stringency
-measures rules on paper, not how people behaved.
+Also: GDP loss and unemployment include non-COVID shocks (energy crisis 2022, wars, oil booms);
+stringency and school closures measure rules on paper, not how people behaved; the World Bank
+unemployment figures are modelled ILO estimates.
 """
         )
 
 # ---------------------------------------------------------------- 2. scatter
 
 with tabs[1]:
-    c1, c2, c3 = st.columns([2, 2, 1])
-    x_column = c1.radio(
-        "Cost on the x axis", ["gdp_loss_pct", "avg_stringency"], format_func=label, horizontal=True
+    c1, c2, c3, c4 = st.columns([2, 2, 2, 1])
+    cost_columns = list(COST_CRITERIA.values())
+    x_column = c1.selectbox("Cost on the x axis", cost_columns, format_func=label)
+    color_options = [c for c in cost_columns if c != x_column]
+    color_column = c2.selectbox(
+        "Dot colour", color_options, format_func=label,
+        index=color_options.index("avg_stringency") if "avg_stringency" in color_options else 0,
     )
-    color_column = "avg_stringency" if x_column == "gdp_loss_pct" else "gdp_loss_pct"
-    max_gdp_loss = c2.slider(
+    max_gdp_loss = c3.slider(
         "Hide countries with |GDP loss| above (%)", 5, 50, 25,
         help="Very large values are mostly other shocks (oil booms, wars, tourism collapse).",
     )
-    label_all = c3.toggle("Label all", value=len(peers) <= 30)
+    label_all = c4.toggle("Label all", value=len(peers) <= 30)
 
     plot = peers.dropna(subset=[health_column, x_column])
     plot = plot[plot["gdp_loss_pct"].abs().le(max_gdp_loss) | plot["gdp_loss_pct"].isna()]
@@ -249,7 +266,8 @@ with tabs[1]:
 
         st.caption(
             f"{len(plot)} countries. Dashed lines = medians. Bubble size = population. "
-            f"Deaths measured up to end {cutoff[:4]}; GDP loss always 2020–23; stringency 2020–22."
+            f"Excess/reported deaths measured up to end {cutoff[:4]}; GDP loss always 2020–23; "
+            "unemployment, school closures and stringency 2020–22."
             + (f" Hidden as GDP outliers: {', '.join(hidden)}." if hidden else "")
         )
         if health_column == "excess_age_adj_pm":
@@ -265,11 +283,9 @@ with tabs[2]:
         "Each criterion is turned into a rank within the peer group, then combined with your weights. "
         "**Score 100** = best on every weighted criterion, **0** = worst."
     )
-    w1, w2, w3 = st.columns(3)
     weights = {
-        "health": w1.slider(CRITERIA_LABELS["health"], 0, 10, 5),
-        "economy": w2.slider(CRITERIA_LABELS["economy"], 0, 10, 3),
-        "freedom": w3.slider(CRITERIA_LABELS["freedom"], 0, 10, 2),
+        name: col.slider(CRITERIA_LABELS[name], 0, 10, default)
+        for col, (name, default) in zip(st.columns(len(DEFAULT_WEIGHTS)), DEFAULT_WEIGHTS.items())
     }
 
     if sum(weights.values()) == 0:
@@ -280,10 +296,8 @@ with tabs[2]:
         scored, missing = score_countries(peers, health_column, weights)
         columns = criterion_columns(health_column)
 
-        table = scored[[
-            "rank", "location", "continent", "score",
-            columns["health"], "gdp_loss_pct", "avg_stringency", "pct_fully_vax", "peak_icu_pm",
-        ]]
+        shown_columns = [*columns.values(), "pct_fully_vax", "peak_icu_pm"]
+        table = scored[["rank", "location", "continent", "score", *shown_columns]]
         st.dataframe(
             table,
             hide_index=True,
@@ -293,11 +307,10 @@ with tabs[2]:
                 "location": "Country",
                 "continent": "Continent",
                 "score": st.column_config.ProgressColumn("Score", min_value=0, max_value=100, format="%.0f"),
-                columns["health"]: st.column_config.NumberColumn(label(columns["health"]), format="%.0f"),
-                "gdp_loss_pct": st.column_config.NumberColumn(label("gdp_loss_pct"), format="%.1f"),
-                "avg_stringency": st.column_config.NumberColumn(label("avg_stringency"), format="%.1f"),
-                "pct_fully_vax": st.column_config.NumberColumn(label("pct_fully_vax"), format="%.0f"),
-                "peak_icu_pm": st.column_config.NumberColumn(label("peak_icu_pm"), format="%.0f"),
+                **{
+                    c: st.column_config.NumberColumn(label(c), format="%.0f" if c.endswith("_pm") else "%.1f")
+                    for c in shown_columns
+                },
             },
         )
         for country in highlight:
@@ -316,11 +329,24 @@ with tabs[3]:
         "(steps of 10%, summing to 100%) is tried. Countries with a **narrow bar near the top** "
         "come out well whatever you value; long bars depend on the weights."
     )
-    top_n = st.slider("Count as 'top' when ranked in the first", 3, 25, 10)
-    stability, n_combos = rank_stability(peers, health_column, step=0.1, top_n=top_n)
+    c1, c2 = st.columns([3, 1])
+    sensitivity_criteria = c1.multiselect(
+        "Criteria to vary", list(CRITERIA_LABELS), format_func=CRITERIA_LABELS.get,
+        default=[name for name, w in weights.items() if w > 0] or list(CRITERIA_LABELS),
+        help="Defaults to the criteria with a weight above 0 in the Ranking tab.",
+    )
+    top_n = c2.slider("Count as 'top' when ranked in the first", 3, 25, 10)
 
-    if stability.empty:
-        st.info("No countries have all three criteria.")
+    stability, n_combos = (
+        rank_stability(peers, health_column, sensitivity_criteria, step=0.1, top_n=top_n)
+        if len(sensitivity_criteria) >= 2
+        else (pd.DataFrame(), 0)
+    )
+
+    if len(sensitivity_criteria) < 2:
+        st.info("Pick at least two criteria.")
+    elif stability.empty:
+        st.info("No countries have all selected criteria.")
     else:
         shown = stability.head(30).iloc[::-1]
         fig = go.Figure()
@@ -340,7 +366,7 @@ with tabs[3]:
             legend={"orientation": "h", "y": -0.08}, margin={"l": 10},
         )
         st.plotly_chart(fig)
-        st.caption(f"{n_combos} weight combinations, {len(stability)} countries with all three criteria. "
+        st.caption(f"{n_combos} weight combinations, {len(stability)} countries with all selected criteria. "
                    "Showing the 30 best by median rank.")
         st.dataframe(
             stability, hide_index=True,
@@ -453,7 +479,10 @@ with tabs[6]:
     gaps = {
         f"No recent excess mortality (end {cutoff[:4]})": peers.loc[peers["excess_pm"].isna(), "location"],
         "No GDP loss": peers.loc[peers["gdp_loss_pct"].isna(), "location"],
+        "No unemployment data": peers.loc[peers["unemployment_rise_pp"].isna(), "location"],
+        "No school-closure data": peers.loc[peers["school_weeks_full"].isna(), "location"],
         "No stringency index": peers.loc[peers["avg_stringency"].isna(), "location"],
+        "No life-expectancy data": peers.loc[peers["life_expectancy_drop_years"].isna(), "location"],
     }
     for title, names in gaps.items():
         with st.expander(f"{title}: {len(names)}"):

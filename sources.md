@@ -14,6 +14,9 @@ URLs were checked to be reachable on 2026-11-03.
 | `ve_primary_series`, `ve_booster` | `WeeklySummary_COVID19_VE_Studies_20250108.xlsx` | IVAC VIEW-hub (Johns Hopkins) — COVID-19 VE studies | 2026-11-03 |
 | `gdp_annual` | `worldbank-gdp.csv` | World Bank — World Development Indicators API | 2026-11-03 |
 | `gdp_covid_loss` | — | **Derived** from `gdp_annual` (see below) | 2026-11-03 |
+| `oxcgrt_daily` | `OxCGRT_compact_national_v1.csv` (not in git, 44 MB) | Oxford COVID-19 Government Response Tracker | 2026-11-03 |
+| `social_annual` | `worldbank-social.csv` | World Bank — unemployment, life expectancy | 2026-11-03 |
+| `society_covid` | — | **Derived** from `oxcgrt_daily` and `social_annual` (see below) | 2026-11-03 |
 
 ### Our World in Data (OWID)
 
@@ -65,6 +68,34 @@ Not a published dataset — calculated from `gdp_annual`:
 3. `cum_loss_2020_2023_pct_of_trend` = (Σ trend − Σ actual) / Σ trend × 100 over 2020–2023
 
 Contains non-COVID shocks too (energy crisis 2022, wars, oil booms).
+
+### OxCGRT — Oxford COVID-19 Government Response Tracker
+
+- Repository: https://github.com/OxCGRT/covid-policy-dataset
+- File: https://raw.githubusercontent.com/OxCGRT/covid-policy-dataset/main/data/OxCGRT_compact_national_v1.csv
+- National totals, daily 2020-01-01 → 2022-12-31: every C (containment), E (economic),
+  H (health) and V (vaccination) indicator plus the indexes. Column names snake_cased
+  (`C1M_School closing` → `c1m_school_closing`).
+
+### World Bank — unemployment and life expectancy
+
+- Unemployment, total (% of labour force, modelled ILO estimate), `SL.UEM.TOTL.ZS`:
+  https://api.worldbank.org/v2/country/all/indicator/SL.UEM.TOTL.ZS?format=json&per_page=20000&date=2010:2025
+- Life expectancy at birth (years), `SP.DYN.LE00.IN`:
+  https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&per_page=20000&date=2010:2025
+
+### Derived: `society_covid`
+
+Per country (ISO3 code):
+
+- `school_weeks_full` — days with OxCGRT `C1M` = 3 (closing required at all levels) in 2020–22, ÷ 7
+- `school_weeks_partial_or_full` — days with `C1M` ≥ 2 (required at some or all levels), ÷ 7
+- `unemployment_rise_pp` — highest unemployment rate in 2020–22 minus 2019, in %-points
+- `life_expectancy_drop_years` — 2019 life expectancy minus the lowest of 2020–22
+
+Not added because coverage is too incomplete for the countries analysed: Google COVID-19
+Community Mobility Reports (missing ~10%), World Bank government debt `GC.DOD.TOTL.GD.ZS`
+(available for ~1 in 3 countries).
 
 ## Referenced but not loaded
 

@@ -12,6 +12,11 @@ Tables (see sources.md for URLs and provenance):
     ve_primary_series, ve_booster VIEW-hub VE studies .xlsx          (downloaded if missing)
     gdp_annual                    worldbank-gdp.csv / World Bank API (downloaded if missing)
     gdp_covid_loss                derived from gdp_annual
+    oxcgrt_daily                  OxCGRT national policy indicators  (downloaded if missing)
+    social_annual                 worldbank-social.csv / World Bank API: unemployment,
+                                  life expectancy                    (downloaded if missing)
+    society_covid                 derived: school-closure weeks, unemployment rise,
+                                  life-expectancy drop per country
 
 The database is written to a temporary file first and only replaces the
 existing one when every step succeeded.
@@ -42,16 +47,28 @@ LOCATIONS_URL = f"{OWID_RAW}/vaccinations/locations.csv"
 VIEWHUB_XLSX = "WeeklySummary_COVID19_VE_Studies_20250108.xlsx"
 VIEWHUB_URL = f"https://view-hub.org/sites/default/files/2026-01/{VIEWHUB_XLSX}"
 GDP_CSV = "worldbank-gdp.csv"
+SOCIAL_CSV = "worldbank-social.csv"
+OXCGRT_CSV = "OxCGRT_compact_national_v1.csv"
+OXCGRT_URL = f"https://raw.githubusercontent.com/OxCGRT/covid-policy-dataset/main/data/{OXCGRT_CSV}"
 
 WORLD_BANK_API = "https://api.worldbank.org/v2"
 GDP_INDICATORS = {
     "NY.GDP.MKTP.KD": "gdp_constant_2015_usd",
     "NY.GDP.MKTP.KD.ZG": "gdp_growth_pct",
 }
-GDP_YEARS = "2010:2025"
+SOCIAL_INDICATORS = {
+    "SL.UEM.TOTL.ZS": "unemployment_pct",  # modeled ILO estimate, % of labour force
+    "SP.DYN.LE00.IN": "life_expectancy_years",
+}
+WORLD_BANK_YEARS = "2010:2025"
 
 TREND_START, TREND_END = 2015, 2019
 LOSS_YEARS = (2020, 2021, 2022, 2023)
+
+BASELINE_YEAR = 2019
+SOCIETY_YEARS = (2020, 2021, 2022)
+# OxCGRT C1M school closing: 0 none, 1 recommended, 2 required for some levels, 3 required for all levels
+SCHOOL_PARTIAL, SCHOOL_FULL = 2, 3
 
 USER_AGENT = "covid-combo-db-builder"
 
@@ -74,7 +91,7 @@ def ensure_file(path: str, url: str, refresh: bool) -> Path:
 
 
 def fetch_world_bank_indicator(indicator: str, column: str) -> pd.DataFrame:
-    url = f"{WORLD_BANK_API}/country/all/indicator/{indicator}?format=json&per_page=20000&date={GDP_YEARS}"
+    url = f"{WORLD_BANK_API}/country/all/indicator/{indicator}?format=json&per_page=20000&date={WORLD_BANK_YEARS}"
     print(f"  downloading {url}")
     _, rows = json.loads(fetch_bytes(url))
     return pd.DataFrame(
@@ -95,19 +112,22 @@ def fetch_world_bank_aggregates() -> set[str]:
     return {c["id"] for c in countries if c["region"]["value"] == "Aggregates"}
 
 
-def ensure_gdp_csv(refresh: bool) -> pd.DataFrame:
-    """World Bank real GDP + growth per country/year, cached in worldbank-gdp.csv."""
-    target = Path(GDP_CSV)
+def ensure_world_bank_csv(path: str, indicators: dict[str, str], refresh: bool) -> pd.DataFrame:
+    """World Bank indicators per country/year (one column each), cached in `path`."""
+    target = Path(path)
     if target.exists() and not refresh:
         return pd.read_csv(target)
 
-    frames = [fetch_world_bank_indicator(ind, col) for ind, col in GDP_INDICATORS.items()]
-    gdp = frames[0].merge(frames[1], on=["iso_code", "country", "year"], how="outer")
-    gdp = gdp[gdp["iso_code"].fillna("") != ""]
-    gdp["is_aggregate"] = gdp["iso_code"].isin(fetch_world_bank_aggregates()).astype(int)
-    gdp = gdp.sort_values(["iso_code", "year"])
-    gdp.to_csv(target, index=False)
-    return gdp
+    keys = ["iso_code", "country", "year"]
+    frames = [fetch_world_bank_indicator(ind, col) for ind, col in indicators.items()]
+    data = frames[0]
+    for frame in frames[1:]:
+        data = data.merge(frame, on=keys, how="outer")
+    data = data[data["iso_code"].fillna("") != ""]
+    data["is_aggregate"] = data["iso_code"].isin(fetch_world_bank_aggregates()).astype(int)
+    data = data.sort_values(["iso_code", "year"])
+    data.to_csv(target, index=False)
+    return data
 
 
 # ---------------------------------------------------------------- transforms
@@ -167,6 +187,65 @@ def gdp_covid_loss(gdp: pd.DataFrame) -> pd.DataFrame:
     )
 
 
+def clean_oxcgrt(raw: pd.DataFrame) -> pd.DataFrame:
+    """National totals only, snake_case columns, real dates.
+
+    "C1M_School closing" -> c1m_school_closing, "C1M_Flag" -> c1m_flag, ...
+    """
+    national = raw[raw["Jurisdiction"] == "NAT_TOTAL"].drop(
+        columns=["RegionName", "RegionCode", "Jurisdiction"], errors="ignore"
+    )
+    national = national.rename(
+        columns=lambda c: re.sub(r"[^0-9a-z]+", "_", c.lower()).strip("_")
+    ).rename(columns={"countrycode": "iso_code", "countryname": "country"})
+    national["date"] = pd.to_datetime(national["date"].astype(str), format="%Y%m%d")
+    return national
+
+
+def school_closure_weeks(oxcgrt: pd.DataFrame) -> pd.DataFrame:
+    """Weeks with schools closed by requirement, from OxCGRT C1M, 2020-2022.
+
+    full:           C1M = 3 (closing required at all levels)
+    partial_or_full: C1M >= 2 (closing required at some or all levels)
+    """
+    level = oxcgrt["c1m_school_closing"]
+    days = oxcgrt.assign(full=level >= SCHOOL_FULL, partial_or_full=level >= SCHOOL_PARTIAL)
+    counted = days[level.notna()].groupby("iso_code")[["full", "partial_or_full"]].sum() / 7
+    return counted.rename(
+        columns={"full": "school_weeks_full", "partial_or_full": "school_weeks_partial_or_full"}
+    )
+
+
+def social_changes(social: pd.DataFrame) -> pd.DataFrame:
+    """Per country, vs. 2019: worst unemployment rise and worst life-expectancy drop in 2020-2022."""
+    countries = social[social["is_aggregate"] == 0]
+    wide = countries.pivot_table(
+        index="iso_code", columns="year", values=["unemployment_pct", "life_expectancy_years"]
+    )
+    years = [y for y in SOCIETY_YEARS if y in wide["unemployment_pct"].columns]
+    unemployment, life = wide["unemployment_pct"], wide["life_expectancy_years"]
+    return pd.DataFrame(
+        {
+            "unemployment_2019_pct": unemployment[BASELINE_YEAR],
+            "unemployment_rise_pp": unemployment[years].max(axis=1) - unemployment[BASELINE_YEAR],
+            "life_expectancy_2019": life[BASELINE_YEAR],
+            "life_expectancy_drop_years": life[BASELINE_YEAR] - life[years].min(axis=1),
+        }
+    )
+
+
+def society_covid(oxcgrt: pd.DataFrame, social: pd.DataFrame) -> pd.DataFrame:
+    """One row per country (ISO3 code as used by OxCGRT and the World Bank)."""
+    names = pd.concat(
+        [
+            social[social["is_aggregate"] == 0][["iso_code", "country"]],
+            oxcgrt[["iso_code", "country"]],
+        ]
+    ).drop_duplicates("iso_code").set_index("iso_code")["country"]
+    combined = school_closure_weeks(oxcgrt).join(social_changes(social), how="outer")
+    return combined.join(names).reset_index()[["iso_code", "country", *combined.columns]]
+
+
 # ---------------------------------------------------------------- build
 
 def load_tables(refresh: bool) -> dict[str, pd.DataFrame]:
@@ -175,7 +254,9 @@ def load_tables(refresh: bool) -> dict[str, pd.DataFrame]:
 
     print("Reading sources")
     viewhub = ensure_file(VIEWHUB_XLSX, VIEWHUB_URL, refresh)
-    gdp = ensure_gdp_csv(refresh)
+    gdp = ensure_world_bank_csv(GDP_CSV, GDP_INDICATORS, refresh)
+    social = ensure_world_bank_csv(SOCIAL_CSV, SOCIAL_INDICATORS, refresh)
+    oxcgrt = clean_oxcgrt(pd.read_csv(ensure_file(OXCGRT_CSV, OXCGRT_URL, refresh), low_memory=False))
     return {
         "covid_data": pd.read_csv(COVID_CSV, parse_dates=["date"]),
         "vaccinations_by_manufacturer": pd.read_csv(
@@ -188,6 +269,9 @@ def load_tables(refresh: bool) -> dict[str, pd.DataFrame]:
         "ve_booster": clean_viewhub_sheet(pd.read_excel(viewhub, sheet_name="Booster Studies")),
         "gdp_annual": gdp,
         "gdp_covid_loss": gdp_covid_loss(gdp),
+        "oxcgrt_daily": oxcgrt,
+        "social_annual": social,
+        "society_covid": society_covid(oxcgrt, social),
     }
 
 
@@ -199,6 +283,9 @@ INDEXES = (
     "CREATE INDEX idx_veb ON ve_booster(booster_vaccine, outcome_category)",
     "CREATE INDEX idx_gdp_iso_year ON gdp_annual(iso_code, year)",
     "CREATE INDEX idx_gdploss_iso ON gdp_covid_loss(iso_code)",
+    "CREATE INDEX idx_oxcgrt_iso_date ON oxcgrt_daily(iso_code, date)",
+    "CREATE INDEX idx_social_iso_year ON social_annual(iso_code, year)",
+    "CREATE INDEX idx_society_iso ON society_covid(iso_code)",
 )
 
 

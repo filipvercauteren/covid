@@ -3,3 +3,5 @@ __pycache__/
 .streamlit/secrets.toml
 .claude/
 *.db
+OxCGRT_compact_national_v1.csv
+WeeklySummary_COVID19_VE_Studies_*.xlsx

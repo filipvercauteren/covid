@@ -82,9 +82,10 @@ All data retrieved 2026-08-24.
 streamlit run resilience_app.py
 ```
 
-Compares countries on three criteria (lower is better for each): excess deaths per million
-(optionally roughly age-adjusted), GDP loss 2020–23 vs. the pre-COVID trend, and average
-stringency 2020–22. Tabs: criteria overview, deaths-vs-cost scatter, weighted ranking,
+Compares countries on five criteria (lower is better for each): health (excess deaths per
+million, optionally roughly age-adjusted, or the life-expectancy drop), economy (GDP loss
+2020–23 vs. the pre-COVID trend), jobs (unemployment rise), education (weeks schools fully
+closed) and freedom (average stringency 2020–22). Tabs: criteria overview, deaths-vs-cost scatter, weighted ranking,
 weight sensitivity, effect of the end date, vaccination speed, data quality.
 
 - `resilience.py` — pure data/scoring functions (no Streamlit), reusable from the notebook.

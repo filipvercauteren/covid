@@ -4,10 +4,13 @@ Pure functions over DataFrames read from covid-combo.db. No Streamlit imports,
 so they can be reused from the notebook or tests.
 
 Criteria (lower is better for all of them):
-- health:  cumulative excess deaths per million up to a cutoff date
-           (optionally roughly age-adjusted), or reported COVID deaths per million
-- economy: cumulative GDP loss 2020-2023 vs. the 2015-2019 trend (table gdp_covid_loss)
-- freedom: average OxCGRT stringency index 2020-2022 (how much restriction it took)
+- health:    cumulative excess deaths per million up to a cutoff date (optionally
+             roughly age-adjusted), reported COVID deaths per million, or the drop
+             in life expectancy 2019 -> worst of 2020-22
+- economy:   cumulative GDP loss 2020-2023 vs. the 2015-2019 trend (table gdp_covid_loss)
+- jobs:      rise in unemployment 2019 -> worst of 2020-22, %-points (table society_covid)
+- education: weeks with schools fully closed by requirement, 2020-22 (OxCGRT C1M = 3)
+- freedom:   average OxCGRT stringency index 2020-2022 (how much restriction it took)
 """
 
 from __future__ import annotations
@@ -36,17 +39,31 @@ HEALTH_MEASURES = {
     "excess_pm": "Excess deaths per million",
     "excess_age_adj_pm": "Age-adjusted excess deaths per million",
     "reported_pm": "Reported COVID deaths per million",
+    "life_expectancy_drop_years": "Life-expectancy drop 2019 → 2020–22 (years)",
+}
+
+# criterion -> column; the health column is chosen by the user
+COST_CRITERIA = {
+    "economy": "gdp_loss_pct",
+    "jobs": "unemployment_rise_pp",
+    "education": "school_weeks_full",
+    "freedom": "avg_stringency",
 }
 
 CRITERIA_LABELS = {
     "health": "Health (deaths)",
     "economy": "Economy (GDP loss)",
+    "jobs": "Jobs (unemployment rise)",
+    "education": "Education (school closures)",
     "freedom": "Freedom (stringency)",
 }
 
 COLUMN_LABELS = {
     **HEALTH_MEASURES,
     "gdp_loss_pct": "GDP loss vs. trend 2020–23 (%)",
+    "unemployment_rise_pp": "Unemployment rise 2019 → 2020–22 (%-points)",
+    "school_weeks_full": "Weeks schools fully closed 2020–22",
+    "school_weeks_partial_or_full": "Weeks schools partly or fully closed 2020–22",
     "avg_stringency": "Avg. stringency index 2020–22",
     "pct_fully_vax": "% fully vaccinated",
     "pct_65plus": "% aged 65+",
@@ -101,13 +118,27 @@ def load_gdp_loss(db_path: str = DB_PATH) -> pd.DataFrame:
         return pd.read_sql(query, conn)
 
 
-def country_metrics(daily: pd.DataFrame, gdp: pd.DataFrame, cutoff: str) -> pd.DataFrame:
+def load_society(db_path: str = DB_PATH) -> pd.DataFrame:
+    """School closures, unemployment rise, life-expectancy drop (derived table society_covid)."""
+    query = """
+        SELECT iso_code AS wb_iso, school_weeks_full, school_weeks_partial_or_full,
+               unemployment_rise_pp, life_expectancy_drop_years
+        FROM society_covid
+    """
+    with closing(sqlite3.connect(db_path)) as conn:
+        return pd.read_sql(query, conn)
+
+
+def country_metrics(
+    daily: pd.DataFrame, gdp: pd.DataFrame, society: pd.DataFrame, cutoff: str
+) -> pd.DataFrame:
     """One row per country with every criterion, measured up to `cutoff`.
 
     - excess_pm: last cumulative excess deaths/million on or before the cutoff;
       NaN when that value is older than EXCESS_MAX_STALENESS (not comparable)
     - avg_stringency: mean over 2020-01-01 .. min(cutoff, 2022-12-31)
-    - gdp_loss_pct: always 2020-2023, independent of the cutoff
+    - gdp_loss_pct, society columns: fixed periods (see module docstring),
+      independent of the cutoff
     """
     cutoff_ts = pd.Timestamp(cutoff)
     upto = daily[daily["date"] <= cutoff_ts]
@@ -150,7 +181,11 @@ def country_metrics(daily: pd.DataFrame, gdp: pd.DataFrame, cutoff: str) -> pd.D
     ).reset_index()
 
     metrics["wb_iso"] = metrics["iso_code"].replace(OWID_TO_WORLD_BANK_ISO)
-    metrics = metrics.merge(gdp, on="wb_iso", how="left").drop(columns="wb_iso")
+    metrics = (
+        metrics.merge(gdp, on="wb_iso", how="left")
+        .merge(society, on="wb_iso", how="left")
+        .drop(columns="wb_iso")
+    )
     metrics["excess_vs_reported"] = metrics["excess_pm"] / metrics["reported_pm"]
     return metrics
 
@@ -188,7 +223,7 @@ def select_peers(
 
 
 def criterion_columns(health_column: str) -> dict[str, str]:
-    return {"health": health_column, "economy": "gdp_loss_pct", "freedom": "avg_stringency"}
+    return {"health": health_column, **COST_CRITERIA}
 
 
 def _badness(values: pd.Series) -> pd.Series:
@@ -227,25 +262,38 @@ def score_countries(
     return scored.sort_values(["rank", "location"]), missing
 
 
-def weight_grid(step: float = 0.1) -> np.ndarray:
-    """Every (health, economy, freedom) weight combination on a grid summing to 1."""
-    n = round(1 / step)
-    return np.array(
-        [(h / n, e / n, (n - h - e) / n) for h in range(n + 1) for e in range(n + 1 - h)]
-    )
+def weight_grid(n_criteria: int, step: float = 0.1) -> np.ndarray:
+    """Every weight combination for `n_criteria` criteria on a grid summing to 1."""
+    units = round(1 / step)
+
+    def compositions(remaining: int, parts: int) -> list[tuple[int, ...]]:
+        if parts == 1:
+            return [(remaining,)]
+        return [
+            (first, *rest)
+            for first in range(remaining + 1)
+            for rest in compositions(remaining - first, parts - 1)
+        ]
+
+    return np.array(compositions(units, n_criteria)) / units
 
 
 def rank_stability(
-    metrics: pd.DataFrame, health_column: str, step: float = 0.1, top_n: int = 10
+    metrics: pd.DataFrame,
+    health_column: str,
+    criteria: list[str],
+    step: float = 0.1,
+    top_n: int = 10,
 ) -> tuple[pd.DataFrame, int]:
-    """Rank of each country under every weight combination in `weight_grid`.
+    """Rank of each country under every weight combination of `criteria`.
 
     A country that stays near the top whatever the weights is a robust result;
     one whose rank swings a lot depends on the chosen weights.
     """
-    columns = list(criterion_columns(health_column).values())
+    all_columns = criterion_columns(health_column)
+    columns = [all_columns[c] for c in criteria]
     complete = metrics.dropna(subset=columns).reset_index(drop=True)
-    grid = weight_grid(step)
+    grid = weight_grid(len(columns), step)
     if complete.empty:
         return complete.assign(best_rank=[], median_rank=[], worst_rank=[], pct_in_top=[]), len(grid)
 
