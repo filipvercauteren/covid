@@ -1,6 +1,7 @@
 # Data sources
 
 All data used in `covid-combo.db` and `covid_analysis.ipynb`, with where it came from.
+`build_combo_db.py` rebuilds the database from these sources (`--refresh` re-downloads them).
 URLs were checked to be reachable on 2026-11-03.
 
 ## Loaded into `covid-combo.db`

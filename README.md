@@ -75,3 +75,20 @@ strongest real counter-evidence found — ending in a trust-tiered bottom-line t
   field rather than presented as confirmed.
 
 All data retrieved 2026-08-24.
+
+## Resilience app: "Who coped best with COVID-19?"
+
+```bash
+streamlit run resilience_app.py
+```
+
+Compares countries on three criteria (lower is better for each): excess deaths per million
+(optionally roughly age-adjusted), GDP loss 2020–23 vs. the pre-COVID trend, and average
+stringency 2020–22. Tabs: criteria overview, deaths-vs-cost scatter, weighted ranking,
+weight sensitivity, effect of the end date, vaccination speed, data quality.
+
+- `resilience.py` — pure data/scoring functions (no Streamlit), reusable from the notebook.
+- `resilience_app.py` — the Streamlit UI.
+- Needs the local `covid-combo.db` (gitignored). Build it with `python build_combo_db.py`
+  (needs `owid-covid-data.csv`; downloads the other sources if missing, `--refresh` re-downloads).
+  See `sources.md` for where the data comes from.
