@@ -12,31 +12,36 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from resilience import (
+    CAPACITY_COLUMNS,
     COLUMN_LABELS,
     COST_CRITERIA,
     CRITERIA_LABELS,
     CUTOFFS,
     DB_PATH,
+    GDP_BASELINES,
     HEALTH_MEASURES,
     VAX_THRESHOLD,
     add_age_adjusted_excess,
+    capacity_correlations,
     country_metrics,
     criterion_columns,
     excess_timeseries,
     load_daily,
     load_gdp_loss,
+    load_health_capacity,
     load_society,
     rank_stability,
     score_countries,
     select_peers,
     vaccination_timeseries,
+    with_gdp_baseline,
 )
 
 DEFAULT_HIGHLIGHT = ("Belgium",)
 DEFAULT_PEERS = ("Belgium", "Netherlands", "Germany", "France", "Denmark", "Sweden", "Norway",
                  "United Kingdom", "Austria", "Switzerland", "Italy", "Spain")
 DEFAULT_TIMELINE = ("New Zealand", "Australia", "Japan", "Belgium", "Sweden", "Denmark")
-DEFAULT_WEIGHTS = {"health": 5, "economy": 2, "jobs": 1, "education": 1, "freedom": 1}
+DEFAULT_WEIGHTS = {"health": 5, "economy": 2, "jobs": 1, "education": 1, "freedom": 1, "recovery": 1}
 
 
 # ---------------------------------------------------------------- data (cached)
@@ -48,16 +53,22 @@ def cached_daily() -> pd.DataFrame:
 
 @st.cache_data(show_spinner=False)
 def cached_metrics(cutoff: str) -> pd.DataFrame:
-    return country_metrics(cached_daily(), load_gdp_loss(DB_PATH), load_society(DB_PATH), cutoff)
+    return country_metrics(
+        cached_daily(), load_gdp_loss(DB_PATH), load_society(DB_PATH), load_health_capacity(DB_PATH), cutoff
+    )
 
 
 @st.cache_data(show_spinner=False)
 def peer_table(
-    cutoff: str, min_population: int, continents: tuple[str, ...], countries: tuple[str, ...]
+    cutoff: str,
+    gdp_baseline: str,
+    min_population: int,
+    continents: tuple[str, ...],
+    countries: tuple[str, ...],
 ) -> tuple[pd.DataFrame, float, float]:
     """Metrics for the peer group. The age fit uses every country above the
     population threshold (more stable than fitting on a small peer group)."""
-    metrics = select_peers(cached_metrics(cutoff), min_population)
+    metrics = with_gdp_baseline(select_peers(cached_metrics(cutoff), min_population), gdp_baseline)
     adjusted, slope, corr = add_age_adjusted_excess(metrics)
     return select_peers(adjusted, 0, continents, countries), slope, corr
 
@@ -106,6 +117,15 @@ with st.sidebar:
         help="Excess mortality counts all extra deaths and isn't fooled by poor testing. "
         "Reported COVID deaths depend on testing and definitions.",
     )
+    gdp_baseline = st.radio(
+        "GDP baseline (what GDP would have been without COVID)",
+        list(GDP_BASELINES),
+        format_func=lambda key: GDP_BASELINES[key][1],
+        help="IMF forecast: what the IMF expected in October 2019, before COVID was known — the "
+        "standard method. Trend: 2015–2019 growth continued, which overstates the loss for countries "
+        "that were growing fast before COVID (e.g. Spain, Poland, Ireland). Compare both to see "
+        "whether a country's position depends on the method.",
+    )
 
     peer_mode = st.segmented_control(
         "Compare with",
@@ -132,7 +152,10 @@ with st.sidebar:
         default=[c for c in DEFAULT_HIGHLIGHT if c in all_countries],
     )
 
-peers, age_slope, age_corr = peer_table(cutoff, int(min_population), peer_continents, peer_countries)
+peers, age_slope, age_corr = peer_table(
+    cutoff, gdp_baseline, int(min_population), peer_continents, peer_countries
+)
+baseline_label = GDP_BASELINES[gdp_baseline][1]
 
 if peers.empty:
     st.warning("No countries match these settings.")
@@ -145,6 +168,7 @@ tabs = st.tabs([
     ":material/balance: Weight sensitivity",
     ":material/timeline: End date matters",
     ":material/vaccines: Vaccination speed",
+    ":material/local_hospital: Healthcare capacity",
     ":material/fact_check: Data quality",
 ])
 
@@ -161,14 +185,16 @@ with tabs[0]:
 | | Life-expectancy drop 2019 → worst of 2020–22 | ✅ alternative health measure | `society_covid` (World Bank) |
 | | Hospital overload | ⚠️ shown, not scored — ICU data for ~40 countries | `icu_patients_per_million` |
 | | Years of life lost | ❌ not available | — |
-| **Economy** | GDP loss 2020–23 vs. 2015–19 trend | ✅ "economy" criterion | `gdp_covid_loss` (World Bank) |
+| **Economy** | GDP loss 2020–23 vs. a no-COVID baseline: IMF forecast of Oct 2019 (default) or 2015–19 trend | ✅ "economy" criterion | `gdp_covid_loss` (World Bank + IMF) |
 | | Unemployment rise 2019 → worst of 2020–22 | ✅ "jobs" criterion | `society_covid` (World Bank / ILO) |
 | | Government debt, support costs | ❌ debt data for only ~30 of these countries | — |
 | **Society** | Weeks schools fully closed 2020–22 | ✅ "education" criterion | `society_covid` (OxCGRT C1M = 3) |
 | | Restrictions (stringency) | ✅ "freedom" criterion | `stringency_index` (OxCGRT) |
 | | Mobility (actual behaviour) | ❌ Google data missing for ~10% of these countries | — |
 | | Learning loss, mental health | ❌ not available for all countries | — |
-| **Resilience** | Vaccination speed | ✅ shown, not scored | `people_fully_vaccinated_per_hundred` |
+| **Resilience** | Years GDP below its 2019 level (2020–24) | ✅ "recovery" criterion | `gdp_covid_loss` (World Bank) |
+| | Vaccination speed | ✅ shown, not scored | `people_fully_vaccinated_per_hundred` |
+| | Healthcare capacity before COVID (spending, doctors, nurses, beds) | ✅ explanatory, not scored — see *Healthcare capacity* | `health_capacity` (World Bank) |
 """
     )
     st.markdown("##### Coverage in the current peer group")
@@ -180,6 +206,7 @@ with tabs[0]:
         "School closures": peers["school_weeks_full"].notna().sum(),
         "Stringency": peers["avg_stringency"].notna().sum(),
         "Life expectancy": peers["life_expectancy_drop_years"].notna().sum(),
+        "GDP recovery": peers["gdp_years_below_2019"].notna().sum(),
         "ICU data": peers["peak_icu_pm"].notna().sum(),
     }
     for col, (name, count) in zip(st.columns(len(coverage)), coverage.items()):
@@ -194,6 +221,10 @@ with tabs[0]:
 3. **Data quality** — countries with poor death registration are missing from excess mortality,
    or look better than reality. See *Data quality*.
 4. **Weighting** — the weights largely decide the winner. See *Weight sensitivity*.
+5. **The GDP baseline** — the loss is measured against what GDP *would* have been without COVID.
+   The IMF's October 2019 forecast is the standard choice; extending the 2015–19 trend overstates
+   the loss for fast-growing countries. A cautious IMF forecast flatters a country (Belgium is above
+   the forecast from 2022). Switch *GDP baseline* in the sidebar to see if the ranking holds.
 
 Also: GDP loss and unemployment include non-COVID shocks (energy crisis 2022, wars, oil booms);
 stringency and school closures measure rules on paper, not how people behaved; the World Bank
@@ -266,7 +297,8 @@ with tabs[1]:
 
         st.caption(
             f"{len(plot)} countries. Dashed lines = medians. Bubble size = population. "
-            f"Excess/reported deaths measured up to end {cutoff[:4]}; GDP loss always 2020–23; "
+            f"Excess/reported deaths measured up to end {cutoff[:4]}; GDP loss always 2020–23, "
+            f"vs. {baseline_label}; "
             "unemployment, school closures and stringency 2020–22."
             + (f" Hidden as GDP outliers: {', '.join(hidden)}." if hidden else "")
         )
@@ -409,7 +441,7 @@ with tabs[4]:
     st.markdown(f"##### Rank on *{HEALTH_MEASURES[health_column].lower()}* by end date (current peer group)")
     rank_columns = {}
     for year_end in CUTOFFS:
-        group, _, _ = peer_table(year_end, int(min_population), peer_continents, peer_countries)
+        group, _, _ = peer_table(year_end, gdp_baseline, int(min_population), peer_continents, peer_countries)
         rank_columns[year_end[:4]] = group.set_index("location")[health_column].rank(method="min")
     ranks = pd.DataFrame(rank_columns)
     focus = ranks.loc[ranks.index.intersection(timeline_countries)]
@@ -454,9 +486,63 @@ with tabs[5]:
         st.plotly_chart(fig)
         st.caption("Countries from the *End date matters* tab.")
 
-# ---------------------------------------------------------------- 7. data quality
+# ---------------------------------------------------------------- 7. healthcare capacity
 
 with tabs[6]:
+    st.markdown(
+        "Healthcare capacity **before** COVID (latest value 2015–2019, World Bank). It is not part of "
+        "the score — more hospital beds isn't *coping better*, it's a starting point. The question here: "
+        "**did countries with more capacity have better outcomes?**"
+    )
+    capacity_columns = list(CAPACITY_COLUMNS)
+    outcome_columns = [health_column, *COST_CRITERIA.values()]
+    corr, counts = capacity_correlations(peers, capacity_columns, outcome_columns)
+
+    heat = corr.rename(index=CAPACITY_COLUMNS, columns=label)
+    fig = px.imshow(
+        heat, text_auto=".2f", color_continuous_scale="RdBu", zmin=-1, zmax=1, aspect="auto",
+        labels={"color": "Spearman ρ"},
+    )
+    fig.update_layout(height=380, xaxis={"side": "top", "tickangle": -30}, margin={"t": 120})
+    st.plotly_chart(fig)
+    st.caption(
+        f"Spearman rank correlation, {int(counts.min().min())}–{int(counts.max().max())} countries per cell. "
+        "Every outcome is *lower is better*, so a **negative (red) value** means more capacity went with a "
+        "better outcome. Beware: richer countries have more capacity *and* older populations, better death "
+        "registration and more money for support — correlation is not causation."
+    )
+
+    c1, c2 = st.columns(2)
+    capacity_column = c1.selectbox("Capacity measure", capacity_columns, format_func=CAPACITY_COLUMNS.get)
+    outcome_column = c2.selectbox("Outcome", outcome_columns, format_func=label)
+    pair = peers.dropna(subset=[capacity_column, outcome_column])
+    if len(pair) < 3:
+        st.info("Too few countries have both values.")
+    else:
+        rho = pair[[capacity_column, outcome_column]].corr(method="spearman").iloc[0, 1]
+        fig = px.scatter(
+            pair, x=capacity_column, y=outcome_column, color="continent", hover_name="location",
+            text=[loc if loc in highlight else "" for loc in pair["location"]],
+            log_x=capacity_column == "health_spending_per_capita_usd", labels=COLUMN_LABELS,
+            title=f"Spearman ρ = {rho:.2f}  ({len(pair)} countries)",
+        )
+        fig.update_traces(textposition="top center")
+        fig.update_layout(height=500)
+        st.plotly_chart(fig)
+
+    with st.expander("Capacity per country"):
+        st.dataframe(
+            peers[["location", "continent", *capacity_columns]].sort_values("location"),
+            hide_index=True,
+            column_config={
+                "location": "Country", "continent": "Continent",
+                **{c: st.column_config.NumberColumn(CAPACITY_COLUMNS[c], format="%.1f") for c in capacity_columns},
+            },
+        )
+
+# ---------------------------------------------------------------- 8. data quality
+
+with tabs[7]:
     st.markdown(
         "Pitfall 3: where excess deaths are many times the reported COVID deaths, the official "
         "figures can't be trusted — and countries without death registration are missing entirely."
@@ -478,11 +564,13 @@ with tabs[6]:
     st.markdown("##### Missing data in the current peer group")
     gaps = {
         f"No recent excess mortality (end {cutoff[:4]})": peers.loc[peers["excess_pm"].isna(), "location"],
-        "No GDP loss": peers.loc[peers["gdp_loss_pct"].isna(), "location"],
+        f"No GDP loss ({baseline_label})": peers.loc[peers["gdp_loss_pct"].isna(), "location"],
         "No unemployment data": peers.loc[peers["unemployment_rise_pp"].isna(), "location"],
         "No school-closure data": peers.loc[peers["school_weeks_full"].isna(), "location"],
         "No stringency index": peers.loc[peers["avg_stringency"].isna(), "location"],
         "No life-expectancy data": peers.loc[peers["life_expectancy_drop_years"].isna(), "location"],
+        "No GDP recovery data": peers.loc[peers["gdp_years_below_2019"].isna(), "location"],
+        "No healthcare-capacity data": peers.loc[peers[capacity_columns].isna().all(axis=1), "location"],
     }
     for title, names in gaps.items():
         with st.expander(f"{title}: {len(names)}"):

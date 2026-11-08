@@ -1,0 +1,2911 @@
+iso_code,country,year,forecast_real_gdp_growth_pct,value_type,vintage
+ABW,Aruba,2010,-3.339,actual,2019-10
+ABW,Aruba,2011,3.505,actual,2019-10
+ABW,Aruba,2012,-1.368,actual,2019-10
+ABW,Aruba,2013,4.165,actual,2019-10
+ABW,Aruba,2014,0.904,actual,2019-10
+ABW,Aruba,2015,-0.448,actual,2019-10
+ABW,Aruba,2016,0.483,actual,2019-10
+ABW,Aruba,2017,2.342,actual,2019-10
+ABW,Aruba,2018,1.2,actual,2019-10
+ABW,Aruba,2019,0.7,estimate,2019-10
+ABW,Aruba,2020,1.0,forecast,2019-10
+ABW,Aruba,2021,1.1,forecast,2019-10
+ABW,Aruba,2022,1.1,forecast,2019-10
+ABW,Aruba,2023,1.1,forecast,2019-10
+ABW,Aruba,2024,1.1,forecast,2019-10
+AFG,Afghanistan,2010,8.438,actual,2019-10
+AFG,Afghanistan,2011,6.479,actual,2019-10
+AFG,Afghanistan,2012,13.968,actual,2019-10
+AFG,Afghanistan,2013,5.683,actual,2019-10
+AFG,Afghanistan,2014,2.697,actual,2019-10
+AFG,Afghanistan,2015,0.988,actual,2019-10
+AFG,Afghanistan,2016,2.164,actual,2019-10
+AFG,Afghanistan,2017,2.665,actual,2019-10
+AFG,Afghanistan,2018,2.7,actual,2019-10
+AFG,Afghanistan,2019,3.0,estimate,2019-10
+AFG,Afghanistan,2020,3.478,forecast,2019-10
+AFG,Afghanistan,2021,4.0,forecast,2019-10
+AFG,Afghanistan,2022,4.5,forecast,2019-10
+AFG,Afghanistan,2023,5.0,forecast,2019-10
+AFG,Afghanistan,2024,5.5,forecast,2019-10
+AGO,Angola,2010,4.859,actual,2019-10
+AGO,Angola,2011,3.472,actual,2019-10
+AGO,Angola,2012,8.542,actual,2019-10
+AGO,Angola,2013,4.955,actual,2019-10
+AGO,Angola,2014,4.823,actual,2019-10
+AGO,Angola,2015,0.944,actual,2019-10
+AGO,Angola,2016,-2.58,actual,2019-10
+AGO,Angola,2017,-0.15,actual,2019-10
+AGO,Angola,2018,-1.2,actual,2019-10
+AGO,Angola,2019,-0.265,estimate,2019-10
+AGO,Angola,2020,1.153,forecast,2019-10
+AGO,Angola,2021,2.874,forecast,2019-10
+AGO,Angola,2022,3.328,forecast,2019-10
+AGO,Angola,2023,4.125,forecast,2019-10
+AGO,Angola,2024,3.783,forecast,2019-10
+ALB,Albania,2010,3.707,actual,2019-10
+ALB,Albania,2011,2.545,actual,2019-10
+ALB,Albania,2012,1.418,actual,2019-10
+ALB,Albania,2013,1.002,actual,2019-10
+ALB,Albania,2014,1.774,actual,2019-10
+ALB,Albania,2015,2.219,actual,2019-10
+ALB,Albania,2016,3.315,actual,2019-10
+ALB,Albania,2017,3.821,actual,2019-10
+ALB,Albania,2018,4.062,actual,2019-10
+ALB,Albania,2019,2.983,estimate,2019-10
+ALB,Albania,2020,4.022,forecast,2019-10
+ALB,Albania,2021,3.989,forecast,2019-10
+ALB,Albania,2022,4.015,forecast,2019-10
+ALB,Albania,2023,4.009,forecast,2019-10
+ALB,Albania,2024,4.004,forecast,2019-10
+ARE,United Arab Emirates,2010,1.595,actual,2019-10
+ARE,United Arab Emirates,2011,6.93,actual,2019-10
+ARE,United Arab Emirates,2012,4.485,actual,2019-10
+ARE,United Arab Emirates,2013,5.053,actual,2019-10
+ARE,United Arab Emirates,2014,4.399,actual,2019-10
+ARE,United Arab Emirates,2015,5.065,actual,2019-10
+ARE,United Arab Emirates,2016,2.988,actual,2019-10
+ARE,United Arab Emirates,2017,0.491,actual,2019-10
+ARE,United Arab Emirates,2018,1.726,actual,2019-10
+ARE,United Arab Emirates,2019,1.56,estimate,2019-10
+ARE,United Arab Emirates,2020,2.515,forecast,2019-10
+ARE,United Arab Emirates,2021,2.723,forecast,2019-10
+ARE,United Arab Emirates,2022,2.318,forecast,2019-10
+ARE,United Arab Emirates,2023,2.403,forecast,2019-10
+ARE,United Arab Emirates,2024,2.467,forecast,2019-10
+ARG,Argentina,2010,10.125,actual,2019-10
+ARG,Argentina,2011,6.004,actual,2019-10
+ARG,Argentina,2012,-1.026,actual,2019-10
+ARG,Argentina,2013,2.405,actual,2019-10
+ARG,Argentina,2014,-2.513,actual,2019-10
+ARG,Argentina,2015,2.731,actual,2019-10
+ARG,Argentina,2016,-2.08,actual,2019-10
+ARG,Argentina,2017,2.669,actual,2019-10
+ARG,Argentina,2018,-2.482,actual,2019-10
+ARG,Argentina,2019,-3.061,estimate,2019-10
+ARG,Argentina,2020,-1.281,forecast,2019-10
+ARG,Argentina,2021,1.433,forecast,2019-10
+ARG,Argentina,2022,2.283,forecast,2019-10
+ARG,Argentina,2023,3.1,forecast,2019-10
+ARG,Argentina,2024,3.2,forecast,2019-10
+ARM,Armenia,2010,2.2,actual,2019-10
+ARM,Armenia,2011,4.7,actual,2019-10
+ARM,Armenia,2012,7.134,actual,2019-10
+ARM,Armenia,2013,3.3,actual,2019-10
+ARM,Armenia,2014,3.606,actual,2019-10
+ARM,Armenia,2015,3.254,actual,2019-10
+ARM,Armenia,2016,0.197,actual,2019-10
+ARM,Armenia,2017,7.519,actual,2019-10
+ARM,Armenia,2018,5.24,actual,2019-10
+ARM,Armenia,2019,6.0,estimate,2019-10
+ARM,Armenia,2020,4.8,forecast,2019-10
+ARM,Armenia,2021,4.5,forecast,2019-10
+ARM,Armenia,2022,4.5,forecast,2019-10
+ARM,Armenia,2023,4.5,forecast,2019-10
+ARM,Armenia,2024,4.5,forecast,2019-10
+ATG,Antigua and Barbuda,2010,-7.574,actual,2019-10
+ATG,Antigua and Barbuda,2011,-1.959,actual,2019-10
+ATG,Antigua and Barbuda,2012,3.372,actual,2019-10
+ATG,Antigua and Barbuda,2013,-0.601,actual,2019-10
+ATG,Antigua and Barbuda,2014,3.797,actual,2019-10
+ATG,Antigua and Barbuda,2015,3.824,actual,2019-10
+ATG,Antigua and Barbuda,2016,5.498,actual,2019-10
+ATG,Antigua and Barbuda,2017,3.145,actual,2019-10
+ATG,Antigua and Barbuda,2018,7.389,actual,2019-10
+ATG,Antigua and Barbuda,2019,4.031,estimate,2019-10
+ATG,Antigua and Barbuda,2020,3.322,forecast,2019-10
+ATG,Antigua and Barbuda,2021,2.509,forecast,2019-10
+ATG,Antigua and Barbuda,2022,2.0,forecast,2019-10
+ATG,Antigua and Barbuda,2023,2.0,forecast,2019-10
+ATG,Antigua and Barbuda,2024,2.0,forecast,2019-10
+AUS,Australia,2010,2.386,actual,2019-10
+AUS,Australia,2011,2.765,actual,2019-10
+AUS,Australia,2012,3.875,actual,2019-10
+AUS,Australia,2013,2.138,actual,2019-10
+AUS,Australia,2014,2.643,actual,2019-10
+AUS,Australia,2015,2.461,actual,2019-10
+AUS,Australia,2016,2.788,actual,2019-10
+AUS,Australia,2017,2.423,actual,2019-10
+AUS,Australia,2018,2.74,actual,2019-10
+AUS,Australia,2019,1.713,estimate,2019-10
+AUS,Australia,2020,2.263,forecast,2019-10
+AUS,Australia,2021,2.582,forecast,2019-10
+AUS,Australia,2022,2.699,forecast,2019-10
+AUS,Australia,2023,2.671,forecast,2019-10
+AUS,Australia,2024,2.64,forecast,2019-10
+AUT,Austria,2010,1.837,actual,2019-10
+AUT,Austria,2011,2.923,actual,2019-10
+AUT,Austria,2012,0.68,actual,2019-10
+AUT,Austria,2013,0.026,actual,2019-10
+AUT,Austria,2014,0.661,actual,2019-10
+AUT,Austria,2015,1.143,actual,2019-10
+AUT,Austria,2016,2.04,actual,2019-10
+AUT,Austria,2017,2.551,actual,2019-10
+AUT,Austria,2018,2.745,actual,2019-10
+AUT,Austria,2019,1.605,estimate,2019-10
+AUT,Austria,2020,1.7,forecast,2019-10
+AUT,Austria,2021,1.55,forecast,2019-10
+AUT,Austria,2022,1.55,forecast,2019-10
+AUT,Austria,2023,1.56,forecast,2019-10
+AUT,Austria,2024,1.56,forecast,2019-10
+AZE,Azerbaijan,2010,4.789,actual,2019-10
+AZE,Azerbaijan,2011,-1.573,actual,2019-10
+AZE,Azerbaijan,2012,2.203,actual,2019-10
+AZE,Azerbaijan,2013,5.843,actual,2019-10
+AZE,Azerbaijan,2014,2.798,actual,2019-10
+AZE,Azerbaijan,2015,1.05,actual,2019-10
+AZE,Azerbaijan,2016,-3.064,actual,2019-10
+AZE,Azerbaijan,2017,0.154,actual,2019-10
+AZE,Azerbaijan,2018,0.971,actual,2019-10
+AZE,Azerbaijan,2019,2.7,estimate,2019-10
+AZE,Azerbaijan,2020,2.11,forecast,2019-10
+AZE,Azerbaijan,2021,2.145,forecast,2019-10
+AZE,Azerbaijan,2022,2.214,forecast,2019-10
+AZE,Azerbaijan,2023,2.347,forecast,2019-10
+AZE,Azerbaijan,2024,2.418,forecast,2019-10
+BDI,Burundi,2010,5.124,actual,2019-10
+BDI,Burundi,2011,4.033,actual,2019-10
+BDI,Burundi,2012,4.447,actual,2019-10
+BDI,Burundi,2013,5.944,actual,2019-10
+BDI,Burundi,2014,4.494,actual,2019-10
+BDI,Burundi,2015,-3.956,actual,2019-10
+BDI,Burundi,2016,-1.042,actual,2019-10
+BDI,Burundi,2017,0.001,actual,2019-10
+BDI,Burundi,2018,0.149,actual,2019-10
+BDI,Burundi,2019,0.419,estimate,2019-10
+BDI,Burundi,2020,0.5,forecast,2019-10
+BDI,Burundi,2021,0.5,forecast,2019-10
+BDI,Burundi,2022,0.5,forecast,2019-10
+BDI,Burundi,2023,0.5,forecast,2019-10
+BDI,Burundi,2024,0.5,forecast,2019-10
+BEL,Belgium,2010,2.744,actual,2019-10
+BEL,Belgium,2011,1.798,actual,2019-10
+BEL,Belgium,2012,0.235,actual,2019-10
+BEL,Belgium,2013,0.201,actual,2019-10
+BEL,Belgium,2014,1.255,actual,2019-10
+BEL,Belgium,2015,1.74,actual,2019-10
+BEL,Belgium,2016,1.453,actual,2019-10
+BEL,Belgium,2017,1.735,actual,2019-10
+BEL,Belgium,2018,1.438,actual,2019-10
+BEL,Belgium,2019,1.214,estimate,2019-10
+BEL,Belgium,2020,1.3,forecast,2019-10
+BEL,Belgium,2021,1.305,forecast,2019-10
+BEL,Belgium,2022,1.319,forecast,2019-10
+BEL,Belgium,2023,1.359,forecast,2019-10
+BEL,Belgium,2024,1.362,forecast,2019-10
+BEN,Benin,2010,2.114,actual,2019-10
+BEN,Benin,2011,2.964,actual,2019-10
+BEN,Benin,2012,4.811,actual,2019-10
+BEN,Benin,2013,7.191,actual,2019-10
+BEN,Benin,2014,6.358,actual,2019-10
+BEN,Benin,2015,1.778,actual,2019-10
+BEN,Benin,2016,3.34,actual,2019-10
+BEN,Benin,2017,5.672,actual,2019-10
+BEN,Benin,2018,6.697,actual,2019-10
+BEN,Benin,2019,6.551,estimate,2019-10
+BEN,Benin,2020,6.701,forecast,2019-10
+BEN,Benin,2021,6.742,forecast,2019-10
+BEN,Benin,2022,6.744,forecast,2019-10
+BEN,Benin,2023,6.727,forecast,2019-10
+BEN,Benin,2024,6.748,forecast,2019-10
+BFA,Burkina Faso,2010,8.446,actual,2019-10
+BFA,Burkina Faso,2011,6.627,actual,2019-10
+BFA,Burkina Faso,2012,6.453,actual,2019-10
+BFA,Burkina Faso,2013,5.794,actual,2019-10
+BFA,Burkina Faso,2014,4.326,actual,2019-10
+BFA,Burkina Faso,2015,3.895,actual,2019-10
+BFA,Burkina Faso,2016,5.946,actual,2019-10
+BFA,Burkina Faso,2017,6.317,actual,2019-10
+BFA,Burkina Faso,2018,6.821,actual,2019-10
+BFA,Burkina Faso,2019,5.967,estimate,2019-10
+BFA,Burkina Faso,2020,5.967,forecast,2019-10
+BFA,Burkina Faso,2021,6.013,forecast,2019-10
+BFA,Burkina Faso,2022,6.018,forecast,2019-10
+BFA,Burkina Faso,2023,6.0,forecast,2019-10
+BFA,Burkina Faso,2024,6.0,forecast,2019-10
+BGD,Bangladesh,2010,6.03,actual,2019-10
+BGD,Bangladesh,2011,6.494,actual,2019-10
+BGD,Bangladesh,2012,6.26,actual,2019-10
+BGD,Bangladesh,2013,6.038,actual,2019-10
+BGD,Bangladesh,2014,6.314,actual,2019-10
+BGD,Bangladesh,2015,6.842,actual,2019-10
+BGD,Bangladesh,2016,7.202,actual,2019-10
+BGD,Bangladesh,2017,7.584,actual,2019-10
+BGD,Bangladesh,2018,7.934,actual,2019-10
+BGD,Bangladesh,2019,7.792,estimate,2019-10
+BGD,Bangladesh,2020,7.445,forecast,2019-10
+BGD,Bangladesh,2021,7.3,forecast,2019-10
+BGD,Bangladesh,2022,7.3,forecast,2019-10
+BGD,Bangladesh,2023,7.3,forecast,2019-10
+BGD,Bangladesh,2024,7.3,forecast,2019-10
+BGR,Bulgaria,2010,1.324,actual,2019-10
+BGR,Bulgaria,2011,1.915,actual,2019-10
+BGR,Bulgaria,2012,0.031,actual,2019-10
+BGR,Bulgaria,2013,0.494,actual,2019-10
+BGR,Bulgaria,2014,1.838,actual,2019-10
+BGR,Bulgaria,2015,3.471,actual,2019-10
+BGR,Bulgaria,2016,3.937,actual,2019-10
+BGR,Bulgaria,2017,3.811,actual,2019-10
+BGR,Bulgaria,2018,3.081,actual,2019-10
+BGR,Bulgaria,2019,3.7,estimate,2019-10
+BGR,Bulgaria,2020,3.2,forecast,2019-10
+BGR,Bulgaria,2021,3.0,forecast,2019-10
+BGR,Bulgaria,2022,2.8,forecast,2019-10
+BGR,Bulgaria,2023,2.8,forecast,2019-10
+BGR,Bulgaria,2024,2.8,forecast,2019-10
+BHR,Bahrain,2010,4.337,actual,2019-10
+BHR,Bahrain,2011,1.984,actual,2019-10
+BHR,Bahrain,2012,3.728,actual,2019-10
+BHR,Bahrain,2013,5.416,actual,2019-10
+BHR,Bahrain,2014,4.351,actual,2019-10
+BHR,Bahrain,2015,2.863,actual,2019-10
+BHR,Bahrain,2016,3.473,actual,2019-10
+BHR,Bahrain,2017,3.804,actual,2019-10
+BHR,Bahrain,2018,1.778,actual,2019-10
+BHR,Bahrain,2019,1.982,estimate,2019-10
+BHR,Bahrain,2020,2.096,forecast,2019-10
+BHR,Bahrain,2021,2.352,forecast,2019-10
+BHR,Bahrain,2022,2.445,forecast,2019-10
+BHR,Bahrain,2023,2.789,forecast,2019-10
+BHR,Bahrain,2024,2.969,forecast,2019-10
+BHS,The Bahamas,2010,1.539,actual,2019-10
+BHS,The Bahamas,2011,0.613,actual,2019-10
+BHS,The Bahamas,2012,3.087,actual,2019-10
+BHS,The Bahamas,2013,-2.952,actual,2019-10
+BHS,The Bahamas,2014,0.737,actual,2019-10
+BHS,The Bahamas,2015,0.598,actual,2019-10
+BHS,The Bahamas,2016,0.446,actual,2019-10
+BHS,The Bahamas,2017,0.067,actual,2019-10
+BHS,The Bahamas,2018,1.566,actual,2019-10
+BHS,The Bahamas,2019,0.91,estimate,2019-10
+BHS,The Bahamas,2020,-0.557,forecast,2019-10
+BHS,The Bahamas,2021,2.101,forecast,2019-10
+BHS,The Bahamas,2022,1.732,forecast,2019-10
+BHS,The Bahamas,2023,1.599,forecast,2019-10
+BHS,The Bahamas,2024,1.586,forecast,2019-10
+BIH,Bosnia and Herzegovina,2010,0.767,actual,2019-10
+BIH,Bosnia and Herzegovina,2011,0.908,actual,2019-10
+BIH,Bosnia and Herzegovina,2012,-0.707,actual,2019-10
+BIH,Bosnia and Herzegovina,2013,2.351,actual,2019-10
+BIH,Bosnia and Herzegovina,2014,1.15,actual,2019-10
+BIH,Bosnia and Herzegovina,2015,3.074,actual,2019-10
+BIH,Bosnia and Herzegovina,2016,3.215,actual,2019-10
+BIH,Bosnia and Herzegovina,2017,3.114,actual,2019-10
+BIH,Bosnia and Herzegovina,2018,3.624,actual,2019-10
+BIH,Bosnia and Herzegovina,2019,2.8,estimate,2019-10
+BIH,Bosnia and Herzegovina,2020,2.6,forecast,2019-10
+BIH,Bosnia and Herzegovina,2021,2.6,forecast,2019-10
+BIH,Bosnia and Herzegovina,2022,2.8,forecast,2019-10
+BIH,Bosnia and Herzegovina,2023,2.9,forecast,2019-10
+BIH,Bosnia and Herzegovina,2024,3.0,forecast,2019-10
+BLR,Belarus,2010,7.75,actual,2019-10
+BLR,Belarus,2011,5.55,actual,2019-10
+BLR,Belarus,2012,1.708,actual,2019-10
+BLR,Belarus,2013,0.999,actual,2019-10
+BLR,Belarus,2014,1.651,actual,2019-10
+BLR,Belarus,2015,-3.83,actual,2019-10
+BLR,Belarus,2016,-2.526,actual,2019-10
+BLR,Belarus,2017,2.532,actual,2019-10
+BLR,Belarus,2018,3.05,actual,2019-10
+BLR,Belarus,2019,1.53,estimate,2019-10
+BLR,Belarus,2020,0.305,forecast,2019-10
+BLR,Belarus,2021,0.105,forecast,2019-10
+BLR,Belarus,2022,0.061,forecast,2019-10
+BLR,Belarus,2023,0.026,forecast,2019-10
+BLR,Belarus,2024,-0.373,forecast,2019-10
+BLZ,Belize,2010,3.383,actual,2019-10
+BLZ,Belize,2011,2.163,actual,2019-10
+BLZ,Belize,2012,2.938,actual,2019-10
+BLZ,Belize,2013,0.852,actual,2019-10
+BLZ,Belize,2014,3.692,actual,2019-10
+BLZ,Belize,2015,3.432,actual,2019-10
+BLZ,Belize,2016,-0.588,actual,2019-10
+BLZ,Belize,2017,1.437,actual,2019-10
+BLZ,Belize,2018,3.035,actual,2019-10
+BLZ,Belize,2019,2.722,estimate,2019-10
+BLZ,Belize,2020,2.096,forecast,2019-10
+BLZ,Belize,2021,1.789,forecast,2019-10
+BLZ,Belize,2022,1.691,forecast,2019-10
+BLZ,Belize,2023,1.712,forecast,2019-10
+BLZ,Belize,2024,1.688,forecast,2019-10
+BOL,Bolivia,2010,4.127,actual,2019-10
+BOL,Bolivia,2011,5.204,actual,2019-10
+BOL,Bolivia,2012,5.122,actual,2019-10
+BOL,Bolivia,2013,6.796,actual,2019-10
+BOL,Bolivia,2014,5.461,actual,2019-10
+BOL,Bolivia,2015,4.857,actual,2019-10
+BOL,Bolivia,2016,4.264,actual,2019-10
+BOL,Bolivia,2017,4.195,actual,2019-10
+BOL,Bolivia,2018,4.224,actual,2019-10
+BOL,Bolivia,2019,3.9,estimate,2019-10
+BOL,Bolivia,2020,3.8,forecast,2019-10
+BOL,Bolivia,2021,3.7,forecast,2019-10
+BOL,Bolivia,2022,3.7,forecast,2019-10
+BOL,Bolivia,2023,3.7,forecast,2019-10
+BOL,Bolivia,2024,3.7,forecast,2019-10
+BRA,Brazil,2010,7.545,actual,2019-10
+BRA,Brazil,2011,3.986,actual,2019-10
+BRA,Brazil,2012,1.928,actual,2019-10
+BRA,Brazil,2013,3.007,actual,2019-10
+BRA,Brazil,2014,0.506,actual,2019-10
+BRA,Brazil,2015,-3.551,actual,2019-10
+BRA,Brazil,2016,-3.313,actual,2019-10
+BRA,Brazil,2017,1.056,actual,2019-10
+BRA,Brazil,2018,1.114,actual,2019-10
+BRA,Brazil,2019,0.875,estimate,2019-10
+BRA,Brazil,2020,2.039,forecast,2019-10
+BRA,Brazil,2021,2.371,forecast,2019-10
+BRA,Brazil,2022,2.358,forecast,2019-10
+BRA,Brazil,2023,2.409,forecast,2019-10
+BRA,Brazil,2024,2.256,forecast,2019-10
+BRB,Barbados,2010,-2.288,actual,2019-10
+BRB,Barbados,2011,-0.673,actual,2019-10
+BRB,Barbados,2012,-0.45,actual,2019-10
+BRB,Barbados,2013,-1.411,actual,2019-10
+BRB,Barbados,2014,-0.126,actual,2019-10
+BRB,Barbados,2015,2.446,actual,2019-10
+BRB,Barbados,2016,2.485,actual,2019-10
+BRB,Barbados,2017,0.478,actual,2019-10
+BRB,Barbados,2018,-0.583,actual,2019-10
+BRB,Barbados,2019,-0.098,estimate,2019-10
+BRB,Barbados,2020,0.6,forecast,2019-10
+BRB,Barbados,2021,1.5,forecast,2019-10
+BRB,Barbados,2022,1.84,forecast,2019-10
+BRB,Barbados,2023,1.84,forecast,2019-10
+BRB,Barbados,2024,1.84,forecast,2019-10
+BRN,Brunei Darussalam,2010,2.652,actual,2019-10
+BRN,Brunei Darussalam,2011,3.744,actual,2019-10
+BRN,Brunei Darussalam,2012,0.913,actual,2019-10
+BRN,Brunei Darussalam,2013,-2.125,actual,2019-10
+BRN,Brunei Darussalam,2014,-2.508,actual,2019-10
+BRN,Brunei Darussalam,2015,-0.405,actual,2019-10
+BRN,Brunei Darussalam,2016,-2.465,actual,2019-10
+BRN,Brunei Darussalam,2017,1.327,actual,2019-10
+BRN,Brunei Darussalam,2018,0.053,actual,2019-10
+BRN,Brunei Darussalam,2019,1.814,estimate,2019-10
+BRN,Brunei Darussalam,2020,4.702,forecast,2019-10
+BRN,Brunei Darussalam,2021,3.595,forecast,2019-10
+BRN,Brunei Darussalam,2022,3.539,forecast,2019-10
+BRN,Brunei Darussalam,2023,2.428,forecast,2019-10
+BRN,Brunei Darussalam,2024,2.116,forecast,2019-10
+BTN,Bhutan,2010,9.327,actual,2019-10
+BTN,Bhutan,2011,9.72,actual,2019-10
+BTN,Bhutan,2012,6.428,actual,2019-10
+BTN,Bhutan,2013,3.57,actual,2019-10
+BTN,Bhutan,2014,3.963,actual,2019-10
+BTN,Bhutan,2015,6.208,actual,2019-10
+BTN,Bhutan,2016,7.355,actual,2019-10
+BTN,Bhutan,2017,6.26,actual,2019-10
+BTN,Bhutan,2018,4.605,actual,2019-10
+BTN,Bhutan,2019,5.528,estimate,2019-10
+BTN,Bhutan,2020,7.212,forecast,2019-10
+BTN,Bhutan,2021,5.911,forecast,2019-10
+BTN,Bhutan,2022,6.907,forecast,2019-10
+BTN,Bhutan,2023,7.171,forecast,2019-10
+BTN,Bhutan,2024,6.411,forecast,2019-10
+BWA,Botswana,2010,8.564,actual,2019-10
+BWA,Botswana,2011,6.048,actual,2019-10
+BWA,Botswana,2012,4.456,actual,2019-10
+BWA,Botswana,2013,11.343,actual,2019-10
+BWA,Botswana,2014,4.149,actual,2019-10
+BWA,Botswana,2015,-1.698,actual,2019-10
+BWA,Botswana,2016,4.304,actual,2019-10
+BWA,Botswana,2017,2.908,actual,2019-10
+BWA,Botswana,2018,4.454,actual,2019-10
+BWA,Botswana,2019,3.48,estimate,2019-10
+BWA,Botswana,2020,4.339,forecast,2019-10
+BWA,Botswana,2021,5.906,forecast,2019-10
+BWA,Botswana,2022,3.851,forecast,2019-10
+BWA,Botswana,2023,3.907,forecast,2019-10
+BWA,Botswana,2024,3.93,forecast,2019-10
+CAF,Central African Republic,2010,4.631,actual,2019-10
+CAF,Central African Republic,2011,4.195,actual,2019-10
+CAF,Central African Republic,2012,5.054,actual,2019-10
+CAF,Central African Republic,2013,-36.392,actual,2019-10
+CAF,Central African Republic,2014,0.08,actual,2019-10
+CAF,Central African Republic,2015,4.338,actual,2019-10
+CAF,Central African Republic,2016,4.75,actual,2019-10
+CAF,Central African Republic,2017,4.528,actual,2019-10
+CAF,Central African Republic,2018,3.82,actual,2019-10
+CAF,Central African Republic,2019,4.457,estimate,2019-10
+CAF,Central African Republic,2020,4.969,forecast,2019-10
+CAF,Central African Republic,2021,4.963,forecast,2019-10
+CAF,Central African Republic,2022,4.988,forecast,2019-10
+CAF,Central African Republic,2023,4.987,forecast,2019-10
+CAF,Central African Republic,2024,4.99,forecast,2019-10
+CAN,Canada,2010,3.089,actual,2019-10
+CAN,Canada,2011,3.147,actual,2019-10
+CAN,Canada,2012,1.762,actual,2019-10
+CAN,Canada,2013,2.33,actual,2019-10
+CAN,Canada,2014,2.868,actual,2019-10
+CAN,Canada,2015,0.69,actual,2019-10
+CAN,Canada,2016,1.107,actual,2019-10
+CAN,Canada,2017,2.979,actual,2019-10
+CAN,Canada,2018,1.879,actual,2019-10
+CAN,Canada,2019,1.545,estimate,2019-10
+CAN,Canada,2020,1.761,forecast,2019-10
+CAN,Canada,2021,1.756,forecast,2019-10
+CAN,Canada,2022,1.719,forecast,2019-10
+CAN,Canada,2023,1.7,forecast,2019-10
+CAN,Canada,2024,1.7,forecast,2019-10
+CHE,Switzerland,2010,2.873,actual,2019-10
+CHE,Switzerland,2011,1.835,actual,2019-10
+CHE,Switzerland,2012,1.006,actual,2019-10
+CHE,Switzerland,2013,1.879,actual,2019-10
+CHE,Switzerland,2014,2.484,actual,2019-10
+CHE,Switzerland,2015,1.264,actual,2019-10
+CHE,Switzerland,2016,1.714,actual,2019-10
+CHE,Switzerland,2017,1.864,actual,2019-10
+CHE,Switzerland,2018,2.756,actual,2019-10
+CHE,Switzerland,2019,0.761,estimate,2019-10
+CHE,Switzerland,2020,1.26,forecast,2019-10
+CHE,Switzerland,2021,1.62,forecast,2019-10
+CHE,Switzerland,2022,1.588,forecast,2019-10
+CHE,Switzerland,2023,1.6,forecast,2019-10
+CHE,Switzerland,2024,1.6,forecast,2019-10
+CHL,Chile,2010,5.825,actual,2019-10
+CHL,Chile,2011,6.119,actual,2019-10
+CHL,Chile,2012,5.332,actual,2019-10
+CHL,Chile,2013,4.049,actual,2019-10
+CHL,Chile,2014,1.769,actual,2019-10
+CHL,Chile,2015,2.306,actual,2019-10
+CHL,Chile,2016,1.694,actual,2019-10
+CHL,Chile,2017,1.255,actual,2019-10
+CHL,Chile,2018,4.024,actual,2019-10
+CHL,Chile,2019,2.515,estimate,2019-10
+CHL,Chile,2020,3.017,forecast,2019-10
+CHL,Chile,2021,3.229,forecast,2019-10
+CHL,Chile,2022,3.265,forecast,2019-10
+CHL,Chile,2023,3.261,forecast,2019-10
+CHL,Chile,2024,3.19,forecast,2019-10
+CHN,China,2010,10.563,actual,2019-10
+CHN,China,2011,9.5,actual,2019-10
+CHN,China,2012,7.9,actual,2019-10
+CHN,China,2013,7.8,actual,2019-10
+CHN,China,2014,7.3,actual,2019-10
+CHN,China,2015,6.9,actual,2019-10
+CHN,China,2016,6.734,actual,2019-10
+CHN,China,2017,6.757,actual,2019-10
+CHN,China,2018,6.567,actual,2019-10
+CHN,China,2019,6.139,estimate,2019-10
+CHN,China,2020,5.819,forecast,2019-10
+CHN,China,2021,5.9,forecast,2019-10
+CHN,China,2022,5.7,forecast,2019-10
+CHN,China,2023,5.6,forecast,2019-10
+CHN,China,2024,5.5,forecast,2019-10
+CIV,Côte d'Ivoire,2010,2.018,actual,2019-10
+CIV,Côte d'Ivoire,2011,-4.857,actual,2019-10
+CIV,Côte d'Ivoire,2012,10.864,actual,2019-10
+CIV,Côte d'Ivoire,2013,9.272,actual,2019-10
+CIV,Côte d'Ivoire,2014,8.794,actual,2019-10
+CIV,Côte d'Ivoire,2015,8.843,actual,2019-10
+CIV,Côte d'Ivoire,2016,7.972,actual,2019-10
+CIV,Côte d'Ivoire,2017,7.702,actual,2019-10
+CIV,Côte d'Ivoire,2018,7.433,actual,2019-10
+CIV,Côte d'Ivoire,2019,7.492,estimate,2019-10
+CIV,Côte d'Ivoire,2020,7.294,forecast,2019-10
+CIV,Côte d'Ivoire,2021,7.006,forecast,2019-10
+CIV,Côte d'Ivoire,2022,6.724,forecast,2019-10
+CIV,Côte d'Ivoire,2023,6.492,forecast,2019-10
+CIV,Côte d'Ivoire,2024,6.413,forecast,2019-10
+CMR,Cameroon,2010,3.423,actual,2019-10
+CMR,Cameroon,2011,4.129,actual,2019-10
+CMR,Cameroon,2012,4.543,actual,2019-10
+CMR,Cameroon,2013,5.404,actual,2019-10
+CMR,Cameroon,2014,5.884,actual,2019-10
+CMR,Cameroon,2015,5.651,actual,2019-10
+CMR,Cameroon,2016,4.648,actual,2019-10
+CMR,Cameroon,2017,3.549,actual,2019-10
+CMR,Cameroon,2018,4.062,actual,2019-10
+CMR,Cameroon,2019,3.995,estimate,2019-10
+CMR,Cameroon,2020,4.167,forecast,2019-10
+CMR,Cameroon,2021,4.511,forecast,2019-10
+CMR,Cameroon,2022,4.962,forecast,2019-10
+CMR,Cameroon,2023,5.241,forecast,2019-10
+CMR,Cameroon,2024,5.395,forecast,2019-10
+COD,Democratic Republic of the Congo,2010,7.108,actual,2019-10
+COD,Democratic Republic of the Congo,2011,6.875,actual,2019-10
+COD,Democratic Republic of the Congo,2012,7.087,actual,2019-10
+COD,Democratic Republic of the Congo,2013,8.482,actual,2019-10
+COD,Democratic Republic of the Congo,2014,9.47,actual,2019-10
+COD,Democratic Republic of the Congo,2015,6.916,actual,2019-10
+COD,Democratic Republic of the Congo,2016,2.399,actual,2019-10
+COD,Democratic Republic of the Congo,2017,3.727,actual,2019-10
+COD,Democratic Republic of the Congo,2018,5.816,actual,2019-10
+COD,Democratic Republic of the Congo,2019,4.291,estimate,2019-10
+COD,Democratic Republic of the Congo,2020,3.891,forecast,2019-10
+COD,Democratic Republic of the Congo,2021,3.393,forecast,2019-10
+COD,Democratic Republic of the Congo,2022,4.507,forecast,2019-10
+COD,Democratic Republic of the Congo,2023,4.268,forecast,2019-10
+COD,Democratic Republic of the Congo,2024,4.608,forecast,2019-10
+COG,Republic of Congo,2010,8.714,actual,2019-10
+COG,Republic of Congo,2011,3.393,actual,2019-10
+COG,Republic of Congo,2012,3.829,actual,2019-10
+COG,Republic of Congo,2013,3.272,actual,2019-10
+COG,Republic of Congo,2014,6.843,actual,2019-10
+COG,Republic of Congo,2015,2.619,actual,2019-10
+COG,Republic of Congo,2016,-2.829,actual,2019-10
+COG,Republic of Congo,2017,-1.772,actual,2019-10
+COG,Republic of Congo,2018,1.59,actual,2019-10
+COG,Republic of Congo,2019,3.973,estimate,2019-10
+COG,Republic of Congo,2020,2.781,forecast,2019-10
+COG,Republic of Congo,2021,1.92,forecast,2019-10
+COG,Republic of Congo,2022,0.049,forecast,2019-10
+COG,Republic of Congo,2023,1.262,forecast,2019-10
+COG,Republic of Congo,2024,2.252,forecast,2019-10
+COL,Colombia,2010,4.348,actual,2019-10
+COL,Colombia,2011,7.363,actual,2019-10
+COL,Colombia,2012,3.903,actual,2019-10
+COL,Colombia,2013,4.567,actual,2019-10
+COL,Colombia,2014,4.728,actual,2019-10
+COL,Colombia,2015,2.956,actual,2019-10
+COL,Colombia,2016,2.087,actual,2019-10
+COL,Colombia,2017,1.351,actual,2019-10
+COL,Colombia,2018,2.569,actual,2019-10
+COL,Colombia,2019,3.356,estimate,2019-10
+COL,Colombia,2020,3.646,forecast,2019-10
+COL,Colombia,2021,3.749,forecast,2019-10
+COL,Colombia,2022,3.75,forecast,2019-10
+COL,Colombia,2023,3.75,forecast,2019-10
+COL,Colombia,2024,3.749,forecast,2019-10
+COM,Comoros,2010,3.778,actual,2019-10
+COM,Comoros,2011,4.144,actual,2019-10
+COM,Comoros,2012,3.168,actual,2019-10
+COM,Comoros,2013,4.466,actual,2019-10
+COM,Comoros,2014,2.107,actual,2019-10
+COM,Comoros,2015,1.147,actual,2019-10
+COM,Comoros,2016,2.603,actual,2019-10
+COM,Comoros,2017,2.952,actual,2019-10
+COM,Comoros,2018,2.956,actual,2019-10
+COM,Comoros,2019,1.253,estimate,2019-10
+COM,Comoros,2020,4.249,forecast,2019-10
+COM,Comoros,2021,3.603,forecast,2019-10
+COM,Comoros,2022,3.511,forecast,2019-10
+COM,Comoros,2023,3.533,forecast,2019-10
+COM,Comoros,2024,3.456,forecast,2019-10
+CPV,Cabo Verde,2010,1.467,actual,2019-10
+CPV,Cabo Verde,2011,3.969,actual,2019-10
+CPV,Cabo Verde,2012,1.082,actual,2019-10
+CPV,Cabo Verde,2013,0.803,actual,2019-10
+CPV,Cabo Verde,2014,0.611,actual,2019-10
+CPV,Cabo Verde,2015,1.007,actual,2019-10
+CPV,Cabo Verde,2016,4.706,actual,2019-10
+CPV,Cabo Verde,2017,3.702,actual,2019-10
+CPV,Cabo Verde,2018,5.078,actual,2019-10
+CPV,Cabo Verde,2019,4.973,estimate,2019-10
+CPV,Cabo Verde,2020,4.953,forecast,2019-10
+CPV,Cabo Verde,2021,4.986,forecast,2019-10
+CPV,Cabo Verde,2022,4.999,forecast,2019-10
+CPV,Cabo Verde,2023,4.98,forecast,2019-10
+CPV,Cabo Verde,2024,4.976,forecast,2019-10
+CRI,Costa Rica,2010,4.952,actual,2019-10
+CRI,Costa Rica,2011,4.307,actual,2019-10
+CRI,Costa Rica,2012,4.797,actual,2019-10
+CRI,Costa Rica,2013,2.269,actual,2019-10
+CRI,Costa Rica,2014,3.515,actual,2019-10
+CRI,Costa Rica,2015,3.632,actual,2019-10
+CRI,Costa Rica,2016,4.246,actual,2019-10
+CRI,Costa Rica,2017,3.397,actual,2019-10
+CRI,Costa Rica,2018,2.634,actual,2019-10
+CRI,Costa Rica,2019,2.025,estimate,2019-10
+CRI,Costa Rica,2020,2.528,forecast,2019-10
+CRI,Costa Rica,2021,2.799,forecast,2019-10
+CRI,Costa Rica,2022,2.961,forecast,2019-10
+CRI,Costa Rica,2023,3.195,forecast,2019-10
+CRI,Costa Rica,2024,3.498,forecast,2019-10
+CYP,Cyprus,2010,1.335,actual,2019-10
+CYP,Cyprus,2011,0.404,actual,2019-10
+CYP,Cyprus,2012,-2.879,actual,2019-10
+CYP,Cyprus,2013,-5.798,actual,2019-10
+CYP,Cyprus,2014,-1.313,actual,2019-10
+CYP,Cyprus,2015,1.963,actual,2019-10
+CYP,Cyprus,2016,4.811,actual,2019-10
+CYP,Cyprus,2017,4.469,actual,2019-10
+CYP,Cyprus,2018,3.878,actual,2019-10
+CYP,Cyprus,2019,3.11,estimate,2019-10
+CYP,Cyprus,2020,2.885,forecast,2019-10
+CYP,Cyprus,2021,2.712,forecast,2019-10
+CYP,Cyprus,2022,2.605,forecast,2019-10
+CYP,Cyprus,2023,2.458,forecast,2019-10
+CYP,Cyprus,2024,2.509,forecast,2019-10
+CZE,Czech Republic,2010,2.273,actual,2019-10
+CZE,Czech Republic,2011,1.778,actual,2019-10
+CZE,Czech Republic,2012,-0.8,actual,2019-10
+CZE,Czech Republic,2013,-0.484,actual,2019-10
+CZE,Czech Republic,2014,2.715,actual,2019-10
+CZE,Czech Republic,2015,5.309,actual,2019-10
+CZE,Czech Republic,2016,2.451,actual,2019-10
+CZE,Czech Republic,2017,4.353,actual,2019-10
+CZE,Czech Republic,2018,2.958,actual,2019-10
+CZE,Czech Republic,2019,2.45,estimate,2019-10
+CZE,Czech Republic,2020,2.617,forecast,2019-10
+CZE,Czech Republic,2021,2.646,forecast,2019-10
+CZE,Czech Republic,2022,2.547,forecast,2019-10
+CZE,Czech Republic,2023,2.541,forecast,2019-10
+CZE,Czech Republic,2024,2.535,forecast,2019-10
+DEU,Germany,2010,4.185,actual,2019-10
+DEU,Germany,2011,3.913,actual,2019-10
+DEU,Germany,2012,0.428,actual,2019-10
+DEU,Germany,2013,0.431,actual,2019-10
+DEU,Germany,2014,2.218,actual,2019-10
+DEU,Germany,2015,1.742,actual,2019-10
+DEU,Germany,2016,2.23,actual,2019-10
+DEU,Germany,2017,2.465,actual,2019-10
+DEU,Germany,2018,1.522,actual,2019-10
+DEU,Germany,2019,0.544,estimate,2019-10
+DEU,Germany,2020,1.247,forecast,2019-10
+DEU,Germany,2021,1.439,forecast,2019-10
+DEU,Germany,2022,1.336,forecast,2019-10
+DEU,Germany,2023,1.235,forecast,2019-10
+DEU,Germany,2024,1.167,forecast,2019-10
+DJI,Djibouti,2010,4.147,actual,2019-10
+DJI,Djibouti,2011,7.293,actual,2019-10
+DJI,Djibouti,2012,4.842,actual,2019-10
+DJI,Djibouti,2013,5.001,actual,2019-10
+DJI,Djibouti,2014,7.062,actual,2019-10
+DJI,Djibouti,2015,7.675,actual,2019-10
+DJI,Djibouti,2016,6.919,actual,2019-10
+DJI,Djibouti,2017,5.077,actual,2019-10
+DJI,Djibouti,2018,5.5,actual,2019-10
+DJI,Djibouti,2019,6.0,estimate,2019-10
+DJI,Djibouti,2020,6.0,forecast,2019-10
+DJI,Djibouti,2021,6.0,forecast,2019-10
+DJI,Djibouti,2022,6.0,forecast,2019-10
+DJI,Djibouti,2023,6.0,forecast,2019-10
+DJI,Djibouti,2024,6.0,forecast,2019-10
+DMA,Dominica,2010,0.673,actual,2019-10
+DMA,Dominica,2011,-0.224,actual,2019-10
+DMA,Dominica,2012,-1.059,actual,2019-10
+DMA,Dominica,2013,-0.608,actual,2019-10
+DMA,Dominica,2014,4.389,actual,2019-10
+DMA,Dominica,2015,-2.551,actual,2019-10
+DMA,Dominica,2016,2.522,actual,2019-10
+DMA,Dominica,2017,-9.53,actual,2019-10
+DMA,Dominica,2018,0.533,actual,2019-10
+DMA,Dominica,2019,9.372,estimate,2019-10
+DMA,Dominica,2020,4.935,forecast,2019-10
+DMA,Dominica,2021,4.171,forecast,2019-10
+DMA,Dominica,2022,3.569,forecast,2019-10
+DMA,Dominica,2023,2.087,forecast,2019-10
+DMA,Dominica,2024,1.484,forecast,2019-10
+DNK,Denmark,2010,1.868,actual,2019-10
+DNK,Denmark,2011,1.336,actual,2019-10
+DNK,Denmark,2012,0.229,actual,2019-10
+DNK,Denmark,2013,0.935,actual,2019-10
+DNK,Denmark,2014,1.616,actual,2019-10
+DNK,Denmark,2015,2.343,actual,2019-10
+DNK,Denmark,2016,2.398,actual,2019-10
+DNK,Denmark,2017,2.266,actual,2019-10
+DNK,Denmark,2018,1.489,actual,2019-10
+DNK,Denmark,2019,1.698,estimate,2019-10
+DNK,Denmark,2020,1.905,forecast,2019-10
+DNK,Denmark,2021,1.723,forecast,2019-10
+DNK,Denmark,2022,1.645,forecast,2019-10
+DNK,Denmark,2023,1.524,forecast,2019-10
+DNK,Denmark,2024,1.511,forecast,2019-10
+DOM,Dominican Republic,2010,8.34,actual,2019-10
+DOM,Dominican Republic,2011,3.133,actual,2019-10
+DOM,Dominican Republic,2012,2.717,actual,2019-10
+DOM,Dominican Republic,2013,4.875,actual,2019-10
+DOM,Dominican Republic,2014,7.05,actual,2019-10
+DOM,Dominican Republic,2015,6.927,actual,2019-10
+DOM,Dominican Republic,2016,6.659,actual,2019-10
+DOM,Dominican Republic,2017,4.667,actual,2019-10
+DOM,Dominican Republic,2018,6.983,actual,2019-10
+DOM,Dominican Republic,2019,4.99,estimate,2019-10
+DOM,Dominican Republic,2020,5.231,forecast,2019-10
+DOM,Dominican Republic,2021,4.952,forecast,2019-10
+DOM,Dominican Republic,2022,5.018,forecast,2019-10
+DOM,Dominican Republic,2023,5.0,forecast,2019-10
+DOM,Dominican Republic,2024,5.0,forecast,2019-10
+DZA,Algeria,2010,3.616,actual,2019-10
+DZA,Algeria,2011,2.823,actual,2019-10
+DZA,Algeria,2012,3.391,actual,2019-10
+DZA,Algeria,2013,2.8,actual,2019-10
+DZA,Algeria,2014,3.8,actual,2019-10
+DZA,Algeria,2015,3.7,actual,2019-10
+DZA,Algeria,2016,3.2,actual,2019-10
+DZA,Algeria,2017,1.3,actual,2019-10
+DZA,Algeria,2018,1.4,actual,2019-10
+DZA,Algeria,2019,2.553,estimate,2019-10
+DZA,Algeria,2020,2.406,forecast,2019-10
+DZA,Algeria,2021,1.754,forecast,2019-10
+DZA,Algeria,2022,1.447,forecast,2019-10
+DZA,Algeria,2023,0.996,forecast,2019-10
+DZA,Algeria,2024,0.793,forecast,2019-10
+ECU,Ecuador,2010,3.525,actual,2019-10
+ECU,Ecuador,2011,7.868,actual,2019-10
+ECU,Ecuador,2012,5.642,actual,2019-10
+ECU,Ecuador,2013,4.947,actual,2019-10
+ECU,Ecuador,2014,3.789,actual,2019-10
+ECU,Ecuador,2015,0.099,actual,2019-10
+ECU,Ecuador,2016,-1.226,actual,2019-10
+ECU,Ecuador,2017,2.368,actual,2019-10
+ECU,Ecuador,2018,1.377,actual,2019-10
+ECU,Ecuador,2019,-0.483,estimate,2019-10
+ECU,Ecuador,2020,0.478,forecast,2019-10
+ECU,Ecuador,2021,1.636,forecast,2019-10
+ECU,Ecuador,2022,2.716,forecast,2019-10
+ECU,Ecuador,2023,2.507,forecast,2019-10
+ECU,Ecuador,2024,2.512,forecast,2019-10
+EGY,Egypt,2010,5.147,actual,2019-10
+EGY,Egypt,2011,1.765,actual,2019-10
+EGY,Egypt,2012,2.226,actual,2019-10
+EGY,Egypt,2013,3.302,actual,2019-10
+EGY,Egypt,2014,2.916,actual,2019-10
+EGY,Egypt,2015,4.372,actual,2019-10
+EGY,Egypt,2016,4.347,actual,2019-10
+EGY,Egypt,2017,4.077,actual,2019-10
+EGY,Egypt,2018,5.314,actual,2019-10
+EGY,Egypt,2019,5.516,estimate,2019-10
+EGY,Egypt,2020,5.868,forecast,2019-10
+EGY,Egypt,2021,5.955,forecast,2019-10
+EGY,Egypt,2022,5.967,forecast,2019-10
+EGY,Egypt,2023,5.95,forecast,2019-10
+EGY,Egypt,2024,6.003,forecast,2019-10
+ERI,Eritrea,2010,10.853,actual,2019-10
+ERI,Eritrea,2011,25.71,actual,2019-10
+ERI,Eritrea,2012,1.886,actual,2019-10
+ERI,Eritrea,2013,-10.456,actual,2019-10
+ERI,Eritrea,2014,30.934,actual,2019-10
+ERI,Eritrea,2015,-20.621,actual,2019-10
+ERI,Eritrea,2016,7.391,actual,2019-10
+ERI,Eritrea,2017,-9.619,actual,2019-10
+ERI,Eritrea,2018,12.186,actual,2019-10
+ERI,Eritrea,2019,3.102,estimate,2019-10
+ERI,Eritrea,2020,3.857,forecast,2019-10
+ERI,Eritrea,2021,4.03,forecast,2019-10
+ERI,Eritrea,2022,7.158,forecast,2019-10
+ERI,Eritrea,2023,4.742,forecast,2019-10
+ERI,Eritrea,2024,4.775,forecast,2019-10
+ESP,Spain,2010,0.015,actual,2019-10
+ESP,Spain,2011,-0.997,actual,2019-10
+ESP,Spain,2012,-2.929,actual,2019-10
+ESP,Spain,2013,-1.706,actual,2019-10
+ESP,Spain,2014,1.379,actual,2019-10
+ESP,Spain,2015,3.65,actual,2019-10
+ESP,Spain,2016,3.169,actual,2019-10
+ESP,Spain,2017,2.983,actual,2019-10
+ESP,Spain,2018,2.579,actual,2019-10
+ESP,Spain,2019,2.175,estimate,2019-10
+ESP,Spain,2020,1.847,forecast,2019-10
+ESP,Spain,2021,1.702,forecast,2019-10
+ESP,Spain,2022,1.671,forecast,2019-10
+ESP,Spain,2023,1.648,forecast,2019-10
+ESP,Spain,2024,1.592,forecast,2019-10
+EST,Estonia,2010,2.707,actual,2019-10
+EST,Estonia,2011,7.442,actual,2019-10
+EST,Estonia,2012,3.11,actual,2019-10
+EST,Estonia,2013,1.346,actual,2019-10
+EST,Estonia,2014,2.987,actual,2019-10
+EST,Estonia,2015,1.845,actual,2019-10
+EST,Estonia,2016,2.632,actual,2019-10
+EST,Estonia,2017,5.749,actual,2019-10
+EST,Estonia,2018,4.761,actual,2019-10
+EST,Estonia,2019,3.2,estimate,2019-10
+EST,Estonia,2020,2.9,forecast,2019-10
+EST,Estonia,2021,2.8,forecast,2019-10
+EST,Estonia,2022,2.8,forecast,2019-10
+EST,Estonia,2023,2.8,forecast,2019-10
+EST,Estonia,2024,2.8,forecast,2019-10
+ETH,Ethiopia,2010,10.6,actual,2019-10
+ETH,Ethiopia,2011,11.4,actual,2019-10
+ETH,Ethiopia,2012,8.7,actual,2019-10
+ETH,Ethiopia,2013,9.9,actual,2019-10
+ETH,Ethiopia,2014,10.3,actual,2019-10
+ETH,Ethiopia,2015,10.4,actual,2019-10
+ETH,Ethiopia,2016,8.0,actual,2019-10
+ETH,Ethiopia,2017,10.148,actual,2019-10
+ETH,Ethiopia,2018,7.705,actual,2019-10
+ETH,Ethiopia,2019,7.44,estimate,2019-10
+ETH,Ethiopia,2020,7.198,forecast,2019-10
+ETH,Ethiopia,2021,7.126,forecast,2019-10
+ETH,Ethiopia,2022,7.023,forecast,2019-10
+ETH,Ethiopia,2023,6.609,forecast,2019-10
+ETH,Ethiopia,2024,6.514,forecast,2019-10
+FIN,Finland,2010,2.992,actual,2019-10
+FIN,Finland,2011,2.571,actual,2019-10
+FIN,Finland,2012,-1.426,actual,2019-10
+FIN,Finland,2013,-0.759,actual,2019-10
+FIN,Finland,2014,-0.632,actual,2019-10
+FIN,Finland,2015,0.501,actual,2019-10
+FIN,Finland,2016,2.772,actual,2019-10
+FIN,Finland,2017,3.043,actual,2019-10
+FIN,Finland,2018,1.658,actual,2019-10
+FIN,Finland,2019,1.244,estimate,2019-10
+FIN,Finland,2020,1.465,forecast,2019-10
+FIN,Finland,2021,1.474,forecast,2019-10
+FIN,Finland,2022,1.391,forecast,2019-10
+FIN,Finland,2023,1.343,forecast,2019-10
+FIN,Finland,2024,1.348,forecast,2019-10
+FJI,Fiji,2010,3.0,actual,2019-10
+FJI,Fiji,2011,2.7,actual,2019-10
+FJI,Fiji,2012,1.411,actual,2019-10
+FJI,Fiji,2013,4.734,actual,2019-10
+FJI,Fiji,2014,5.604,actual,2019-10
+FJI,Fiji,2015,4.664,actual,2019-10
+FJI,Fiji,2016,2.51,actual,2019-10
+FJI,Fiji,2017,5.425,actual,2019-10
+FJI,Fiji,2018,3.526,actual,2019-10
+FJI,Fiji,2019,2.7,estimate,2019-10
+FJI,Fiji,2020,3.0,forecast,2019-10
+FJI,Fiji,2021,3.2,forecast,2019-10
+FJI,Fiji,2022,3.2,forecast,2019-10
+FJI,Fiji,2023,3.2,forecast,2019-10
+FJI,Fiji,2024,3.2,forecast,2019-10
+FRA,France,2010,1.949,actual,2019-10
+FRA,France,2011,2.193,actual,2019-10
+FRA,France,2012,0.313,actual,2019-10
+FRA,France,2013,0.576,actual,2019-10
+FRA,France,2014,0.956,actual,2019-10
+FRA,France,2015,1.113,actual,2019-10
+FRA,France,2016,1.095,actual,2019-10
+FRA,France,2017,2.26,actual,2019-10
+FRA,France,2018,1.725,actual,2019-10
+FRA,France,2019,1.249,estimate,2019-10
+FRA,France,2020,1.263,forecast,2019-10
+FRA,France,2021,1.338,forecast,2019-10
+FRA,France,2022,1.391,forecast,2019-10
+FRA,France,2023,1.392,forecast,2019-10
+FRA,France,2024,1.432,forecast,2019-10
+FSM,Micronesia,2010,2.048,actual,2019-10
+FSM,Micronesia,2011,3.338,actual,2019-10
+FSM,Micronesia,2012,-1.997,actual,2019-10
+FSM,Micronesia,2013,-3.922,actual,2019-10
+FSM,Micronesia,2014,-2.227,actual,2019-10
+FSM,Micronesia,2015,4.955,actual,2019-10
+FSM,Micronesia,2016,0.717,actual,2019-10
+FSM,Micronesia,2017,2.432,actual,2019-10
+FSM,Micronesia,2018,1.198,actual,2019-10
+FSM,Micronesia,2019,1.45,estimate,2019-10
+FSM,Micronesia,2020,0.778,forecast,2019-10
+FSM,Micronesia,2021,0.741,forecast,2019-10
+FSM,Micronesia,2022,0.6,forecast,2019-10
+FSM,Micronesia,2023,0.6,forecast,2019-10
+FSM,Micronesia,2024,0.6,forecast,2019-10
+GAB,Gabon,2010,6.27,actual,2019-10
+GAB,Gabon,2011,7.092,actual,2019-10
+GAB,Gabon,2012,5.251,actual,2019-10
+GAB,Gabon,2013,5.517,actual,2019-10
+GAB,Gabon,2014,4.435,actual,2019-10
+GAB,Gabon,2015,3.879,actual,2019-10
+GAB,Gabon,2016,2.091,actual,2019-10
+GAB,Gabon,2017,0.499,actual,2019-10
+GAB,Gabon,2018,0.846,actual,2019-10
+GAB,Gabon,2019,2.941,estimate,2019-10
+GAB,Gabon,2020,3.419,forecast,2019-10
+GAB,Gabon,2021,3.723,forecast,2019-10
+GAB,Gabon,2022,4.475,forecast,2019-10
+GAB,Gabon,2023,4.531,forecast,2019-10
+GAB,Gabon,2024,4.546,forecast,2019-10
+GBR,United Kingdom,2010,1.711,actual,2019-10
+GBR,United Kingdom,2011,1.645,actual,2019-10
+GBR,United Kingdom,2012,1.447,actual,2019-10
+GBR,United Kingdom,2013,2.046,actual,2019-10
+GBR,United Kingdom,2014,2.948,actual,2019-10
+GBR,United Kingdom,2015,2.349,actual,2019-10
+GBR,United Kingdom,2016,1.789,actual,2019-10
+GBR,United Kingdom,2017,1.823,actual,2019-10
+GBR,United Kingdom,2018,1.398,actual,2019-10
+GBR,United Kingdom,2019,1.235,estimate,2019-10
+GBR,United Kingdom,2020,1.448,forecast,2019-10
+GBR,United Kingdom,2021,1.543,forecast,2019-10
+GBR,United Kingdom,2022,1.502,forecast,2019-10
+GBR,United Kingdom,2023,1.533,forecast,2019-10
+GBR,United Kingdom,2024,1.53,forecast,2019-10
+GEO,Georgia,2010,6.249,actual,2019-10
+GEO,Georgia,2011,7.222,actual,2019-10
+GEO,Georgia,2012,6.351,actual,2019-10
+GEO,Georgia,2013,3.387,actual,2019-10
+GEO,Georgia,2014,4.624,actual,2019-10
+GEO,Georgia,2015,2.881,actual,2019-10
+GEO,Georgia,2016,2.847,actual,2019-10
+GEO,Georgia,2017,4.833,actual,2019-10
+GEO,Georgia,2018,4.717,actual,2019-10
+GEO,Georgia,2019,4.641,estimate,2019-10
+GEO,Georgia,2020,4.801,forecast,2019-10
+GEO,Georgia,2021,5.0,forecast,2019-10
+GEO,Georgia,2022,5.2,forecast,2019-10
+GEO,Georgia,2023,5.2,forecast,2019-10
+GEO,Georgia,2024,5.187,forecast,2019-10
+GHA,Ghana,2010,7.942,actual,2019-10
+GHA,Ghana,2011,17.407,actual,2019-10
+GHA,Ghana,2012,8.981,actual,2019-10
+GHA,Ghana,2013,7.934,actual,2019-10
+GHA,Ghana,2014,2.897,actual,2019-10
+GHA,Ghana,2015,2.178,actual,2019-10
+GHA,Ghana,2016,3.448,actual,2019-10
+GHA,Ghana,2017,8.143,actual,2019-10
+GHA,Ghana,2018,6.263,actual,2019-10
+GHA,Ghana,2019,7.457,estimate,2019-10
+GHA,Ghana,2020,5.607,forecast,2019-10
+GHA,Ghana,2021,4.222,forecast,2019-10
+GHA,Ghana,2022,4.616,forecast,2019-10
+GHA,Ghana,2023,4.959,forecast,2019-10
+GHA,Ghana,2024,5.106,forecast,2019-10
+GIN,Guinea,2010,4.219,actual,2019-10
+GIN,Guinea,2011,5.614,actual,2019-10
+GIN,Guinea,2012,5.915,actual,2019-10
+GIN,Guinea,2013,3.934,actual,2019-10
+GIN,Guinea,2014,3.708,actual,2019-10
+GIN,Guinea,2015,3.813,actual,2019-10
+GIN,Guinea,2016,10.828,actual,2019-10
+GIN,Guinea,2017,10.048,actual,2019-10
+GIN,Guinea,2018,5.768,actual,2019-10
+GIN,Guinea,2019,5.892,estimate,2019-10
+GIN,Guinea,2020,5.963,forecast,2019-10
+GIN,Guinea,2021,5.99,forecast,2019-10
+GIN,Guinea,2022,5.281,forecast,2019-10
+GIN,Guinea,2023,4.991,forecast,2019-10
+GIN,Guinea,2024,4.955,forecast,2019-10
+GMB,The Gambia,2010,5.908,actual,2019-10
+GMB,The Gambia,2011,-8.13,actual,2019-10
+GMB,The Gambia,2012,5.242,actual,2019-10
+GMB,The Gambia,2013,2.873,actual,2019-10
+GMB,The Gambia,2014,-1.407,actual,2019-10
+GMB,The Gambia,2015,4.058,actual,2019-10
+GMB,The Gambia,2016,1.943,actual,2019-10
+GMB,The Gambia,2017,4.823,actual,2019-10
+GMB,The Gambia,2018,6.547,actual,2019-10
+GMB,The Gambia,2019,6.528,estimate,2019-10
+GMB,The Gambia,2020,6.405,forecast,2019-10
+GMB,The Gambia,2021,5.6,forecast,2019-10
+GMB,The Gambia,2022,5.4,forecast,2019-10
+GMB,The Gambia,2023,5.124,forecast,2019-10
+GMB,The Gambia,2024,4.8,forecast,2019-10
+GNB,Guinea-Bissau,2010,4.611,actual,2019-10
+GNB,Guinea-Bissau,2011,8.085,actual,2019-10
+GNB,Guinea-Bissau,2012,-1.713,actual,2019-10
+GNB,Guinea-Bissau,2013,3.256,actual,2019-10
+GNB,Guinea-Bissau,2014,0.965,actual,2019-10
+GNB,Guinea-Bissau,2015,6.134,actual,2019-10
+GNB,Guinea-Bissau,2016,6.263,actual,2019-10
+GNB,Guinea-Bissau,2017,5.927,actual,2019-10
+GNB,Guinea-Bissau,2018,3.8,actual,2019-10
+GNB,Guinea-Bissau,2019,4.6,estimate,2019-10
+GNB,Guinea-Bissau,2020,4.9,forecast,2019-10
+GNB,Guinea-Bissau,2021,5.0,forecast,2019-10
+GNB,Guinea-Bissau,2022,5.1,forecast,2019-10
+GNB,Guinea-Bissau,2023,5.2,forecast,2019-10
+GNB,Guinea-Bissau,2024,5.3,forecast,2019-10
+GNQ,Equatorial Guinea,2010,-8.924,actual,2019-10
+GNQ,Equatorial Guinea,2011,6.524,actual,2019-10
+GNQ,Equatorial Guinea,2012,8.313,actual,2019-10
+GNQ,Equatorial Guinea,2013,-4.133,actual,2019-10
+GNQ,Equatorial Guinea,2014,0.415,actual,2019-10
+GNQ,Equatorial Guinea,2015,-9.11,actual,2019-10
+GNQ,Equatorial Guinea,2016,-8.817,actual,2019-10
+GNQ,Equatorial Guinea,2017,-4.708,actual,2019-10
+GNQ,Equatorial Guinea,2018,-5.728,actual,2019-10
+GNQ,Equatorial Guinea,2019,-4.641,estimate,2019-10
+GNQ,Equatorial Guinea,2020,-4.992,forecast,2019-10
+GNQ,Equatorial Guinea,2021,-5.261,forecast,2019-10
+GNQ,Equatorial Guinea,2022,-5.636,forecast,2019-10
+GNQ,Equatorial Guinea,2023,-3.224,forecast,2019-10
+GNQ,Equatorial Guinea,2024,-2.809,forecast,2019-10
+GRC,Greece,2010,-5.478,actual,2019-10
+GRC,Greece,2011,-9.132,actual,2019-10
+GRC,Greece,2012,-7.3,actual,2019-10
+GRC,Greece,2013,-3.242,actual,2019-10
+GRC,Greece,2014,0.74,actual,2019-10
+GRC,Greece,2015,-0.438,actual,2019-10
+GRC,Greece,2016,-0.191,actual,2019-10
+GRC,Greece,2017,1.505,actual,2019-10
+GRC,Greece,2018,1.934,actual,2019-10
+GRC,Greece,2019,1.981,estimate,2019-10
+GRC,Greece,2020,2.22,forecast,2019-10
+GRC,Greece,2021,1.707,forecast,2019-10
+GRC,Greece,2022,1.345,forecast,2019-10
+GRC,Greece,2023,0.897,forecast,2019-10
+GRC,Greece,2024,0.932,forecast,2019-10
+GRD,Grenada,2010,-0.511,actual,2019-10
+GRD,Grenada,2011,0.765,actual,2019-10
+GRD,Grenada,2012,-1.155,actual,2019-10
+GRD,Grenada,2013,2.351,actual,2019-10
+GRD,Grenada,2014,7.342,actual,2019-10
+GRD,Grenada,2015,6.445,actual,2019-10
+GRD,Grenada,2016,3.74,actual,2019-10
+GRD,Grenada,2017,4.439,actual,2019-10
+GRD,Grenada,2018,4.248,actual,2019-10
+GRD,Grenada,2019,3.144,estimate,2019-10
+GRD,Grenada,2020,2.73,forecast,2019-10
+GRD,Grenada,2021,2.659,forecast,2019-10
+GRD,Grenada,2022,3.171,forecast,2019-10
+GRD,Grenada,2023,3.178,forecast,2019-10
+GRD,Grenada,2024,2.964,forecast,2019-10
+GTM,Guatemala,2010,2.869,actual,2019-10
+GTM,Guatemala,2011,4.162,actual,2019-10
+GTM,Guatemala,2012,2.97,actual,2019-10
+GTM,Guatemala,2013,3.698,actual,2019-10
+GTM,Guatemala,2014,4.174,actual,2019-10
+GTM,Guatemala,2015,4.14,actual,2019-10
+GTM,Guatemala,2016,3.092,actual,2019-10
+GTM,Guatemala,2017,2.76,actual,2019-10
+GTM,Guatemala,2018,3.145,actual,2019-10
+GTM,Guatemala,2019,3.354,estimate,2019-10
+GTM,Guatemala,2020,3.541,forecast,2019-10
+GTM,Guatemala,2021,3.72,forecast,2019-10
+GTM,Guatemala,2022,3.596,forecast,2019-10
+GTM,Guatemala,2023,3.514,forecast,2019-10
+GTM,Guatemala,2024,3.467,forecast,2019-10
+GUY,Guyana,2010,4.371,actual,2019-10
+GUY,Guyana,2011,5.437,actual,2019-10
+GUY,Guyana,2012,5.039,actual,2019-10
+GUY,Guyana,2013,5.018,actual,2019-10
+GUY,Guyana,2014,3.898,actual,2019-10
+GUY,Guyana,2015,3.055,actual,2019-10
+GUY,Guyana,2016,3.356,actual,2019-10
+GUY,Guyana,2017,2.134,actual,2019-10
+GUY,Guyana,2018,4.138,actual,2019-10
+GUY,Guyana,2019,4.435,estimate,2019-10
+GUY,Guyana,2020,85.618,forecast,2019-10
+GUY,Guyana,2021,4.767,forecast,2019-10
+GUY,Guyana,2022,20.63,forecast,2019-10
+GUY,Guyana,2023,26.19,forecast,2019-10
+GUY,Guyana,2024,3.237,forecast,2019-10
+HKG,Hong Kong SAR,2010,6.768,actual,2019-10
+HKG,Hong Kong SAR,2011,4.815,actual,2019-10
+HKG,Hong Kong SAR,2012,1.7,actual,2019-10
+HKG,Hong Kong SAR,2013,3.102,actual,2019-10
+HKG,Hong Kong SAR,2014,2.762,actual,2019-10
+HKG,Hong Kong SAR,2015,2.388,actual,2019-10
+HKG,Hong Kong SAR,2016,2.176,actual,2019-10
+HKG,Hong Kong SAR,2017,3.849,actual,2019-10
+HKG,Hong Kong SAR,2018,3.002,actual,2019-10
+HKG,Hong Kong SAR,2019,0.346,estimate,2019-10
+HKG,Hong Kong SAR,2020,1.464,forecast,2019-10
+HKG,Hong Kong SAR,2021,2.461,forecast,2019-10
+HKG,Hong Kong SAR,2022,2.656,forecast,2019-10
+HKG,Hong Kong SAR,2023,2.747,forecast,2019-10
+HKG,Hong Kong SAR,2024,2.854,forecast,2019-10
+HND,Honduras,2010,3.731,actual,2019-10
+HND,Honduras,2011,3.836,actual,2019-10
+HND,Honduras,2012,4.129,actual,2019-10
+HND,Honduras,2013,2.792,actual,2019-10
+HND,Honduras,2014,3.058,actual,2019-10
+HND,Honduras,2015,3.84,actual,2019-10
+HND,Honduras,2016,3.752,actual,2019-10
+HND,Honduras,2017,4.93,actual,2019-10
+HND,Honduras,2018,3.745,actual,2019-10
+HND,Honduras,2019,3.36,estimate,2019-10
+HND,Honduras,2020,3.528,forecast,2019-10
+HND,Honduras,2021,3.634,forecast,2019-10
+HND,Honduras,2022,3.743,forecast,2019-10
+HND,Honduras,2023,3.855,forecast,2019-10
+HND,Honduras,2024,3.94,forecast,2019-10
+HRV,Croatia,2010,-1.473,actual,2019-10
+HRV,Croatia,2011,-0.34,actual,2019-10
+HRV,Croatia,2012,-2.3,actual,2019-10
+HRV,Croatia,2013,-0.492,actual,2019-10
+HRV,Croatia,2014,-0.088,actual,2019-10
+HRV,Croatia,2015,2.401,actual,2019-10
+HRV,Croatia,2016,3.536,actual,2019-10
+HRV,Croatia,2017,2.921,actual,2019-10
+HRV,Croatia,2018,2.63,actual,2019-10
+HRV,Croatia,2019,3.032,estimate,2019-10
+HRV,Croatia,2020,2.704,forecast,2019-10
+HRV,Croatia,2021,2.518,forecast,2019-10
+HRV,Croatia,2022,2.271,forecast,2019-10
+HRV,Croatia,2023,2.062,forecast,2019-10
+HRV,Croatia,2024,2.033,forecast,2019-10
+HTI,Haiti,2010,-5.498,actual,2019-10
+HTI,Haiti,2011,5.524,actual,2019-10
+HTI,Haiti,2012,2.885,actual,2019-10
+HTI,Haiti,2013,4.241,actual,2019-10
+HTI,Haiti,2014,2.803,actual,2019-10
+HTI,Haiti,2015,1.211,actual,2019-10
+HTI,Haiti,2016,1.453,actual,2019-10
+HTI,Haiti,2017,1.173,actual,2019-10
+HTI,Haiti,2018,1.484,actual,2019-10
+HTI,Haiti,2019,0.1,estimate,2019-10
+HTI,Haiti,2020,1.199,forecast,2019-10
+HTI,Haiti,2021,1.495,forecast,2019-10
+HTI,Haiti,2022,1.495,forecast,2019-10
+HTI,Haiti,2023,1.495,forecast,2019-10
+HTI,Haiti,2024,1.505,forecast,2019-10
+HUN,Hungary,2010,0.655,actual,2019-10
+HUN,Hungary,2011,1.658,actual,2019-10
+HUN,Hungary,2012,-1.631,actual,2019-10
+HUN,Hungary,2013,2.094,actual,2019-10
+HUN,Hungary,2014,4.225,actual,2019-10
+HUN,Hungary,2015,3.536,actual,2019-10
+HUN,Hungary,2016,2.281,actual,2019-10
+HUN,Hungary,2017,4.137,actual,2019-10
+HUN,Hungary,2018,4.94,actual,2019-10
+HUN,Hungary,2019,4.6,estimate,2019-10
+HUN,Hungary,2020,3.3,forecast,2019-10
+HUN,Hungary,2021,2.9,forecast,2019-10
+HUN,Hungary,2022,2.6,forecast,2019-10
+HUN,Hungary,2023,2.4,forecast,2019-10
+HUN,Hungary,2024,2.2,forecast,2019-10
+IDN,Indonesia,2010,6.378,actual,2019-10
+IDN,Indonesia,2011,6.17,actual,2019-10
+IDN,Indonesia,2012,6.03,actual,2019-10
+IDN,Indonesia,2013,5.557,actual,2019-10
+IDN,Indonesia,2014,5.007,actual,2019-10
+IDN,Indonesia,2015,4.876,actual,2019-10
+IDN,Indonesia,2016,5.033,actual,2019-10
+IDN,Indonesia,2017,5.067,actual,2019-10
+IDN,Indonesia,2018,5.171,actual,2019-10
+IDN,Indonesia,2019,5.037,estimate,2019-10
+IDN,Indonesia,2020,5.072,forecast,2019-10
+IDN,Indonesia,2021,5.226,forecast,2019-10
+IDN,Indonesia,2022,5.307,forecast,2019-10
+IDN,Indonesia,2023,5.294,forecast,2019-10
+IDN,Indonesia,2024,5.274,forecast,2019-10
+IND,India,2010,10.26,actual,2019-10
+IND,India,2011,6.638,actual,2019-10
+IND,India,2012,5.456,actual,2019-10
+IND,India,2013,6.386,actual,2019-10
+IND,India,2014,7.41,actual,2019-10
+IND,India,2015,7.996,actual,2019-10
+IND,India,2016,8.17,actual,2019-10
+IND,India,2017,7.168,actual,2019-10
+IND,India,2018,6.811,actual,2019-10
+IND,India,2019,6.124,estimate,2019-10
+IND,India,2020,7.033,forecast,2019-10
+IND,India,2021,7.442,forecast,2019-10
+IND,India,2022,7.436,forecast,2019-10
+IND,India,2023,7.439,forecast,2019-10
+IND,India,2024,7.331,forecast,2019-10
+IRL,Ireland,2010,1.762,actual,2019-10
+IRL,Ireland,2011,0.335,actual,2019-10
+IRL,Ireland,2012,0.226,actual,2019-10
+IRL,Ireland,2013,1.352,actual,2019-10
+IRL,Ireland,2014,8.534,actual,2019-10
+IRL,Ireland,2015,25.122,actual,2019-10
+IRL,Ireland,2016,3.664,actual,2019-10
+IRL,Ireland,2017,8.136,actual,2019-10
+IRL,Ireland,2018,8.301,actual,2019-10
+IRL,Ireland,2019,4.254,estimate,2019-10
+IRL,Ireland,2020,3.501,forecast,2019-10
+IRL,Ireland,2021,3.15,forecast,2019-10
+IRL,Ireland,2022,2.886,forecast,2019-10
+IRL,Ireland,2023,2.723,forecast,2019-10
+IRL,Ireland,2024,2.684,forecast,2019-10
+IRN,Islamic Republic of Iran,2010,5.727,actual,2019-10
+IRN,Islamic Republic of Iran,2011,3.062,actual,2019-10
+IRN,Islamic Republic of Iran,2012,-7.714,actual,2019-10
+IRN,Islamic Republic of Iran,2013,-0.325,actual,2019-10
+IRN,Islamic Republic of Iran,2014,3.215,actual,2019-10
+IRN,Islamic Republic of Iran,2015,-1.586,actual,2019-10
+IRN,Islamic Republic of Iran,2016,12.518,actual,2019-10
+IRN,Islamic Republic of Iran,2017,3.732,actual,2019-10
+IRN,Islamic Republic of Iran,2018,-4.845,actual,2019-10
+IRN,Islamic Republic of Iran,2019,-9.459,estimate,2019-10
+IRN,Islamic Republic of Iran,2020,0.046,forecast,2019-10
+IRN,Islamic Republic of Iran,2021,0.988,forecast,2019-10
+IRN,Islamic Republic of Iran,2022,0.975,forecast,2019-10
+IRN,Islamic Republic of Iran,2023,0.981,forecast,2019-10
+IRN,Islamic Republic of Iran,2024,1.092,forecast,2019-10
+IRQ,Iraq,2010,6.403,actual,2019-10
+IRQ,Iraq,2011,7.546,actual,2019-10
+IRQ,Iraq,2012,13.936,actual,2019-10
+IRQ,Iraq,2013,7.628,actual,2019-10
+IRQ,Iraq,2014,0.738,actual,2019-10
+IRQ,Iraq,2015,2.537,actual,2019-10
+IRQ,Iraq,2016,15.199,actual,2019-10
+IRQ,Iraq,2017,-2.495,actual,2019-10
+IRQ,Iraq,2018,-0.563,actual,2019-10
+IRQ,Iraq,2019,3.404,estimate,2019-10
+IRQ,Iraq,2020,4.676,forecast,2019-10
+IRQ,Iraq,2021,3.727,forecast,2019-10
+IRQ,Iraq,2022,2.323,forecast,2019-10
+IRQ,Iraq,2023,2.066,forecast,2019-10
+IRQ,Iraq,2024,2.081,forecast,2019-10
+ISL,Iceland,2010,-3.436,actual,2019-10
+ISL,Iceland,2011,1.882,actual,2019-10
+ISL,Iceland,2012,1.296,actual,2019-10
+ISL,Iceland,2013,4.134,actual,2019-10
+ISL,Iceland,2014,2.083,actual,2019-10
+ISL,Iceland,2015,4.749,actual,2019-10
+ISL,Iceland,2016,6.627,actual,2019-10
+ISL,Iceland,2017,4.404,actual,2019-10
+ISL,Iceland,2018,4.821,actual,2019-10
+ISL,Iceland,2019,0.822,estimate,2019-10
+ISL,Iceland,2020,1.631,forecast,2019-10
+ISL,Iceland,2021,2.048,forecast,2019-10
+ISL,Iceland,2022,2.035,forecast,2019-10
+ISL,Iceland,2023,2.047,forecast,2019-10
+ISL,Iceland,2024,1.937,forecast,2019-10
+ISR,Israel,2010,5.541,actual,2019-10
+ISR,Israel,2011,5.15,actual,2019-10
+ISR,Israel,2012,2.405,actual,2019-10
+ISR,Israel,2013,4.269,actual,2019-10
+ISR,Israel,2014,3.778,actual,2019-10
+ISR,Israel,2015,2.312,actual,2019-10
+ISR,Israel,2016,3.982,actual,2019-10
+ISR,Israel,2017,3.575,actual,2019-10
+ISR,Israel,2018,3.441,actual,2019-10
+ISR,Israel,2019,3.132,estimate,2019-10
+ISR,Israel,2020,3.069,forecast,2019-10
+ISR,Israel,2021,3.16,forecast,2019-10
+ISR,Israel,2022,3.093,forecast,2019-10
+ISR,Israel,2023,3.05,forecast,2019-10
+ISR,Israel,2024,2.991,forecast,2019-10
+ITA,Italy,2010,1.687,actual,2019-10
+ITA,Italy,2011,0.577,actual,2019-10
+ITA,Italy,2012,-2.819,actual,2019-10
+ITA,Italy,2013,-1.728,actual,2019-10
+ITA,Italy,2014,0.114,actual,2019-10
+ITA,Italy,2015,0.924,actual,2019-10
+ITA,Italy,2016,1.119,actual,2019-10
+ITA,Italy,2017,1.684,actual,2019-10
+ITA,Italy,2018,0.858,actual,2019-10
+ITA,Italy,2019,0.011,estimate,2019-10
+ITA,Italy,2020,0.537,forecast,2019-10
+ITA,Italy,2021,0.774,forecast,2019-10
+ITA,Italy,2022,0.687,forecast,2019-10
+ITA,Italy,2023,0.646,forecast,2019-10
+ITA,Italy,2024,0.646,forecast,2019-10
+JAM,Jamaica,2010,-1.436,actual,2019-10
+JAM,Jamaica,2011,1.42,actual,2019-10
+JAM,Jamaica,2012,-0.502,actual,2019-10
+JAM,Jamaica,2013,0.208,actual,2019-10
+JAM,Jamaica,2014,0.573,actual,2019-10
+JAM,Jamaica,2015,0.85,actual,2019-10
+JAM,Jamaica,2016,1.504,actual,2019-10
+JAM,Jamaica,2017,0.658,actual,2019-10
+JAM,Jamaica,2018,1.636,actual,2019-10
+JAM,Jamaica,2019,1.057,estimate,2019-10
+JAM,Jamaica,2020,1.021,forecast,2019-10
+JAM,Jamaica,2021,1.7,forecast,2019-10
+JAM,Jamaica,2022,1.975,forecast,2019-10
+JAM,Jamaica,2023,2.075,forecast,2019-10
+JAM,Jamaica,2024,2.175,forecast,2019-10
+JOR,Jordan,2010,2.311,actual,2019-10
+JOR,Jordan,2011,2.587,actual,2019-10
+JOR,Jordan,2012,2.65,actual,2019-10
+JOR,Jordan,2013,2.829,actual,2019-10
+JOR,Jordan,2014,3.098,actual,2019-10
+JOR,Jordan,2015,2.353,actual,2019-10
+JOR,Jordan,2016,2.044,actual,2019-10
+JOR,Jordan,2017,2.116,actual,2019-10
+JOR,Jordan,2018,1.94,actual,2019-10
+JOR,Jordan,2019,2.2,estimate,2019-10
+JOR,Jordan,2020,2.4,forecast,2019-10
+JOR,Jordan,2021,2.6,forecast,2019-10
+JOR,Jordan,2022,2.8,forecast,2019-10
+JOR,Jordan,2023,3.0,forecast,2019-10
+JOR,Jordan,2024,3.0,forecast,2019-10
+JPN,Japan,2010,4.192,actual,2019-10
+JPN,Japan,2011,-0.115,actual,2019-10
+JPN,Japan,2012,1.495,actual,2019-10
+JPN,Japan,2013,2.0,actual,2019-10
+JPN,Japan,2014,0.375,actual,2019-10
+JPN,Japan,2015,1.223,actual,2019-10
+JPN,Japan,2016,0.609,actual,2019-10
+JPN,Japan,2017,1.936,actual,2019-10
+JPN,Japan,2018,0.814,actual,2019-10
+JPN,Japan,2019,0.891,estimate,2019-10
+JPN,Japan,2020,0.466,forecast,2019-10
+JPN,Japan,2021,0.453,forecast,2019-10
+JPN,Japan,2022,0.522,forecast,2019-10
+JPN,Japan,2023,0.501,forecast,2019-10
+JPN,Japan,2024,0.503,forecast,2019-10
+KAZ,Kazakhstan,2010,7.3,actual,2019-10
+KAZ,Kazakhstan,2011,7.4,actual,2019-10
+KAZ,Kazakhstan,2012,4.8,actual,2019-10
+KAZ,Kazakhstan,2013,6.0,actual,2019-10
+KAZ,Kazakhstan,2014,4.2,actual,2019-10
+KAZ,Kazakhstan,2015,1.2,actual,2019-10
+KAZ,Kazakhstan,2016,1.1,actual,2019-10
+KAZ,Kazakhstan,2017,4.1,actual,2019-10
+KAZ,Kazakhstan,2018,4.1,actual,2019-10
+KAZ,Kazakhstan,2019,3.819,estimate,2019-10
+KAZ,Kazakhstan,2020,3.917,forecast,2019-10
+KAZ,Kazakhstan,2021,3.708,forecast,2019-10
+KAZ,Kazakhstan,2022,3.32,forecast,2019-10
+KAZ,Kazakhstan,2023,5.299,forecast,2019-10
+KAZ,Kazakhstan,2024,3.54,forecast,2019-10
+KEN,Kenya,2010,8.402,actual,2019-10
+KEN,Kenya,2011,6.112,actual,2019-10
+KEN,Kenya,2012,4.563,actual,2019-10
+KEN,Kenya,2013,5.879,actual,2019-10
+KEN,Kenya,2014,5.357,actual,2019-10
+KEN,Kenya,2015,5.718,actual,2019-10
+KEN,Kenya,2016,5.879,actual,2019-10
+KEN,Kenya,2017,4.863,actual,2019-10
+KEN,Kenya,2018,6.32,actual,2019-10
+KEN,Kenya,2019,5.597,estimate,2019-10
+KEN,Kenya,2020,6.046,forecast,2019-10
+KEN,Kenya,2021,5.815,forecast,2019-10
+KEN,Kenya,2022,5.841,forecast,2019-10
+KEN,Kenya,2023,5.835,forecast,2019-10
+KEN,Kenya,2024,5.851,forecast,2019-10
+KGZ,Kyrgyz Republic,2010,-0.472,actual,2019-10
+KGZ,Kyrgyz Republic,2011,5.956,actual,2019-10
+KGZ,Kyrgyz Republic,2012,-0.088,actual,2019-10
+KGZ,Kyrgyz Republic,2013,10.915,actual,2019-10
+KGZ,Kyrgyz Republic,2014,4.024,actual,2019-10
+KGZ,Kyrgyz Republic,2015,3.876,actual,2019-10
+KGZ,Kyrgyz Republic,2016,4.336,actual,2019-10
+KGZ,Kyrgyz Republic,2017,4.74,actual,2019-10
+KGZ,Kyrgyz Republic,2018,3.459,actual,2019-10
+KGZ,Kyrgyz Republic,2019,3.759,estimate,2019-10
+KGZ,Kyrgyz Republic,2020,3.388,forecast,2019-10
+KGZ,Kyrgyz Republic,2021,3.779,forecast,2019-10
+KGZ,Kyrgyz Republic,2022,4.58,forecast,2019-10
+KGZ,Kyrgyz Republic,2023,3.354,forecast,2019-10
+KGZ,Kyrgyz Republic,2024,3.354,forecast,2019-10
+KHM,Cambodia,2010,5.963,actual,2019-10
+KHM,Cambodia,2011,7.07,actual,2019-10
+KHM,Cambodia,2012,7.313,actual,2019-10
+KHM,Cambodia,2013,7.357,actual,2019-10
+KHM,Cambodia,2014,7.143,actual,2019-10
+KHM,Cambodia,2015,7.036,actual,2019-10
+KHM,Cambodia,2016,6.863,actual,2019-10
+KHM,Cambodia,2017,6.997,actual,2019-10
+KHM,Cambodia,2018,7.533,actual,2019-10
+KHM,Cambodia,2019,6.97,estimate,2019-10
+KHM,Cambodia,2020,6.772,forecast,2019-10
+KHM,Cambodia,2021,6.704,forecast,2019-10
+KHM,Cambodia,2022,6.639,forecast,2019-10
+KHM,Cambodia,2023,6.561,forecast,2019-10
+KHM,Cambodia,2024,6.514,forecast,2019-10
+KIR,Kiribati,2010,-0.924,actual,2019-10
+KIR,Kiribati,2011,1.595,actual,2019-10
+KIR,Kiribati,2012,4.713,actual,2019-10
+KIR,Kiribati,2013,4.215,actual,2019-10
+KIR,Kiribati,2014,-0.698,actual,2019-10
+KIR,Kiribati,2015,10.405,actual,2019-10
+KIR,Kiribati,2016,5.13,actual,2019-10
+KIR,Kiribati,2017,0.328,actual,2019-10
+KIR,Kiribati,2018,2.332,actual,2019-10
+KIR,Kiribati,2019,2.323,estimate,2019-10
+KIR,Kiribati,2020,2.348,forecast,2019-10
+KIR,Kiribati,2021,2.043,forecast,2019-10
+KIR,Kiribati,2022,1.93,forecast,2019-10
+KIR,Kiribati,2023,1.938,forecast,2019-10
+KIR,Kiribati,2024,1.808,forecast,2019-10
+KNA,St. Kitts and Nevis,2010,1.527,actual,2019-10
+KNA,St. Kitts and Nevis,2011,3.212,actual,2019-10
+KNA,St. Kitts and Nevis,2012,-4.39,actual,2019-10
+KNA,St. Kitts and Nevis,2013,6.371,actual,2019-10
+KNA,St. Kitts and Nevis,2014,7.215,actual,2019-10
+KNA,St. Kitts and Nevis,2015,1.595,actual,2019-10
+KNA,St. Kitts and Nevis,2016,1.845,actual,2019-10
+KNA,St. Kitts and Nevis,2017,0.905,actual,2019-10
+KNA,St. Kitts and Nevis,2018,4.591,actual,2019-10
+KNA,St. Kitts and Nevis,2019,3.5,estimate,2019-10
+KNA,St. Kitts and Nevis,2020,3.5,forecast,2019-10
+KNA,St. Kitts and Nevis,2021,3.0,forecast,2019-10
+KNA,St. Kitts and Nevis,2022,2.7,forecast,2019-10
+KNA,St. Kitts and Nevis,2023,2.659,forecast,2019-10
+KNA,St. Kitts and Nevis,2024,2.671,forecast,2019-10
+KOR,Korea,2010,6.805,actual,2019-10
+KOR,Korea,2011,3.686,actual,2019-10
+KOR,Korea,2012,2.403,actual,2019-10
+KOR,Korea,2013,3.165,actual,2019-10
+KOR,Korea,2014,3.202,actual,2019-10
+KOR,Korea,2015,2.809,actual,2019-10
+KOR,Korea,2016,2.947,actual,2019-10
+KOR,Korea,2017,3.16,actual,2019-10
+KOR,Korea,2018,2.665,actual,2019-10
+KOR,Korea,2019,1.954,estimate,2019-10
+KOR,Korea,2020,2.218,forecast,2019-10
+KOR,Korea,2021,2.748,forecast,2019-10
+KOR,Korea,2022,2.894,forecast,2019-10
+KOR,Korea,2023,2.874,forecast,2019-10
+KOR,Korea,2024,2.916,forecast,2019-10
+KWT,Kuwait,2010,-2.371,actual,2019-10
+KWT,Kuwait,2011,9.628,actual,2019-10
+KWT,Kuwait,2012,6.625,actual,2019-10
+KWT,Kuwait,2013,1.151,actual,2019-10
+KWT,Kuwait,2014,0.5,actual,2019-10
+KWT,Kuwait,2015,0.593,actual,2019-10
+KWT,Kuwait,2016,2.926,actual,2019-10
+KWT,Kuwait,2017,-3.482,actual,2019-10
+KWT,Kuwait,2018,1.177,actual,2019-10
+KWT,Kuwait,2019,0.585,estimate,2019-10
+KWT,Kuwait,2020,3.071,forecast,2019-10
+KWT,Kuwait,2021,2.629,forecast,2019-10
+KWT,Kuwait,2022,2.259,forecast,2019-10
+KWT,Kuwait,2023,2.649,forecast,2019-10
+KWT,Kuwait,2024,2.873,forecast,2019-10
+LAO,Lao P.D.R.,2010,8.018,actual,2019-10
+LAO,Lao P.D.R.,2011,7.986,actual,2019-10
+LAO,Lao P.D.R.,2012,7.805,actual,2019-10
+LAO,Lao P.D.R.,2013,8.026,actual,2019-10
+LAO,Lao P.D.R.,2014,7.612,actual,2019-10
+LAO,Lao P.D.R.,2015,7.27,actual,2019-10
+LAO,Lao P.D.R.,2016,7.023,actual,2019-10
+LAO,Lao P.D.R.,2017,6.832,actual,2019-10
+LAO,Lao P.D.R.,2018,6.308,actual,2019-10
+LAO,Lao P.D.R.,2019,6.434,estimate,2019-10
+LAO,Lao P.D.R.,2020,6.507,forecast,2019-10
+LAO,Lao P.D.R.,2021,6.736,forecast,2019-10
+LAO,Lao P.D.R.,2022,6.771,forecast,2019-10
+LAO,Lao P.D.R.,2023,6.758,forecast,2019-10
+LAO,Lao P.D.R.,2024,6.772,forecast,2019-10
+LBN,Lebanon,2010,8.037,actual,2019-10
+LBN,Lebanon,2011,0.918,actual,2019-10
+LBN,Lebanon,2012,2.72,actual,2019-10
+LBN,Lebanon,2013,2.619,actual,2019-10
+LBN,Lebanon,2014,1.884,actual,2019-10
+LBN,Lebanon,2015,0.415,actual,2019-10
+LBN,Lebanon,2016,1.606,actual,2019-10
+LBN,Lebanon,2017,0.552,actual,2019-10
+LBN,Lebanon,2018,0.25,actual,2019-10
+LBN,Lebanon,2019,0.2,estimate,2019-10
+LBN,Lebanon,2020,0.863,forecast,2019-10
+LBN,Lebanon,2021,2.336,forecast,2019-10
+LBN,Lebanon,2022,2.57,forecast,2019-10
+LBN,Lebanon,2023,3.124,forecast,2019-10
+LBN,Lebanon,2024,2.746,forecast,2019-10
+LBR,Liberia,2010,6.351,actual,2019-10
+LBR,Liberia,2011,7.7,actual,2019-10
+LBR,Liberia,2012,8.42,actual,2019-10
+LBR,Liberia,2013,8.836,actual,2019-10
+LBR,Liberia,2014,0.695,actual,2019-10
+LBR,Liberia,2015,0.007,actual,2019-10
+LBR,Liberia,2016,-1.63,actual,2019-10
+LBR,Liberia,2017,2.469,actual,2019-10
+LBR,Liberia,2018,1.242,actual,2019-10
+LBR,Liberia,2019,0.44,estimate,2019-10
+LBR,Liberia,2020,1.553,forecast,2019-10
+LBR,Liberia,2021,1.253,forecast,2019-10
+LBR,Liberia,2022,-1.264,forecast,2019-10
+LBR,Liberia,2023,-0.495,forecast,2019-10
+LBR,Liberia,2024,3.75,forecast,2019-10
+LBY,Libya,2010,3.176,actual,2019-10
+LBY,Libya,2011,-66.657,actual,2019-10
+LBY,Libya,2012,124.709,actual,2019-10
+LBY,Libya,2013,-36.829,actual,2019-10
+LBY,Libya,2014,-53.017,actual,2019-10
+LBY,Libya,2015,-13.023,actual,2019-10
+LBY,Libya,2016,-7.389,actual,2019-10
+LBY,Libya,2017,64.014,actual,2019-10
+LBY,Libya,2018,17.879,actual,2019-10
+LBY,Libya,2019,-19.056,estimate,2019-10
+LBY,Libya,2020,-0.036,forecast,2019-10
+LBY,Libya,2021,0.0,forecast,2019-10
+LBY,Libya,2022,0.0,forecast,2019-10
+LBY,Libya,2023,0.0,forecast,2019-10
+LBY,Libya,2024,0.0,forecast,2019-10
+LCA,St. Lucia,2010,0.403,actual,2019-10
+LCA,St. Lucia,2011,4.143,actual,2019-10
+LCA,St. Lucia,2012,-0.375,actual,2019-10
+LCA,St. Lucia,2013,-1.977,actual,2019-10
+LCA,St. Lucia,2014,1.338,actual,2019-10
+LCA,St. Lucia,2015,0.229,actual,2019-10
+LCA,St. Lucia,2016,3.152,actual,2019-10
+LCA,St. Lucia,2017,2.55,actual,2019-10
+LCA,St. Lucia,2018,0.857,actual,2019-10
+LCA,St. Lucia,2019,1.511,estimate,2019-10
+LCA,St. Lucia,2020,3.217,forecast,2019-10
+LCA,St. Lucia,2021,2.993,forecast,2019-10
+LCA,St. Lucia,2022,2.4,forecast,2019-10
+LCA,St. Lucia,2023,1.5,forecast,2019-10
+LCA,St. Lucia,2024,1.5,forecast,2019-10
+LKA,Sri Lanka,2010,8.016,actual,2019-10
+LKA,Sri Lanka,2011,8.405,actual,2019-10
+LKA,Sri Lanka,2012,9.145,actual,2019-10
+LKA,Sri Lanka,2013,3.396,actual,2019-10
+LKA,Sri Lanka,2014,4.961,actual,2019-10
+LKA,Sri Lanka,2015,5.008,actual,2019-10
+LKA,Sri Lanka,2016,4.487,actual,2019-10
+LKA,Sri Lanka,2017,3.42,actual,2019-10
+LKA,Sri Lanka,2018,3.209,actual,2019-10
+LKA,Sri Lanka,2019,2.72,estimate,2019-10
+LKA,Sri Lanka,2020,3.532,forecast,2019-10
+LKA,Sri Lanka,2021,4.255,forecast,2019-10
+LKA,Sri Lanka,2022,4.504,forecast,2019-10
+LKA,Sri Lanka,2023,4.643,forecast,2019-10
+LKA,Sri Lanka,2024,4.84,forecast,2019-10
+LSO,Lesotho,2010,6.289,actual,2019-10
+LSO,Lesotho,2011,6.664,actual,2019-10
+LSO,Lesotho,2012,4.913,actual,2019-10
+LSO,Lesotho,2013,2.167,actual,2019-10
+LSO,Lesotho,2014,2.744,actual,2019-10
+LSO,Lesotho,2015,2.132,actual,2019-10
+LSO,Lesotho,2016,2.689,actual,2019-10
+LSO,Lesotho,2017,0.515,actual,2019-10
+LSO,Lesotho,2018,2.766,actual,2019-10
+LSO,Lesotho,2019,2.76,estimate,2019-10
+LSO,Lesotho,2020,-0.169,forecast,2019-10
+LSO,Lesotho,2021,3.68,forecast,2019-10
+LSO,Lesotho,2022,4.453,forecast,2019-10
+LSO,Lesotho,2023,1.394,forecast,2019-10
+LSO,Lesotho,2024,1.349,forecast,2019-10
+LTU,Lithuania,2010,1.639,actual,2019-10
+LTU,Lithuania,2011,6.043,actual,2019-10
+LTU,Lithuania,2012,3.827,actual,2019-10
+LTU,Lithuania,2013,3.499,actual,2019-10
+LTU,Lithuania,2014,3.537,actual,2019-10
+LTU,Lithuania,2015,2.021,actual,2019-10
+LTU,Lithuania,2016,2.353,actual,2019-10
+LTU,Lithuania,2017,4.14,actual,2019-10
+LTU,Lithuania,2018,3.494,actual,2019-10
+LTU,Lithuania,2019,3.405,estimate,2019-10
+LTU,Lithuania,2020,2.718,forecast,2019-10
+LTU,Lithuania,2021,2.462,forecast,2019-10
+LTU,Lithuania,2022,2.387,forecast,2019-10
+LTU,Lithuania,2023,2.297,forecast,2019-10
+LTU,Lithuania,2024,2.285,forecast,2019-10
+LUX,Luxembourg,2010,4.865,actual,2019-10
+LUX,Luxembourg,2011,2.539,actual,2019-10
+LUX,Luxembourg,2012,-0.352,actual,2019-10
+LUX,Luxembourg,2013,3.654,actual,2019-10
+LUX,Luxembourg,2014,4.297,actual,2019-10
+LUX,Luxembourg,2015,3.916,actual,2019-10
+LUX,Luxembourg,2016,2.411,actual,2019-10
+LUX,Luxembourg,2017,1.546,actual,2019-10
+LUX,Luxembourg,2018,2.603,actual,2019-10
+LUX,Luxembourg,2019,2.562,estimate,2019-10
+LUX,Luxembourg,2020,2.774,forecast,2019-10
+LUX,Luxembourg,2021,2.66,forecast,2019-10
+LUX,Luxembourg,2022,2.633,forecast,2019-10
+LUX,Luxembourg,2023,2.601,forecast,2019-10
+LUX,Luxembourg,2024,2.579,forecast,2019-10
+LVA,Latvia,2010,-3.941,actual,2019-10
+LVA,Latvia,2011,6.381,actual,2019-10
+LVA,Latvia,2012,4.035,actual,2019-10
+LVA,Latvia,2013,2.43,actual,2019-10
+LVA,Latvia,2014,1.858,actual,2019-10
+LVA,Latvia,2015,2.972,actual,2019-10
+LVA,Latvia,2016,2.064,actual,2019-10
+LVA,Latvia,2017,4.636,actual,2019-10
+LVA,Latvia,2018,4.77,actual,2019-10
+LVA,Latvia,2019,2.836,estimate,2019-10
+LVA,Latvia,2020,2.794,forecast,2019-10
+LVA,Latvia,2021,2.895,forecast,2019-10
+LVA,Latvia,2022,3.023,forecast,2019-10
+LVA,Latvia,2023,3.021,forecast,2019-10
+LVA,Latvia,2024,3.005,forecast,2019-10
+MAC,Macao SAR,2010,25.264,actual,2019-10
+MAC,Macao SAR,2011,21.672,actual,2019-10
+MAC,Macao SAR,2012,9.237,actual,2019-10
+MAC,Macao SAR,2013,11.2,actual,2019-10
+MAC,Macao SAR,2014,-1.201,actual,2019-10
+MAC,Macao SAR,2015,-21.594,actual,2019-10
+MAC,Macao SAR,2016,-0.858,actual,2019-10
+MAC,Macao SAR,2017,9.704,actual,2019-10
+MAC,Macao SAR,2018,4.708,actual,2019-10
+MAC,Macao SAR,2019,-1.32,estimate,2019-10
+MAC,Macao SAR,2020,-1.064,forecast,2019-10
+MAC,Macao SAR,2021,-0.064,forecast,2019-10
+MAC,Macao SAR,2022,0.434,forecast,2019-10
+MAC,Macao SAR,2023,0.346,forecast,2019-10
+MAC,Macao SAR,2024,0.252,forecast,2019-10
+MAR,Morocco,2010,3.816,actual,2019-10
+MAR,Morocco,2011,5.246,actual,2019-10
+MAR,Morocco,2012,3.01,actual,2019-10
+MAR,Morocco,2013,4.535,actual,2019-10
+MAR,Morocco,2014,2.669,actual,2019-10
+MAR,Morocco,2015,4.55,actual,2019-10
+MAR,Morocco,2016,1.06,actual,2019-10
+MAR,Morocco,2017,4.201,actual,2019-10
+MAR,Morocco,2018,2.955,actual,2019-10
+MAR,Morocco,2019,2.657,estimate,2019-10
+MAR,Morocco,2020,3.688,forecast,2019-10
+MAR,Morocco,2021,4.13,forecast,2019-10
+MAR,Morocco,2022,4.299,forecast,2019-10
+MAR,Morocco,2023,4.422,forecast,2019-10
+MAR,Morocco,2024,4.534,forecast,2019-10
+MDA,Moldova,2010,7.1,actual,2019-10
+MDA,Moldova,2011,5.818,actual,2019-10
+MDA,Moldova,2012,-0.59,actual,2019-10
+MDA,Moldova,2013,9.044,actual,2019-10
+MDA,Moldova,2014,5.0,actual,2019-10
+MDA,Moldova,2015,-0.338,actual,2019-10
+MDA,Moldova,2016,4.409,actual,2019-10
+MDA,Moldova,2017,4.691,actual,2019-10
+MDA,Moldova,2018,4.002,actual,2019-10
+MDA,Moldova,2019,3.5,estimate,2019-10
+MDA,Moldova,2020,3.8,forecast,2019-10
+MDA,Moldova,2021,3.8,forecast,2019-10
+MDA,Moldova,2022,3.8,forecast,2019-10
+MDA,Moldova,2023,3.8,forecast,2019-10
+MDA,Moldova,2024,3.8,forecast,2019-10
+MDG,Madagascar,2010,0.272,actual,2019-10
+MDG,Madagascar,2011,1.446,actual,2019-10
+MDG,Madagascar,2012,3.037,actual,2019-10
+MDG,Madagascar,2013,2.241,actual,2019-10
+MDG,Madagascar,2014,3.33,actual,2019-10
+MDG,Madagascar,2015,3.097,actual,2019-10
+MDG,Madagascar,2016,4.193,actual,2019-10
+MDG,Madagascar,2017,4.285,actual,2019-10
+MDG,Madagascar,2018,5.198,actual,2019-10
+MDG,Madagascar,2019,5.222,estimate,2019-10
+MDG,Madagascar,2020,5.309,forecast,2019-10
+MDG,Madagascar,2021,5.139,forecast,2019-10
+MDG,Madagascar,2022,4.854,forecast,2019-10
+MDG,Madagascar,2023,4.837,forecast,2019-10
+MDG,Madagascar,2024,4.806,forecast,2019-10
+MDV,Maldives,2010,7.093,actual,2019-10
+MDV,Maldives,2011,8.431,actual,2019-10
+MDV,Maldives,2012,2.388,actual,2019-10
+MDV,Maldives,2013,7.281,actual,2019-10
+MDV,Maldives,2014,7.33,actual,2019-10
+MDV,Maldives,2015,2.885,actual,2019-10
+MDV,Maldives,2016,7.289,actual,2019-10
+MDV,Maldives,2017,6.912,actual,2019-10
+MDV,Maldives,2018,7.514,actual,2019-10
+MDV,Maldives,2019,6.466,estimate,2019-10
+MDV,Maldives,2020,6.045,forecast,2019-10
+MDV,Maldives,2021,5.51,forecast,2019-10
+MDV,Maldives,2022,5.468,forecast,2019-10
+MDV,Maldives,2023,5.539,forecast,2019-10
+MDV,Maldives,2024,5.458,forecast,2019-10
+MEX,Mexico,2010,5.118,actual,2019-10
+MEX,Mexico,2011,3.663,actual,2019-10
+MEX,Mexico,2012,3.642,actual,2019-10
+MEX,Mexico,2013,1.354,actual,2019-10
+MEX,Mexico,2014,2.804,actual,2019-10
+MEX,Mexico,2015,3.288,actual,2019-10
+MEX,Mexico,2016,2.911,actual,2019-10
+MEX,Mexico,2017,2.117,actual,2019-10
+MEX,Mexico,2018,1.995,actual,2019-10
+MEX,Mexico,2019,0.396,estimate,2019-10
+MEX,Mexico,2020,1.307,forecast,2019-10
+MEX,Mexico,2021,1.899,forecast,2019-10
+MEX,Mexico,2022,2.108,forecast,2019-10
+MEX,Mexico,2023,2.269,forecast,2019-10
+MEX,Mexico,2024,2.396,forecast,2019-10
+MHL,Marshall Islands,2010,7.056,actual,2019-10
+MHL,Marshall Islands,2011,1.087,actual,2019-10
+MHL,Marshall Islands,2012,3.155,actual,2019-10
+MHL,Marshall Islands,2013,2.79,actual,2019-10
+MHL,Marshall Islands,2014,-0.694,actual,2019-10
+MHL,Marshall Islands,2015,-0.627,actual,2019-10
+MHL,Marshall Islands,2016,1.78,actual,2019-10
+MHL,Marshall Islands,2017,4.549,actual,2019-10
+MHL,Marshall Islands,2018,2.554,actual,2019-10
+MHL,Marshall Islands,2019,2.411,estimate,2019-10
+MHL,Marshall Islands,2020,2.302,forecast,2019-10
+MHL,Marshall Islands,2021,2.005,forecast,2019-10
+MHL,Marshall Islands,2022,1.848,forecast,2019-10
+MHL,Marshall Islands,2023,1.646,forecast,2019-10
+MHL,Marshall Islands,2024,1.246,forecast,2019-10
+MKD,North Macedonia,2010,3.359,actual,2019-10
+MKD,North Macedonia,2011,2.34,actual,2019-10
+MKD,North Macedonia,2012,-0.456,actual,2019-10
+MKD,North Macedonia,2013,2.925,actual,2019-10
+MKD,North Macedonia,2014,3.629,actual,2019-10
+MKD,North Macedonia,2015,3.856,actual,2019-10
+MKD,North Macedonia,2016,2.848,actual,2019-10
+MKD,North Macedonia,2017,0.241,actual,2019-10
+MKD,North Macedonia,2018,2.665,actual,2019-10
+MKD,North Macedonia,2019,3.151,estimate,2019-10
+MKD,North Macedonia,2020,3.355,forecast,2019-10
+MKD,North Macedonia,2021,3.2,forecast,2019-10
+MKD,North Macedonia,2022,3.3,forecast,2019-10
+MKD,North Macedonia,2023,3.43,forecast,2019-10
+MKD,North Macedonia,2024,3.54,forecast,2019-10
+MLI,Mali,2010,5.314,actual,2019-10
+MLI,Mali,2011,3.213,actual,2019-10
+MLI,Mali,2012,-0.837,actual,2019-10
+MLI,Mali,2013,2.304,actual,2019-10
+MLI,Mali,2014,7.101,actual,2019-10
+MLI,Mali,2015,6.167,actual,2019-10
+MLI,Mali,2016,5.764,actual,2019-10
+MLI,Mali,2017,5.419,actual,2019-10
+MLI,Mali,2018,4.651,actual,2019-10
+MLI,Mali,2019,5.04,estimate,2019-10
+MLI,Mali,2020,5.0,forecast,2019-10
+MLI,Mali,2021,4.9,forecast,2019-10
+MLI,Mali,2022,4.9,forecast,2019-10
+MLI,Mali,2023,4.8,forecast,2019-10
+MLI,Mali,2024,4.8,forecast,2019-10
+MLT,Malta,2010,3.543,actual,2019-10
+MLT,Malta,2011,1.307,actual,2019-10
+MLT,Malta,2012,2.799,actual,2019-10
+MLT,Malta,2013,4.603,actual,2019-10
+MLT,Malta,2014,8.706,actual,2019-10
+MLT,Malta,2015,10.818,actual,2019-10
+MLT,Malta,2016,5.676,actual,2019-10
+MLT,Malta,2017,6.724,actual,2019-10
+MLT,Malta,2018,6.772,actual,2019-10
+MLT,Malta,2019,5.098,estimate,2019-10
+MLT,Malta,2020,4.316,forecast,2019-10
+MLT,Malta,2021,3.744,forecast,2019-10
+MLT,Malta,2022,3.5,forecast,2019-10
+MLT,Malta,2023,3.29,forecast,2019-10
+MLT,Malta,2024,3.184,forecast,2019-10
+MMR,Myanmar,2010,5.247,actual,2019-10
+MMR,Myanmar,2011,5.471,actual,2019-10
+MMR,Myanmar,2012,6.486,actual,2019-10
+MMR,Myanmar,2013,7.899,actual,2019-10
+MMR,Myanmar,2014,8.2,actual,2019-10
+MMR,Myanmar,2015,7.473,actual,2019-10
+MMR,Myanmar,2016,5.151,actual,2019-10
+MMR,Myanmar,2017,6.334,actual,2019-10
+MMR,Myanmar,2018,6.825,actual,2019-10
+MMR,Myanmar,2019,6.203,estimate,2019-10
+MMR,Myanmar,2020,6.259,forecast,2019-10
+MMR,Myanmar,2021,6.013,forecast,2019-10
+MMR,Myanmar,2022,6.126,forecast,2019-10
+MMR,Myanmar,2023,6.336,forecast,2019-10
+MMR,Myanmar,2024,6.45,forecast,2019-10
+MNE,Montenegro,2010,2.7,actual,2019-10
+MNE,Montenegro,2011,3.2,actual,2019-10
+MNE,Montenegro,2012,-2.724,actual,2019-10
+MNE,Montenegro,2013,3.549,actual,2019-10
+MNE,Montenegro,2014,1.784,actual,2019-10
+MNE,Montenegro,2015,3.39,actual,2019-10
+MNE,Montenegro,2016,2.949,actual,2019-10
+MNE,Montenegro,2017,4.716,actual,2019-10
+MNE,Montenegro,2018,4.9,actual,2019-10
+MNE,Montenegro,2019,2.989,estimate,2019-10
+MNE,Montenegro,2020,2.478,forecast,2019-10
+MNE,Montenegro,2021,2.915,forecast,2019-10
+MNE,Montenegro,2022,3.176,forecast,2019-10
+MNE,Montenegro,2023,3.205,forecast,2019-10
+MNE,Montenegro,2024,2.926,forecast,2019-10
+MNG,Mongolia,2010,7.313,actual,2019-10
+MNG,Mongolia,2011,17.291,actual,2019-10
+MNG,Mongolia,2012,12.32,actual,2019-10
+MNG,Mongolia,2013,11.649,actual,2019-10
+MNG,Mongolia,2014,7.885,actual,2019-10
+MNG,Mongolia,2015,2.38,actual,2019-10
+MNG,Mongolia,2016,1.168,actual,2019-10
+MNG,Mongolia,2017,5.337,actual,2019-10
+MNG,Mongolia,2018,6.913,actual,2019-10
+MNG,Mongolia,2019,6.5,estimate,2019-10
+MNG,Mongolia,2020,5.367,forecast,2019-10
+MNG,Mongolia,2021,5.142,forecast,2019-10
+MNG,Mongolia,2022,5.585,forecast,2019-10
+MNG,Mongolia,2023,6.032,forecast,2019-10
+MNG,Mongolia,2024,5.0,forecast,2019-10
+MOZ,Mozambique,2010,6.688,actual,2019-10
+MOZ,Mozambique,2011,7.118,actual,2019-10
+MOZ,Mozambique,2012,7.198,actual,2019-10
+MOZ,Mozambique,2013,7.141,actual,2019-10
+MOZ,Mozambique,2014,7.444,actual,2019-10
+MOZ,Mozambique,2015,6.594,actual,2019-10
+MOZ,Mozambique,2016,3.763,actual,2019-10
+MOZ,Mozambique,2017,3.737,actual,2019-10
+MOZ,Mozambique,2018,3.27,actual,2019-10
+MOZ,Mozambique,2019,1.8,estimate,2019-10
+MOZ,Mozambique,2020,6.043,forecast,2019-10
+MOZ,Mozambique,2021,4.0,forecast,2019-10
+MOZ,Mozambique,2022,4.0,forecast,2019-10
+MOZ,Mozambique,2023,9.243,forecast,2019-10
+MOZ,Mozambique,2024,11.474,forecast,2019-10
+MRT,Mauritania,2010,4.774,actual,2019-10
+MRT,Mauritania,2011,4.704,actual,2019-10
+MRT,Mauritania,2012,5.795,actual,2019-10
+MRT,Mauritania,2013,6.09,actual,2019-10
+MRT,Mauritania,2014,5.58,actual,2019-10
+MRT,Mauritania,2015,0.437,actual,2019-10
+MRT,Mauritania,2016,1.841,actual,2019-10
+MRT,Mauritania,2017,3.074,actual,2019-10
+MRT,Mauritania,2018,3.566,actual,2019-10
+MRT,Mauritania,2019,6.628,estimate,2019-10
+MRT,Mauritania,2020,5.879,forecast,2019-10
+MRT,Mauritania,2021,5.851,forecast,2019-10
+MRT,Mauritania,2022,9.165,forecast,2019-10
+MRT,Mauritania,2023,6.481,forecast,2019-10
+MRT,Mauritania,2024,5.807,forecast,2019-10
+MUS,Mauritius,2010,4.377,actual,2019-10
+MUS,Mauritius,2011,4.077,actual,2019-10
+MUS,Mauritius,2012,3.496,actual,2019-10
+MUS,Mauritius,2013,3.36,actual,2019-10
+MUS,Mauritius,2014,3.745,actual,2019-10
+MUS,Mauritius,2015,3.553,actual,2019-10
+MUS,Mauritius,2016,3.838,actual,2019-10
+MUS,Mauritius,2017,3.814,actual,2019-10
+MUS,Mauritius,2018,3.761,actual,2019-10
+MUS,Mauritius,2019,3.675,estimate,2019-10
+MUS,Mauritius,2020,3.83,forecast,2019-10
+MUS,Mauritius,2021,3.93,forecast,2019-10
+MUS,Mauritius,2022,4.011,forecast,2019-10
+MUS,Mauritius,2023,4.011,forecast,2019-10
+MUS,Mauritius,2024,4.011,forecast,2019-10
+MWI,Malawi,2010,6.874,actual,2019-10
+MWI,Malawi,2011,4.854,actual,2019-10
+MWI,Malawi,2012,1.886,actual,2019-10
+MWI,Malawi,2013,5.2,actual,2019-10
+MWI,Malawi,2014,5.7,actual,2019-10
+MWI,Malawi,2015,2.95,actual,2019-10
+MWI,Malawi,2016,2.27,actual,2019-10
+MWI,Malawi,2017,4.0,actual,2019-10
+MWI,Malawi,2018,3.17,actual,2019-10
+MWI,Malawi,2019,4.5,estimate,2019-10
+MWI,Malawi,2020,5.1,forecast,2019-10
+MWI,Malawi,2021,5.5,forecast,2019-10
+MWI,Malawi,2022,6.0,forecast,2019-10
+MWI,Malawi,2023,6.5,forecast,2019-10
+MWI,Malawi,2024,6.5,forecast,2019-10
+MYS,Malaysia,2010,7.528,actual,2019-10
+MYS,Malaysia,2011,5.293,actual,2019-10
+MYS,Malaysia,2012,5.474,actual,2019-10
+MYS,Malaysia,2013,4.694,actual,2019-10
+MYS,Malaysia,2014,6.007,actual,2019-10
+MYS,Malaysia,2015,5.007,actual,2019-10
+MYS,Malaysia,2016,4.45,actual,2019-10
+MYS,Malaysia,2017,5.742,actual,2019-10
+MYS,Malaysia,2018,4.741,actual,2019-10
+MYS,Malaysia,2019,4.5,estimate,2019-10
+MYS,Malaysia,2020,4.4,forecast,2019-10
+MYS,Malaysia,2021,4.9,forecast,2019-10
+MYS,Malaysia,2022,4.84,forecast,2019-10
+MYS,Malaysia,2023,4.84,forecast,2019-10
+MYS,Malaysia,2024,4.9,forecast,2019-10
+NAM,Namibia,2010,6.039,actual,2019-10
+NAM,Namibia,2011,5.091,actual,2019-10
+NAM,Namibia,2012,5.062,actual,2019-10
+NAM,Namibia,2013,5.615,actual,2019-10
+NAM,Namibia,2014,6.352,actual,2019-10
+NAM,Namibia,2015,6.086,actual,2019-10
+NAM,Namibia,2016,1.123,actual,2019-10
+NAM,Namibia,2017,-0.868,actual,2019-10
+NAM,Namibia,2018,-0.075,actual,2019-10
+NAM,Namibia,2019,-0.177,estimate,2019-10
+NAM,Namibia,2020,1.551,forecast,2019-10
+NAM,Namibia,2021,2.433,forecast,2019-10
+NAM,Namibia,2022,3.202,forecast,2019-10
+NAM,Namibia,2023,3.895,forecast,2019-10
+NAM,Namibia,2024,2.974,forecast,2019-10
+NER,Niger,2010,8.36,actual,2019-10
+NER,Niger,2011,2.209,actual,2019-10
+NER,Niger,2012,11.85,actual,2019-10
+NER,Niger,2013,5.268,actual,2019-10
+NER,Niger,2014,7.529,actual,2019-10
+NER,Niger,2015,4.336,actual,2019-10
+NER,Niger,2016,4.927,actual,2019-10
+NER,Niger,2017,4.895,actual,2019-10
+NER,Niger,2018,6.481,actual,2019-10
+NER,Niger,2019,6.28,estimate,2019-10
+NER,Niger,2020,6.05,forecast,2019-10
+NER,Niger,2021,5.594,forecast,2019-10
+NER,Niger,2022,11.889,forecast,2019-10
+NER,Niger,2023,6.139,forecast,2019-10
+NER,Niger,2024,6.761,forecast,2019-10
+NGA,Nigeria,2010,11.259,actual,2019-10
+NGA,Nigeria,2011,4.887,actual,2019-10
+NGA,Nigeria,2012,4.279,actual,2019-10
+NGA,Nigeria,2013,5.394,actual,2019-10
+NGA,Nigeria,2014,6.31,actual,2019-10
+NGA,Nigeria,2015,2.653,actual,2019-10
+NGA,Nigeria,2016,-1.617,actual,2019-10
+NGA,Nigeria,2017,0.806,actual,2019-10
+NGA,Nigeria,2018,1.923,actual,2019-10
+NGA,Nigeria,2019,2.288,estimate,2019-10
+NGA,Nigeria,2020,2.521,forecast,2019-10
+NGA,Nigeria,2021,2.516,forecast,2019-10
+NGA,Nigeria,2022,2.731,forecast,2019-10
+NGA,Nigeria,2023,2.607,forecast,2019-10
+NGA,Nigeria,2024,2.64,forecast,2019-10
+NIC,Nicaragua,2010,4.41,actual,2019-10
+NIC,Nicaragua,2011,6.317,actual,2019-10
+NIC,Nicaragua,2012,6.496,actual,2019-10
+NIC,Nicaragua,2013,4.927,actual,2019-10
+NIC,Nicaragua,2014,4.785,actual,2019-10
+NIC,Nicaragua,2015,4.792,actual,2019-10
+NIC,Nicaragua,2016,4.563,actual,2019-10
+NIC,Nicaragua,2017,4.675,actual,2019-10
+NIC,Nicaragua,2018,-3.816,actual,2019-10
+NIC,Nicaragua,2019,-5.039,estimate,2019-10
+NIC,Nicaragua,2020,-0.8,forecast,2019-10
+NIC,Nicaragua,2021,-0.1,forecast,2019-10
+NIC,Nicaragua,2022,0.445,forecast,2019-10
+NIC,Nicaragua,2023,0.977,forecast,2019-10
+NIC,Nicaragua,2024,1.459,forecast,2019-10
+NLD,Netherlands,2010,1.341,actual,2019-10
+NLD,Netherlands,2011,1.55,actual,2019-10
+NLD,Netherlands,2012,-1.031,actual,2019-10
+NLD,Netherlands,2013,-0.127,actual,2019-10
+NLD,Netherlands,2014,1.424,actual,2019-10
+NLD,Netherlands,2015,1.958,actual,2019-10
+NLD,Netherlands,2016,2.192,actual,2019-10
+NLD,Netherlands,2017,2.911,actual,2019-10
+NLD,Netherlands,2018,2.597,actual,2019-10
+NLD,Netherlands,2019,1.765,estimate,2019-10
+NLD,Netherlands,2020,1.639,forecast,2019-10
+NLD,Netherlands,2021,1.526,forecast,2019-10
+NLD,Netherlands,2022,1.489,forecast,2019-10
+NLD,Netherlands,2023,1.468,forecast,2019-10
+NLD,Netherlands,2024,1.522,forecast,2019-10
+NOR,Norway,2010,0.702,actual,2019-10
+NOR,Norway,2011,0.981,actual,2019-10
+NOR,Norway,2012,2.703,actual,2019-10
+NOR,Norway,2013,1.034,actual,2019-10
+NOR,Norway,2014,1.969,actual,2019-10
+NOR,Norway,2015,1.967,actual,2019-10
+NOR,Norway,2016,1.072,actual,2019-10
+NOR,Norway,2017,2.323,actual,2019-10
+NOR,Norway,2018,1.29,actual,2019-10
+NOR,Norway,2019,1.932,estimate,2019-10
+NOR,Norway,2020,2.441,forecast,2019-10
+NOR,Norway,2021,1.577,forecast,2019-10
+NOR,Norway,2022,1.631,forecast,2019-10
+NOR,Norway,2023,1.659,forecast,2019-10
+NOR,Norway,2024,1.688,forecast,2019-10
+NPL,Nepal,2010,4.816,actual,2019-10
+NPL,Nepal,2011,3.422,actual,2019-10
+NPL,Nepal,2012,4.781,actual,2019-10
+NPL,Nepal,2013,4.129,actual,2019-10
+NPL,Nepal,2014,5.989,actual,2019-10
+NPL,Nepal,2015,3.323,actual,2019-10
+NPL,Nepal,2016,0.589,actual,2019-10
+NPL,Nepal,2017,8.223,actual,2019-10
+NPL,Nepal,2018,6.658,actual,2019-10
+NPL,Nepal,2019,7.051,estimate,2019-10
+NPL,Nepal,2020,6.27,forecast,2019-10
+NPL,Nepal,2021,5.759,forecast,2019-10
+NPL,Nepal,2022,5.295,forecast,2019-10
+NPL,Nepal,2023,4.971,forecast,2019-10
+NPL,Nepal,2024,4.97,forecast,2019-10
+NRU,Nauru,2010,11.113,actual,2019-10
+NRU,Nauru,2011,10.778,actual,2019-10
+NRU,Nauru,2012,10.367,actual,2019-10
+NRU,Nauru,2013,30.969,actual,2019-10
+NRU,Nauru,2014,27.229,actual,2019-10
+NRU,Nauru,2015,3.418,actual,2019-10
+NRU,Nauru,2016,3.02,actual,2019-10
+NRU,Nauru,2017,-5.496,actual,2019-10
+NRU,Nauru,2018,-1.494,actual,2019-10
+NRU,Nauru,2019,1.515,estimate,2019-10
+NRU,Nauru,2020,0.734,forecast,2019-10
+NRU,Nauru,2021,1.273,forecast,2019-10
+NRU,Nauru,2022,1.646,forecast,2019-10
+NRU,Nauru,2023,1.871,forecast,2019-10
+NRU,Nauru,2024,1.997,forecast,2019-10
+NZL,New Zealand,2010,2.012,actual,2019-10
+NZL,New Zealand,2011,1.865,actual,2019-10
+NZL,New Zealand,2012,2.55,actual,2019-10
+NZL,New Zealand,2013,2.192,actual,2019-10
+NZL,New Zealand,2014,3.134,actual,2019-10
+NZL,New Zealand,2015,4.004,actual,2019-10
+NZL,New Zealand,2016,4.183,actual,2019-10
+NZL,New Zealand,2017,2.621,actual,2019-10
+NZL,New Zealand,2018,2.81,actual,2019-10
+NZL,New Zealand,2019,2.506,estimate,2019-10
+NZL,New Zealand,2020,2.699,forecast,2019-10
+NZL,New Zealand,2021,2.62,forecast,2019-10
+NZL,New Zealand,2022,2.595,forecast,2019-10
+NZL,New Zealand,2023,2.464,forecast,2019-10
+NZL,New Zealand,2024,2.49,forecast,2019-10
+OMN,Oman,2010,1.956,actual,2019-10
+OMN,Oman,2011,2.565,actual,2019-10
+OMN,Oman,2012,9.104,actual,2019-10
+OMN,Oman,2013,5.103,actual,2019-10
+OMN,Oman,2014,1.423,actual,2019-10
+OMN,Oman,2015,4.658,actual,2019-10
+OMN,Oman,2016,4.897,actual,2019-10
+OMN,Oman,2017,0.346,actual,2019-10
+OMN,Oman,2018,1.764,actual,2019-10
+OMN,Oman,2019,0.036,estimate,2019-10
+OMN,Oman,2020,3.681,forecast,2019-10
+OMN,Oman,2021,4.321,forecast,2019-10
+OMN,Oman,2022,0.897,forecast,2019-10
+OMN,Oman,2023,-0.614,forecast,2019-10
+OMN,Oman,2024,1.63,forecast,2019-10
+PAK,Pakistan,2010,2.581,actual,2019-10
+PAK,Pakistan,2011,3.624,actual,2019-10
+PAK,Pakistan,2012,3.837,actual,2019-10
+PAK,Pakistan,2013,3.683,actual,2019-10
+PAK,Pakistan,2014,4.053,actual,2019-10
+PAK,Pakistan,2015,4.058,actual,2019-10
+PAK,Pakistan,2016,4.563,actual,2019-10
+PAK,Pakistan,2017,5.219,actual,2019-10
+PAK,Pakistan,2018,5.528,actual,2019-10
+PAK,Pakistan,2019,3.294,estimate,2019-10
+PAK,Pakistan,2020,2.35,forecast,2019-10
+PAK,Pakistan,2021,3.001,forecast,2019-10
+PAK,Pakistan,2022,4.528,forecast,2019-10
+PAK,Pakistan,2023,5.015,forecast,2019-10
+PAK,Pakistan,2024,5.017,forecast,2019-10
+PAN,Panama,2010,5.828,actual,2019-10
+PAN,Panama,2011,11.314,actual,2019-10
+PAN,Panama,2012,9.779,actual,2019-10
+PAN,Panama,2013,6.903,actual,2019-10
+PAN,Panama,2014,5.067,actual,2019-10
+PAN,Panama,2015,5.733,actual,2019-10
+PAN,Panama,2016,4.966,actual,2019-10
+PAN,Panama,2017,5.321,actual,2019-10
+PAN,Panama,2018,3.677,actual,2019-10
+PAN,Panama,2019,4.308,estimate,2019-10
+PAN,Panama,2020,5.5,forecast,2019-10
+PAN,Panama,2021,5.49,forecast,2019-10
+PAN,Panama,2022,5.5,forecast,2019-10
+PAN,Panama,2023,5.5,forecast,2019-10
+PAN,Panama,2024,5.5,forecast,2019-10
+PER,Peru,2010,8.451,actual,2019-10
+PER,Peru,2011,6.452,actual,2019-10
+PER,Peru,2012,5.951,actual,2019-10
+PER,Peru,2013,5.837,actual,2019-10
+PER,Peru,2014,2.394,actual,2019-10
+PER,Peru,2015,3.274,actual,2019-10
+PER,Peru,2016,4.048,actual,2019-10
+PER,Peru,2017,2.474,actual,2019-10
+PER,Peru,2018,3.991,actual,2019-10
+PER,Peru,2019,2.595,estimate,2019-10
+PER,Peru,2020,3.619,forecast,2019-10
+PER,Peru,2021,4.001,forecast,2019-10
+PER,Peru,2022,3.994,forecast,2019-10
+PER,Peru,2023,3.898,forecast,2019-10
+PER,Peru,2024,3.76,forecast,2019-10
+PHL,Philippines,2010,7.632,actual,2019-10
+PHL,Philippines,2011,3.66,actual,2019-10
+PHL,Philippines,2012,6.684,actual,2019-10
+PHL,Philippines,2013,7.064,actual,2019-10
+PHL,Philippines,2014,6.145,actual,2019-10
+PHL,Philippines,2015,6.067,actual,2019-10
+PHL,Philippines,2016,6.884,actual,2019-10
+PHL,Philippines,2017,6.678,actual,2019-10
+PHL,Philippines,2018,6.244,actual,2019-10
+PHL,Philippines,2019,5.718,estimate,2019-10
+PHL,Philippines,2020,6.183,forecast,2019-10
+PHL,Philippines,2021,6.395,forecast,2019-10
+PHL,Philippines,2022,6.47,forecast,2019-10
+PHL,Philippines,2023,6.519,forecast,2019-10
+PHL,Philippines,2024,6.501,forecast,2019-10
+PLW,Palau,2010,0.289,actual,2019-10
+PLW,Palau,2011,4.866,actual,2019-10
+PLW,Palau,2012,1.841,actual,2019-10
+PLW,Palau,2013,-1.414,actual,2019-10
+PLW,Palau,2014,4.373,actual,2019-10
+PLW,Palau,2015,10.075,actual,2019-10
+PLW,Palau,2016,0.797,actual,2019-10
+PLW,Palau,2017,-3.518,actual,2019-10
+PLW,Palau,2018,1.705,actual,2019-10
+PLW,Palau,2019,0.3,estimate,2019-10
+PLW,Palau,2020,1.8,forecast,2019-10
+PLW,Palau,2021,2.2,forecast,2019-10
+PLW,Palau,2022,2.0,forecast,2019-10
+PLW,Palau,2023,2.0,forecast,2019-10
+PLW,Palau,2024,2.0,forecast,2019-10
+PNG,Papua New Guinea,2010,10.128,actual,2019-10
+PNG,Papua New Guinea,2011,1.108,actual,2019-10
+PNG,Papua New Guinea,2012,4.657,actual,2019-10
+PNG,Papua New Guinea,2013,3.825,actual,2019-10
+PNG,Papua New Guinea,2014,13.544,actual,2019-10
+PNG,Papua New Guinea,2015,9.484,actual,2019-10
+PNG,Papua New Guinea,2016,4.078,actual,2019-10
+PNG,Papua New Guinea,2017,2.674,actual,2019-10
+PNG,Papua New Guinea,2018,-1.088,actual,2019-10
+PNG,Papua New Guinea,2019,5.021,estimate,2019-10
+PNG,Papua New Guinea,2020,2.562,forecast,2019-10
+PNG,Papua New Guinea,2021,2.521,forecast,2019-10
+PNG,Papua New Guinea,2022,3.052,forecast,2019-10
+PNG,Papua New Guinea,2023,3.399,forecast,2019-10
+PNG,Papua New Guinea,2024,3.547,forecast,2019-10
+POL,Poland,2010,3.607,actual,2019-10
+POL,Poland,2011,5.017,actual,2019-10
+POL,Poland,2012,1.608,actual,2019-10
+POL,Poland,2013,1.392,actual,2019-10
+POL,Poland,2014,3.318,actual,2019-10
+POL,Poland,2015,3.839,actual,2019-10
+POL,Poland,2016,3.063,actual,2019-10
+POL,Poland,2017,4.937,actual,2019-10
+POL,Poland,2018,5.149,actual,2019-10
+POL,Poland,2019,4.026,estimate,2019-10
+POL,Poland,2020,3.083,forecast,2019-10
+POL,Poland,2021,2.69,forecast,2019-10
+POL,Poland,2022,2.526,forecast,2019-10
+POL,Poland,2023,2.487,forecast,2019-10
+POL,Poland,2024,2.487,forecast,2019-10
+PRI,Puerto Rico,2010,-0.413,actual,2019-10
+PRI,Puerto Rico,2011,-0.359,actual,2019-10
+PRI,Puerto Rico,2012,0.029,actual,2019-10
+PRI,Puerto Rico,2013,-0.307,actual,2019-10
+PRI,Puerto Rico,2014,-1.19,actual,2019-10
+PRI,Puerto Rico,2015,-1.049,actual,2019-10
+PRI,Puerto Rico,2016,-1.263,actual,2019-10
+PRI,Puerto Rico,2017,-2.657,actual,2019-10
+PRI,Puerto Rico,2018,-4.906,actual,2019-10
+PRI,Puerto Rico,2019,-1.147,estimate,2019-10
+PRI,Puerto Rico,2020,-0.693,forecast,2019-10
+PRI,Puerto Rico,2021,-0.775,forecast,2019-10
+PRI,Puerto Rico,2022,-0.775,forecast,2019-10
+PRI,Puerto Rico,2023,-0.753,forecast,2019-10
+PRI,Puerto Rico,2024,-0.753,forecast,2019-10
+PRT,Portugal,2010,1.738,actual,2019-10
+PRT,Portugal,2011,-1.696,actual,2019-10
+PRT,Portugal,2012,-4.057,actual,2019-10
+PRT,Portugal,2013,-0.923,actual,2019-10
+PRT,Portugal,2014,0.792,actual,2019-10
+PRT,Portugal,2015,1.792,actual,2019-10
+PRT,Portugal,2016,2.019,actual,2019-10
+PRT,Portugal,2017,3.506,actual,2019-10
+PRT,Portugal,2018,2.441,actual,2019-10
+PRT,Portugal,2019,1.913,estimate,2019-10
+PRT,Portugal,2020,1.6,forecast,2019-10
+PRT,Portugal,2021,1.5,forecast,2019-10
+PRT,Portugal,2022,1.5,forecast,2019-10
+PRT,Portugal,2023,1.5,forecast,2019-10
+PRT,Portugal,2024,1.5,forecast,2019-10
+PRY,Paraguay,2010,11.144,actual,2019-10
+PRY,Paraguay,2011,4.249,actual,2019-10
+PRY,Paraguay,2012,-0.539,actual,2019-10
+PRY,Paraguay,2013,8.417,actual,2019-10
+PRY,Paraguay,2014,4.861,actual,2019-10
+PRY,Paraguay,2015,3.08,actual,2019-10
+PRY,Paraguay,2016,4.313,actual,2019-10
+PRY,Paraguay,2017,4.958,actual,2019-10
+PRY,Paraguay,2018,3.722,actual,2019-10
+PRY,Paraguay,2019,1.008,estimate,2019-10
+PRY,Paraguay,2020,4.027,forecast,2019-10
+PRY,Paraguay,2021,4.209,forecast,2019-10
+PRY,Paraguay,2022,4.038,forecast,2019-10
+PRY,Paraguay,2023,4.068,forecast,2019-10
+PRY,Paraguay,2024,3.904,forecast,2019-10
+QAT,Qatar,2010,18.132,actual,2019-10
+QAT,Qatar,2011,13.375,actual,2019-10
+QAT,Qatar,2012,4.687,actual,2019-10
+QAT,Qatar,2013,4.41,actual,2019-10
+QAT,Qatar,2014,3.979,actual,2019-10
+QAT,Qatar,2015,3.658,actual,2019-10
+QAT,Qatar,2016,2.131,actual,2019-10
+QAT,Qatar,2017,1.58,actual,2019-10
+QAT,Qatar,2018,1.493,actual,2019-10
+QAT,Qatar,2019,1.969,estimate,2019-10
+QAT,Qatar,2020,2.755,forecast,2019-10
+QAT,Qatar,2021,3.022,forecast,2019-10
+QAT,Qatar,2022,2.358,forecast,2019-10
+QAT,Qatar,2023,2.093,forecast,2019-10
+QAT,Qatar,2024,2.832,forecast,2019-10
+ROU,Romania,2010,-3.901,actual,2019-10
+ROU,Romania,2011,2.007,actual,2019-10
+ROU,Romania,2012,2.077,actual,2019-10
+ROU,Romania,2013,3.515,actual,2019-10
+ROU,Romania,2014,3.411,actual,2019-10
+ROU,Romania,2015,3.872,actual,2019-10
+ROU,Romania,2016,4.801,actual,2019-10
+ROU,Romania,2017,6.991,actual,2019-10
+ROU,Romania,2018,4.096,actual,2019-10
+ROU,Romania,2019,4.0,estimate,2019-10
+ROU,Romania,2020,3.5,forecast,2019-10
+ROU,Romania,2021,3.0,forecast,2019-10
+ROU,Romania,2022,3.0,forecast,2019-10
+ROU,Romania,2023,3.0,forecast,2019-10
+ROU,Romania,2024,3.0,forecast,2019-10
+RUS,Russia,2010,4.504,actual,2019-10
+RUS,Russia,2011,5.066,actual,2019-10
+RUS,Russia,2012,3.7,actual,2019-10
+RUS,Russia,2013,1.8,actual,2019-10
+RUS,Russia,2014,0.7,actual,2019-10
+RUS,Russia,2015,-2.308,actual,2019-10
+RUS,Russia,2016,0.329,actual,2019-10
+RUS,Russia,2017,1.63,actual,2019-10
+RUS,Russia,2018,2.255,actual,2019-10
+RUS,Russia,2019,1.084,estimate,2019-10
+RUS,Russia,2020,1.87,forecast,2019-10
+RUS,Russia,2021,2.045,forecast,2019-10
+RUS,Russia,2022,2.049,forecast,2019-10
+RUS,Russia,2023,1.945,forecast,2019-10
+RUS,Russia,2024,1.845,forecast,2019-10
+RWA,Rwanda,2010,7.322,actual,2019-10
+RWA,Rwanda,2011,7.968,actual,2019-10
+RWA,Rwanda,2012,8.639,actual,2019-10
+RWA,Rwanda,2013,4.718,actual,2019-10
+RWA,Rwanda,2014,6.157,actual,2019-10
+RWA,Rwanda,2015,8.873,actual,2019-10
+RWA,Rwanda,2016,5.982,actual,2019-10
+RWA,Rwanda,2017,6.12,actual,2019-10
+RWA,Rwanda,2018,8.606,actual,2019-10
+RWA,Rwanda,2019,7.8,estimate,2019-10
+RWA,Rwanda,2020,8.1,forecast,2019-10
+RWA,Rwanda,2021,8.2,forecast,2019-10
+RWA,Rwanda,2022,8.0,forecast,2019-10
+RWA,Rwanda,2023,7.5,forecast,2019-10
+RWA,Rwanda,2024,7.5,forecast,2019-10
+SAU,Saudi Arabia,2010,5.039,actual,2019-10
+SAU,Saudi Arabia,2011,9.997,actual,2019-10
+SAU,Saudi Arabia,2012,5.411,actual,2019-10
+SAU,Saudi Arabia,2013,2.674,actual,2019-10
+SAU,Saudi Arabia,2014,3.678,actual,2019-10
+SAU,Saudi Arabia,2015,4.106,actual,2019-10
+SAU,Saudi Arabia,2016,1.671,actual,2019-10
+SAU,Saudi Arabia,2017,-0.742,actual,2019-10
+SAU,Saudi Arabia,2018,2.434,actual,2019-10
+SAU,Saudi Arabia,2019,0.167,estimate,2019-10
+SAU,Saudi Arabia,2020,2.184,forecast,2019-10
+SAU,Saudi Arabia,2021,2.22,forecast,2019-10
+SAU,Saudi Arabia,2022,2.396,forecast,2019-10
+SAU,Saudi Arabia,2023,2.495,forecast,2019-10
+SAU,Saudi Arabia,2024,2.467,forecast,2019-10
+SDN,Sudan,2010,3.858,actual,2019-10
+SDN,Sudan,2011,-2.825,actual,2019-10
+SDN,Sudan,2012,-17.005,actual,2019-10
+SDN,Sudan,2013,1.963,actual,2019-10
+SDN,Sudan,2014,4.671,actual,2019-10
+SDN,Sudan,2015,1.913,actual,2019-10
+SDN,Sudan,2016,2.938,actual,2019-10
+SDN,Sudan,2017,1.663,actual,2019-10
+SDN,Sudan,2018,-2.227,actual,2019-10
+SDN,Sudan,2019,-2.624,estimate,2019-10
+SDN,Sudan,2020,-1.514,forecast,2019-10
+SDN,Sudan,2021,-1.065,forecast,2019-10
+SDN,Sudan,2022,0.163,forecast,2019-10
+SDN,Sudan,2023,0.983,forecast,2019-10
+SDN,Sudan,2024,1.405,forecast,2019-10
+SEN,Senegal,2010,3.563,actual,2019-10
+SEN,Senegal,2011,1.458,actual,2019-10
+SEN,Senegal,2012,5.117,actual,2019-10
+SEN,Senegal,2013,2.822,actual,2019-10
+SEN,Senegal,2014,6.614,actual,2019-10
+SEN,Senegal,2015,6.367,actual,2019-10
+SEN,Senegal,2016,6.356,actual,2019-10
+SEN,Senegal,2017,7.134,actual,2019-10
+SEN,Senegal,2018,6.651,actual,2019-10
+SEN,Senegal,2019,6.049,estimate,2019-10
+SEN,Senegal,2020,6.751,forecast,2019-10
+SEN,Senegal,2021,6.959,forecast,2019-10
+SEN,Senegal,2022,8.375,forecast,2019-10
+SEN,Senegal,2023,11.562,forecast,2019-10
+SEN,Senegal,2024,7.982,forecast,2019-10
+SGP,Singapore,2010,14.526,actual,2019-10
+SGP,Singapore,2011,6.262,actual,2019-10
+SGP,Singapore,2012,4.449,actual,2019-10
+SGP,Singapore,2013,4.815,actual,2019-10
+SGP,Singapore,2014,3.901,actual,2019-10
+SGP,Singapore,2015,2.892,actual,2019-10
+SGP,Singapore,2016,2.962,actual,2019-10
+SGP,Singapore,2017,3.7,actual,2019-10
+SGP,Singapore,2018,3.139,actual,2019-10
+SGP,Singapore,2019,0.546,estimate,2019-10
+SGP,Singapore,2020,0.993,forecast,2019-10
+SGP,Singapore,2021,1.573,forecast,2019-10
+SGP,Singapore,2022,2.216,forecast,2019-10
+SGP,Singapore,2023,2.351,forecast,2019-10
+SGP,Singapore,2024,2.501,forecast,2019-10
+SLB,Solomon Islands,2010,6.809,actual,2019-10
+SLB,Solomon Islands,2011,13.196,actual,2019-10
+SLB,Solomon Islands,2012,4.555,actual,2019-10
+SLB,Solomon Islands,2013,3.018,actual,2019-10
+SLB,Solomon Islands,2014,2.25,actual,2019-10
+SLB,Solomon Islands,2015,2.542,actual,2019-10
+SLB,Solomon Islands,2016,3.221,actual,2019-10
+SLB,Solomon Islands,2017,3.694,actual,2019-10
+SLB,Solomon Islands,2018,3.855,actual,2019-10
+SLB,Solomon Islands,2019,2.698,estimate,2019-10
+SLB,Solomon Islands,2020,2.865,forecast,2019-10
+SLB,Solomon Islands,2021,2.712,forecast,2019-10
+SLB,Solomon Islands,2022,2.705,forecast,2019-10
+SLB,Solomon Islands,2023,2.789,forecast,2019-10
+SLB,Solomon Islands,2024,2.866,forecast,2019-10
+SLE,Sierra Leone,2010,5.347,actual,2019-10
+SLE,Sierra Leone,2011,6.312,actual,2019-10
+SLE,Sierra Leone,2012,15.178,actual,2019-10
+SLE,Sierra Leone,2013,20.72,actual,2019-10
+SLE,Sierra Leone,2014,4.555,actual,2019-10
+SLE,Sierra Leone,2015,-20.493,actual,2019-10
+SLE,Sierra Leone,2016,6.354,actual,2019-10
+SLE,Sierra Leone,2017,3.771,actual,2019-10
+SLE,Sierra Leone,2018,3.458,actual,2019-10
+SLE,Sierra Leone,2019,4.998,estimate,2019-10
+SLE,Sierra Leone,2020,4.65,forecast,2019-10
+SLE,Sierra Leone,2021,4.782,forecast,2019-10
+SLE,Sierra Leone,2022,4.64,forecast,2019-10
+SLE,Sierra Leone,2023,4.693,forecast,2019-10
+SLE,Sierra Leone,2024,4.687,forecast,2019-10
+SLV,El Salvador,2010,2.106,actual,2019-10
+SLV,El Salvador,2011,3.812,actual,2019-10
+SLV,El Salvador,2012,2.814,actual,2019-10
+SLV,El Salvador,2013,2.239,actual,2019-10
+SLV,El Salvador,2014,1.71,actual,2019-10
+SLV,El Salvador,2015,2.395,actual,2019-10
+SLV,El Salvador,2016,2.511,actual,2019-10
+SLV,El Salvador,2017,2.305,actual,2019-10
+SLV,El Salvador,2018,2.537,actual,2019-10
+SLV,El Salvador,2019,2.5,estimate,2019-10
+SLV,El Salvador,2020,2.3,forecast,2019-10
+SLV,El Salvador,2021,2.2,forecast,2019-10
+SLV,El Salvador,2022,2.2,forecast,2019-10
+SLV,El Salvador,2023,2.2,forecast,2019-10
+SLV,El Salvador,2024,2.2,forecast,2019-10
+SMR,San Marino,2010,-5.437,actual,2019-10
+SMR,San Marino,2011,-8.334,actual,2019-10
+SMR,San Marino,2012,-7.022,actual,2019-10
+SMR,San Marino,2013,-0.834,actual,2019-10
+SMR,San Marino,2014,-0.702,actual,2019-10
+SMR,San Marino,2015,2.496,actual,2019-10
+SMR,San Marino,2016,2.459,actual,2019-10
+SMR,San Marino,2017,0.602,actual,2019-10
+SMR,San Marino,2018,1.13,actual,2019-10
+SMR,San Marino,2019,0.787,estimate,2019-10
+SMR,San Marino,2020,0.699,forecast,2019-10
+SMR,San Marino,2021,0.599,forecast,2019-10
+SMR,San Marino,2022,0.499,forecast,2019-10
+SMR,San Marino,2023,0.499,forecast,2019-10
+SMR,San Marino,2024,0.499,forecast,2019-10
+SOM,Somalia,2010,,actual,2019-10
+SOM,Somalia,2011,,actual,2019-10
+SOM,Somalia,2012,1.2,actual,2019-10
+SOM,Somalia,2013,1.86,actual,2019-10
+SOM,Somalia,2014,2.354,actual,2019-10
+SOM,Somalia,2015,3.46,actual,2019-10
+SOM,Somalia,2016,2.894,actual,2019-10
+SOM,Somalia,2017,1.385,actual,2019-10
+SOM,Somalia,2018,2.8,actual,2019-10
+SOM,Somalia,2019,2.9,estimate,2019-10
+SOM,Somalia,2020,3.2,forecast,2019-10
+SOM,Somalia,2021,3.5,forecast,2019-10
+SOM,Somalia,2022,3.5,forecast,2019-10
+SOM,Somalia,2023,3.5,forecast,2019-10
+SOM,Somalia,2024,3.5,forecast,2019-10
+SRB,Serbia,2010,0.731,actual,2019-10
+SRB,Serbia,2011,2.036,actual,2019-10
+SRB,Serbia,2012,-0.682,actual,2019-10
+SRB,Serbia,2013,2.893,actual,2019-10
+SRB,Serbia,2014,-1.59,actual,2019-10
+SRB,Serbia,2015,1.776,actual,2019-10
+SRB,Serbia,2016,3.34,actual,2019-10
+SRB,Serbia,2017,2.049,actual,2019-10
+SRB,Serbia,2018,4.302,actual,2019-10
+SRB,Serbia,2019,3.498,estimate,2019-10
+SRB,Serbia,2020,3.99,forecast,2019-10
+SRB,Serbia,2021,4.0,forecast,2019-10
+SRB,Serbia,2022,4.0,forecast,2019-10
+SRB,Serbia,2023,4.0,forecast,2019-10
+SRB,Serbia,2024,4.0,forecast,2019-10
+SSD,South Sudan,2010,,actual,2019-10
+SSD,South Sudan,2011,,actual,2019-10
+SSD,South Sudan,2012,-52.429,actual,2019-10
+SSD,South Sudan,2013,29.329,actual,2019-10
+SSD,South Sudan,2014,2.918,actual,2019-10
+SSD,South Sudan,2015,-0.173,actual,2019-10
+SSD,South Sudan,2016,-16.737,actual,2019-10
+SSD,South Sudan,2017,-5.491,actual,2019-10
+SSD,South Sudan,2018,-1.123,actual,2019-10
+SSD,South Sudan,2019,7.932,estimate,2019-10
+SSD,South Sudan,2020,8.213,forecast,2019-10
+SSD,South Sudan,2021,5.015,forecast,2019-10
+SSD,South Sudan,2022,5.912,forecast,2019-10
+SSD,South Sudan,2023,5.28,forecast,2019-10
+SSD,South Sudan,2024,4.701,forecast,2019-10
+STP,São Tomé and Príncipe,2010,6.672,actual,2019-10
+STP,São Tomé and Príncipe,2011,4.398,actual,2019-10
+STP,São Tomé and Príncipe,2012,3.142,actual,2019-10
+STP,São Tomé and Príncipe,2013,4.815,actual,2019-10
+STP,São Tomé and Príncipe,2014,6.55,actual,2019-10
+STP,São Tomé and Príncipe,2015,3.798,actual,2019-10
+STP,São Tomé and Príncipe,2016,4.172,actual,2019-10
+STP,São Tomé and Príncipe,2017,3.871,actual,2019-10
+STP,São Tomé and Príncipe,2018,2.658,actual,2019-10
+STP,São Tomé and Príncipe,2019,2.7,estimate,2019-10
+STP,São Tomé and Príncipe,2020,3.5,forecast,2019-10
+STP,São Tomé and Príncipe,2021,4.0,forecast,2019-10
+STP,São Tomé and Príncipe,2022,4.5,forecast,2019-10
+STP,São Tomé and Príncipe,2023,4.5,forecast,2019-10
+STP,São Tomé and Príncipe,2024,4.5,forecast,2019-10
+SUR,Suriname,2010,5.163,actual,2019-10
+SUR,Suriname,2011,5.847,actual,2019-10
+SUR,Suriname,2012,2.697,actual,2019-10
+SUR,Suriname,2013,2.931,actual,2019-10
+SUR,Suriname,2014,0.254,actual,2019-10
+SUR,Suriname,2015,-3.414,actual,2019-10
+SUR,Suriname,2016,-5.56,actual,2019-10
+SUR,Suriname,2017,1.691,actual,2019-10
+SUR,Suriname,2018,2.0,actual,2019-10
+SUR,Suriname,2019,2.2,estimate,2019-10
+SUR,Suriname,2020,2.5,forecast,2019-10
+SUR,Suriname,2021,2.4,forecast,2019-10
+SUR,Suriname,2022,2.0,forecast,2019-10
+SUR,Suriname,2023,2.4,forecast,2019-10
+SUR,Suriname,2024,2.6,forecast,2019-10
+SVK,Slovak Republic,2010,5.042,actual,2019-10
+SVK,Slovak Republic,2011,2.819,actual,2019-10
+SVK,Slovak Republic,2012,1.657,actual,2019-10
+SVK,Slovak Republic,2013,1.491,actual,2019-10
+SVK,Slovak Republic,2014,2.75,actual,2019-10
+SVK,Slovak Republic,2015,4.175,actual,2019-10
+SVK,Slovak Republic,2016,3.125,actual,2019-10
+SVK,Slovak Republic,2017,3.188,actual,2019-10
+SVK,Slovak Republic,2018,4.109,actual,2019-10
+SVK,Slovak Republic,2019,2.6,estimate,2019-10
+SVK,Slovak Republic,2020,2.7,forecast,2019-10
+SVK,Slovak Republic,2021,2.749,forecast,2019-10
+SVK,Slovak Republic,2022,2.749,forecast,2019-10
+SVK,Slovak Republic,2023,2.749,forecast,2019-10
+SVK,Slovak Republic,2024,2.5,forecast,2019-10
+SVN,Slovenia,2010,1.344,actual,2019-10
+SVN,Slovenia,2011,0.861,actual,2019-10
+SVN,Slovenia,2012,-2.639,actual,2019-10
+SVN,Slovenia,2013,-1.029,actual,2019-10
+SVN,Slovenia,2014,2.768,actual,2019-10
+SVN,Slovenia,2015,2.21,actual,2019-10
+SVN,Slovenia,2016,3.122,actual,2019-10
+SVN,Slovenia,2017,4.833,actual,2019-10
+SVN,Slovenia,2018,4.118,actual,2019-10
+SVN,Slovenia,2019,2.936,estimate,2019-10
+SVN,Slovenia,2020,2.936,forecast,2019-10
+SVN,Slovenia,2021,2.734,forecast,2019-10
+SVN,Slovenia,2022,2.307,forecast,2019-10
+SVN,Slovenia,2023,2.235,forecast,2019-10
+SVN,Slovenia,2024,2.124,forecast,2019-10
+SWE,Sweden,2010,6.189,actual,2019-10
+SWE,Sweden,2011,3.052,actual,2019-10
+SWE,Sweden,2012,-0.631,actual,2019-10
+SWE,Sweden,2013,1.088,actual,2019-10
+SWE,Sweden,2014,2.747,actual,2019-10
+SWE,Sweden,2015,4.421,actual,2019-10
+SWE,Sweden,2016,2.413,actual,2019-10
+SWE,Sweden,2017,2.412,actual,2019-10
+SWE,Sweden,2018,2.324,actual,2019-10
+SWE,Sweden,2019,0.936,estimate,2019-10
+SWE,Sweden,2020,1.462,forecast,2019-10
+SWE,Sweden,2021,2.051,forecast,2019-10
+SWE,Sweden,2022,1.974,forecast,2019-10
+SWE,Sweden,2023,1.98,forecast,2019-10
+SWE,Sweden,2024,1.987,forecast,2019-10
+SWZ,Eswatini,2010,3.794,actual,2019-10
+SWZ,Eswatini,2011,2.247,actual,2019-10
+SWZ,Eswatini,2012,5.391,actual,2019-10
+SWZ,Eswatini,2013,3.862,actual,2019-10
+SWZ,Eswatini,2014,0.913,actual,2019-10
+SWZ,Eswatini,2015,2.312,actual,2019-10
+SWZ,Eswatini,2016,1.268,actual,2019-10
+SWZ,Eswatini,2017,2.025,actual,2019-10
+SWZ,Eswatini,2018,2.351,actual,2019-10
+SWZ,Eswatini,2019,1.3,estimate,2019-10
+SWZ,Eswatini,2020,0.509,forecast,2019-10
+SWZ,Eswatini,2021,0.638,forecast,2019-10
+SWZ,Eswatini,2022,0.543,forecast,2019-10
+SWZ,Eswatini,2023,0.576,forecast,2019-10
+SWZ,Eswatini,2024,0.467,forecast,2019-10
+SYC,Seychelles,2010,5.945,actual,2019-10
+SYC,Seychelles,2011,5.379,actual,2019-10
+SYC,Seychelles,2012,3.68,actual,2019-10
+SYC,Seychelles,2013,6.018,actual,2019-10
+SYC,Seychelles,2014,4.531,actual,2019-10
+SYC,Seychelles,2015,4.911,actual,2019-10
+SYC,Seychelles,2016,4.503,actual,2019-10
+SYC,Seychelles,2017,4.332,actual,2019-10
+SYC,Seychelles,2018,4.089,actual,2019-10
+SYC,Seychelles,2019,3.464,estimate,2019-10
+SYC,Seychelles,2020,3.316,forecast,2019-10
+SYC,Seychelles,2021,4.138,forecast,2019-10
+SYC,Seychelles,2022,4.024,forecast,2019-10
+SYC,Seychelles,2023,3.835,forecast,2019-10
+SYC,Seychelles,2024,3.577,forecast,2019-10
+SYR,Syria,2010,3.44,actual,2019-10
+SYR,Syria,2011,,actual,2019-10
+SYR,Syria,2012,,actual,2019-10
+SYR,Syria,2013,,actual,2019-10
+SYR,Syria,2014,,actual,2019-10
+SYR,Syria,2015,,actual,2019-10
+SYR,Syria,2016,,actual,2019-10
+SYR,Syria,2017,,actual,2019-10
+SYR,Syria,2018,,actual,2019-10
+SYR,Syria,2019,,estimate,2019-10
+SYR,Syria,2020,,forecast,2019-10
+SYR,Syria,2021,,forecast,2019-10
+SYR,Syria,2022,,forecast,2019-10
+SYR,Syria,2023,,forecast,2019-10
+SYR,Syria,2024,,forecast,2019-10
+TCD,Chad,2010,13.598,actual,2019-10
+TCD,Chad,2011,0.12,actual,2019-10
+TCD,Chad,2012,8.807,actual,2019-10
+TCD,Chad,2013,5.753,actual,2019-10
+TCD,Chad,2014,6.893,actual,2019-10
+TCD,Chad,2015,1.77,actual,2019-10
+TCD,Chad,2016,-5.558,actual,2019-10
+TCD,Chad,2017,-2.38,actual,2019-10
+TCD,Chad,2018,2.444,actual,2019-10
+TCD,Chad,2019,2.284,estimate,2019-10
+TCD,Chad,2020,5.442,forecast,2019-10
+TCD,Chad,2021,4.815,forecast,2019-10
+TCD,Chad,2022,5.35,forecast,2019-10
+TCD,Chad,2023,4.08,forecast,2019-10
+TCD,Chad,2024,3.748,forecast,2019-10
+TGO,Togo,2010,6.099,actual,2019-10
+TGO,Togo,2011,6.398,actual,2019-10
+TGO,Togo,2012,6.544,actual,2019-10
+TGO,Togo,2013,6.112,actual,2019-10
+TGO,Togo,2014,5.921,actual,2019-10
+TGO,Togo,2015,5.743,actual,2019-10
+TGO,Togo,2016,5.6,actual,2019-10
+TGO,Togo,2017,4.42,actual,2019-10
+TGO,Togo,2018,4.9,actual,2019-10
+TGO,Togo,2019,5.1,estimate,2019-10
+TGO,Togo,2020,5.3,forecast,2019-10
+TGO,Togo,2021,5.41,forecast,2019-10
+TGO,Togo,2022,5.41,forecast,2019-10
+TGO,Togo,2023,5.41,forecast,2019-10
+TGO,Togo,2024,5.41,forecast,2019-10
+THA,Thailand,2010,7.513,actual,2019-10
+THA,Thailand,2011,0.84,actual,2019-10
+THA,Thailand,2012,7.243,actual,2019-10
+THA,Thailand,2013,2.687,actual,2019-10
+THA,Thailand,2014,0.984,actual,2019-10
+THA,Thailand,2015,3.134,actual,2019-10
+THA,Thailand,2016,3.356,actual,2019-10
+THA,Thailand,2017,4.024,actual,2019-10
+THA,Thailand,2018,4.133,actual,2019-10
+THA,Thailand,2019,2.871,estimate,2019-10
+THA,Thailand,2020,3.007,forecast,2019-10
+THA,Thailand,2021,3.491,forecast,2019-10
+THA,Thailand,2022,3.649,forecast,2019-10
+THA,Thailand,2023,3.649,forecast,2019-10
+THA,Thailand,2024,3.649,forecast,2019-10
+TJK,Tajikistan,2010,6.5,actual,2019-10
+TJK,Tajikistan,2011,7.4,actual,2019-10
+TJK,Tajikistan,2012,7.5,actual,2019-10
+TJK,Tajikistan,2013,7.4,actual,2019-10
+TJK,Tajikistan,2014,6.7,actual,2019-10
+TJK,Tajikistan,2015,6.0,actual,2019-10
+TJK,Tajikistan,2016,6.9,actual,2019-10
+TJK,Tajikistan,2017,7.1,actual,2019-10
+TJK,Tajikistan,2018,7.3,actual,2019-10
+TJK,Tajikistan,2019,5.0,estimate,2019-10
+TJK,Tajikistan,2020,4.5,forecast,2019-10
+TJK,Tajikistan,2021,4.5,forecast,2019-10
+TJK,Tajikistan,2022,4.5,forecast,2019-10
+TJK,Tajikistan,2023,4.0,forecast,2019-10
+TJK,Tajikistan,2024,4.0,forecast,2019-10
+TKM,Turkmenistan,2010,9.16,actual,2019-10
+TKM,Turkmenistan,2011,14.72,actual,2019-10
+TKM,Turkmenistan,2012,11.051,actual,2019-10
+TKM,Turkmenistan,2013,10.163,actual,2019-10
+TKM,Turkmenistan,2014,10.346,actual,2019-10
+TKM,Turkmenistan,2015,6.453,actual,2019-10
+TKM,Turkmenistan,2016,6.2,actual,2019-10
+TKM,Turkmenistan,2017,6.47,actual,2019-10
+TKM,Turkmenistan,2018,6.153,actual,2019-10
+TKM,Turkmenistan,2019,6.338,estimate,2019-10
+TKM,Turkmenistan,2020,6.038,forecast,2019-10
+TKM,Turkmenistan,2021,5.841,forecast,2019-10
+TKM,Turkmenistan,2022,5.944,forecast,2019-10
+TKM,Turkmenistan,2023,5.864,forecast,2019-10
+TKM,Turkmenistan,2024,5.827,forecast,2019-10
+TLS,Timor-Leste,2010,8.466,actual,2019-10
+TLS,Timor-Leste,2011,6.7,actual,2019-10
+TLS,Timor-Leste,2012,5.713,actual,2019-10
+TLS,Timor-Leste,2013,2.357,actual,2019-10
+TLS,Timor-Leste,2014,4.736,actual,2019-10
+TLS,Timor-Leste,2015,3.483,actual,2019-10
+TLS,Timor-Leste,2016,5.124,actual,2019-10
+TLS,Timor-Leste,2017,-3.478,actual,2019-10
+TLS,Timor-Leste,2018,-0.2,actual,2019-10
+TLS,Timor-Leste,2019,4.5,estimate,2019-10
+TLS,Timor-Leste,2020,5.0,forecast,2019-10
+TLS,Timor-Leste,2021,4.8,forecast,2019-10
+TLS,Timor-Leste,2022,4.8,forecast,2019-10
+TLS,Timor-Leste,2023,4.8,forecast,2019-10
+TLS,Timor-Leste,2024,4.8,forecast,2019-10
+TON,Tonga,2010,3.318,actual,2019-10
+TON,Tonga,2011,1.967,actual,2019-10
+TON,Tonga,2012,-1.058,actual,2019-10
+TON,Tonga,2013,-0.585,actual,2019-10
+TON,Tonga,2014,2.678,actual,2019-10
+TON,Tonga,2015,3.632,actual,2019-10
+TON,Tonga,2016,4.696,actual,2019-10
+TON,Tonga,2017,2.703,actual,2019-10
+TON,Tonga,2018,1.471,actual,2019-10
+TON,Tonga,2019,3.51,estimate,2019-10
+TON,Tonga,2020,3.682,forecast,2019-10
+TON,Tonga,2021,2.885,forecast,2019-10
+TON,Tonga,2022,2.426,forecast,2019-10
+TON,Tonga,2023,2.108,forecast,2019-10
+TON,Tonga,2024,1.986,forecast,2019-10
+TTO,Trinidad and Tobago,2010,3.461,actual,2019-10
+TTO,Trinidad and Tobago,2011,-0.192,actual,2019-10
+TTO,Trinidad and Tobago,2012,-0.681,actual,2019-10
+TTO,Trinidad and Tobago,2013,2.006,actual,2019-10
+TTO,Trinidad and Tobago,2014,-0.97,actual,2019-10
+TTO,Trinidad and Tobago,2015,1.778,actual,2019-10
+TTO,Trinidad and Tobago,2016,-6.509,actual,2019-10
+TTO,Trinidad and Tobago,2017,-1.857,actual,2019-10
+TTO,Trinidad and Tobago,2018,0.315,actual,2019-10
+TTO,Trinidad and Tobago,2019,0.006,estimate,2019-10
+TTO,Trinidad and Tobago,2020,1.492,forecast,2019-10
+TTO,Trinidad and Tobago,2021,2.292,forecast,2019-10
+TTO,Trinidad and Tobago,2022,1.977,forecast,2019-10
+TTO,Trinidad and Tobago,2023,1.616,forecast,2019-10
+TTO,Trinidad and Tobago,2024,1.662,forecast,2019-10
+TUN,Tunisia,2010,3.511,actual,2019-10
+TUN,Tunisia,2011,-1.918,actual,2019-10
+TUN,Tunisia,2012,3.998,actual,2019-10
+TUN,Tunisia,2013,2.875,actual,2019-10
+TUN,Tunisia,2014,2.971,actual,2019-10
+TUN,Tunisia,2015,1.195,actual,2019-10
+TUN,Tunisia,2016,1.263,actual,2019-10
+TUN,Tunisia,2017,1.825,actual,2019-10
+TUN,Tunisia,2018,2.483,actual,2019-10
+TUN,Tunisia,2019,1.514,estimate,2019-10
+TUN,Tunisia,2020,2.428,forecast,2019-10
+TUN,Tunisia,2021,2.889,forecast,2019-10
+TUN,Tunisia,2022,3.803,forecast,2019-10
+TUN,Tunisia,2023,3.883,forecast,2019-10
+TUN,Tunisia,2024,4.438,forecast,2019-10
+TUR,Turkey,2010,8.487,actual,2019-10
+TUR,Turkey,2011,11.113,actual,2019-10
+TUR,Turkey,2012,4.79,actual,2019-10
+TUR,Turkey,2013,8.491,actual,2019-10
+TUR,Turkey,2014,5.167,actual,2019-10
+TUR,Turkey,2015,6.086,actual,2019-10
+TUR,Turkey,2016,3.184,actual,2019-10
+TUR,Turkey,2017,7.471,actual,2019-10
+TUR,Turkey,2018,2.827,actual,2019-10
+TUR,Turkey,2019,0.249,estimate,2019-10
+TUR,Turkey,2020,2.986,forecast,2019-10
+TUR,Turkey,2021,2.998,forecast,2019-10
+TUR,Turkey,2022,3.032,forecast,2019-10
+TUR,Turkey,2023,3.468,forecast,2019-10
+TUR,Turkey,2024,3.499,forecast,2019-10
+TUV,Tuvalu,2010,-3.09,actual,2019-10
+TUV,Tuvalu,2011,7.89,actual,2019-10
+TUV,Tuvalu,2012,-3.836,actual,2019-10
+TUV,Tuvalu,2013,4.577,actual,2019-10
+TUV,Tuvalu,2014,1.348,actual,2019-10
+TUV,Tuvalu,2015,9.143,actual,2019-10
+TUV,Tuvalu,2016,3.035,actual,2019-10
+TUV,Tuvalu,2017,3.242,actual,2019-10
+TUV,Tuvalu,2018,4.284,actual,2019-10
+TUV,Tuvalu,2019,4.072,estimate,2019-10
+TUV,Tuvalu,2020,4.38,forecast,2019-10
+TUV,Tuvalu,2021,4.244,forecast,2019-10
+TUV,Tuvalu,2022,4.143,forecast,2019-10
+TUV,Tuvalu,2023,3.894,forecast,2019-10
+TUV,Tuvalu,2024,2.746,forecast,2019-10
+TWN,Taiwan Province of China,2010,10.631,actual,2019-10
+TWN,Taiwan Province of China,2011,3.805,actual,2019-10
+TWN,Taiwan Province of China,2012,2.064,actual,2019-10
+TWN,Taiwan Province of China,2013,2.202,actual,2019-10
+TWN,Taiwan Province of China,2014,4.021,actual,2019-10
+TWN,Taiwan Province of China,2015,0.806,actual,2019-10
+TWN,Taiwan Province of China,2016,1.512,actual,2019-10
+TWN,Taiwan Province of China,2017,3.079,actual,2019-10
+TWN,Taiwan Province of China,2018,2.634,actual,2019-10
+TWN,Taiwan Province of China,2019,2.035,estimate,2019-10
+TWN,Taiwan Province of China,2020,1.933,forecast,2019-10
+TWN,Taiwan Province of China,2021,2.094,forecast,2019-10
+TWN,Taiwan Province of China,2022,2.116,forecast,2019-10
+TWN,Taiwan Province of China,2023,2.08,forecast,2019-10
+TWN,Taiwan Province of China,2024,2.012,forecast,2019-10
+TZA,Tanzania,2010,6.359,actual,2019-10
+TZA,Tanzania,2011,7.905,actual,2019-10
+TZA,Tanzania,2012,5.141,actual,2019-10
+TZA,Tanzania,2013,6.782,actual,2019-10
+TZA,Tanzania,2014,6.732,actual,2019-10
+TZA,Tanzania,2015,6.161,actual,2019-10
+TZA,Tanzania,2016,6.867,actual,2019-10
+TZA,Tanzania,2017,6.773,actual,2019-10
+TZA,Tanzania,2018,6.951,actual,2019-10
+TZA,Tanzania,2019,5.2,estimate,2019-10
+TZA,Tanzania,2020,5.704,forecast,2019-10
+TZA,Tanzania,2021,5.99,forecast,2019-10
+TZA,Tanzania,2022,6.293,forecast,2019-10
+TZA,Tanzania,2023,6.531,forecast,2019-10
+TZA,Tanzania,2024,6.467,forecast,2019-10
+UGA,Uganda,2010,7.666,actual,2019-10
+UGA,Uganda,2011,6.821,actual,2019-10
+UGA,Uganda,2012,2.24,actual,2019-10
+UGA,Uganda,2013,4.714,actual,2019-10
+UGA,Uganda,2014,4.561,actual,2019-10
+UGA,Uganda,2015,5.67,actual,2019-10
+UGA,Uganda,2016,2.323,actual,2019-10
+UGA,Uganda,2017,5.008,actual,2019-10
+UGA,Uganda,2018,6.105,actual,2019-10
+UGA,Uganda,2019,6.156,estimate,2019-10
+UGA,Uganda,2020,6.216,forecast,2019-10
+UGA,Uganda,2021,6.142,forecast,2019-10
+UGA,Uganda,2022,6.057,forecast,2019-10
+UGA,Uganda,2023,7.785,forecast,2019-10
+UGA,Uganda,2024,10.085,forecast,2019-10
+UKR,Ukraine,2010,4.1,actual,2019-10
+UKR,Ukraine,2011,5.466,actual,2019-10
+UKR,Ukraine,2012,0.239,actual,2019-10
+UKR,Ukraine,2013,-0.027,actual,2019-10
+UKR,Ukraine,2014,-6.553,actual,2019-10
+UKR,Ukraine,2015,-9.773,actual,2019-10
+UKR,Ukraine,2016,2.441,actual,2019-10
+UKR,Ukraine,2017,2.525,actual,2019-10
+UKR,Ukraine,2018,3.277,actual,2019-10
+UKR,Ukraine,2019,2.99,estimate,2019-10
+UKR,Ukraine,2020,3.011,forecast,2019-10
+UKR,Ukraine,2021,3.143,forecast,2019-10
+UKR,Ukraine,2022,3.19,forecast,2019-10
+UKR,Ukraine,2023,3.34,forecast,2019-10
+UKR,Ukraine,2024,3.315,forecast,2019-10
+URY,Uruguay,2010,7.803,actual,2019-10
+URY,Uruguay,2011,5.162,actual,2019-10
+URY,Uruguay,2012,3.538,actual,2019-10
+URY,Uruguay,2013,4.638,actual,2019-10
+URY,Uruguay,2014,3.239,actual,2019-10
+URY,Uruguay,2015,0.371,actual,2019-10
+URY,Uruguay,2016,1.69,actual,2019-10
+URY,Uruguay,2017,2.591,actual,2019-10
+URY,Uruguay,2018,1.62,actual,2019-10
+URY,Uruguay,2019,0.4,estimate,2019-10
+URY,Uruguay,2020,2.3,forecast,2019-10
+URY,Uruguay,2021,3.0,forecast,2019-10
+URY,Uruguay,2022,2.0,forecast,2019-10
+URY,Uruguay,2023,2.0,forecast,2019-10
+URY,Uruguay,2024,2.4,forecast,2019-10
+USA,United States,2010,2.564,actual,2019-10
+USA,United States,2011,1.551,actual,2019-10
+USA,United States,2012,2.249,actual,2019-10
+USA,United States,2013,1.842,actual,2019-10
+USA,United States,2014,2.526,actual,2019-10
+USA,United States,2015,2.908,actual,2019-10
+USA,United States,2016,1.638,actual,2019-10
+USA,United States,2017,2.37,actual,2019-10
+USA,United States,2018,2.927,actual,2019-10
+USA,United States,2019,2.35,estimate,2019-10
+USA,United States,2020,2.089,forecast,2019-10
+USA,United States,2021,1.746,forecast,2019-10
+USA,United States,2022,1.559,forecast,2019-10
+USA,United States,2023,1.58,forecast,2019-10
+USA,United States,2024,1.62,forecast,2019-10
+UVK,Kosovo,2010,3.309,actual,2019-10
+UVK,Kosovo,2011,4.377,actual,2019-10
+UVK,Kosovo,2012,2.81,actual,2019-10
+UVK,Kosovo,2013,3.442,actual,2019-10
+UVK,Kosovo,2014,1.222,actual,2019-10
+UVK,Kosovo,2015,4.103,actual,2019-10
+UVK,Kosovo,2016,4.063,actual,2019-10
+UVK,Kosovo,2017,4.226,actual,2019-10
+UVK,Kosovo,2018,3.816,actual,2019-10
+UVK,Kosovo,2019,4.2,estimate,2019-10
+UVK,Kosovo,2020,4.0,forecast,2019-10
+UVK,Kosovo,2021,4.0,forecast,2019-10
+UVK,Kosovo,2022,4.0,forecast,2019-10
+UVK,Kosovo,2023,4.0,forecast,2019-10
+UVK,Kosovo,2024,4.0,forecast,2019-10
+UZB,Uzbekistan,2010,8.475,actual,2019-10
+UZB,Uzbekistan,2011,8.281,actual,2019-10
+UZB,Uzbekistan,2012,8.18,actual,2019-10
+UZB,Uzbekistan,2013,8.026,actual,2019-10
+UZB,Uzbekistan,2014,7.179,actual,2019-10
+UZB,Uzbekistan,2015,7.448,actual,2019-10
+UZB,Uzbekistan,2016,6.094,actual,2019-10
+UZB,Uzbekistan,2017,4.462,actual,2019-10
+UZB,Uzbekistan,2018,5.133,actual,2019-10
+UZB,Uzbekistan,2019,5.5,estimate,2019-10
+UZB,Uzbekistan,2020,6.0,forecast,2019-10
+UZB,Uzbekistan,2021,6.0,forecast,2019-10
+UZB,Uzbekistan,2022,6.0,forecast,2019-10
+UZB,Uzbekistan,2023,6.0,forecast,2019-10
+UZB,Uzbekistan,2024,6.0,forecast,2019-10
+VCT,St. Vincent and the Grenadines,2010,-2.331,actual,2019-10
+VCT,St. Vincent and the Grenadines,2011,0.247,actual,2019-10
+VCT,St. Vincent and the Grenadines,2012,1.301,actual,2019-10
+VCT,St. Vincent and the Grenadines,2013,2.491,actual,2019-10
+VCT,St. Vincent and the Grenadines,2014,0.247,actual,2019-10
+VCT,St. Vincent and the Grenadines,2015,0.823,actual,2019-10
+VCT,St. Vincent and the Grenadines,2016,0.836,actual,2019-10
+VCT,St. Vincent and the Grenadines,2017,0.719,actual,2019-10
+VCT,St. Vincent and the Grenadines,2018,2.014,actual,2019-10
+VCT,St. Vincent and the Grenadines,2019,2.328,estimate,2019-10
+VCT,St. Vincent and the Grenadines,2020,2.316,forecast,2019-10
+VCT,St. Vincent and the Grenadines,2021,2.342,forecast,2019-10
+VCT,St. Vincent and the Grenadines,2022,2.311,forecast,2019-10
+VCT,St. Vincent and the Grenadines,2023,2.344,forecast,2019-10
+VCT,St. Vincent and the Grenadines,2024,2.323,forecast,2019-10
+VEN,Venezuela,2010,-1.489,actual,2019-10
+VEN,Venezuela,2011,4.176,actual,2019-10
+VEN,Venezuela,2012,5.626,actual,2019-10
+VEN,Venezuela,2013,1.343,actual,2019-10
+VEN,Venezuela,2014,-3.894,actual,2019-10
+VEN,Venezuela,2015,-6.221,actual,2019-10
+VEN,Venezuela,2016,-17.04,actual,2019-10
+VEN,Venezuela,2017,-15.671,actual,2019-10
+VEN,Venezuela,2018,-18.0,actual,2019-10
+VEN,Venezuela,2019,-35.0,estimate,2019-10
+VEN,Venezuela,2020,-10.0,forecast,2019-10
+VEN,Venezuela,2021,-5.0,forecast,2019-10
+VEN,Venezuela,2022,,forecast,2019-10
+VEN,Venezuela,2023,,forecast,2019-10
+VEN,Venezuela,2024,,forecast,2019-10
+VNM,Vietnam,2010,6.423,actual,2019-10
+VNM,Vietnam,2011,6.24,actual,2019-10
+VNM,Vietnam,2012,5.247,actual,2019-10
+VNM,Vietnam,2013,5.422,actual,2019-10
+VNM,Vietnam,2014,5.984,actual,2019-10
+VNM,Vietnam,2015,6.679,actual,2019-10
+VNM,Vietnam,2016,6.211,actual,2019-10
+VNM,Vietnam,2017,6.812,actual,2019-10
+VNM,Vietnam,2018,7.076,actual,2019-10
+VNM,Vietnam,2019,6.5,estimate,2019-10
+VNM,Vietnam,2020,6.5,forecast,2019-10
+VNM,Vietnam,2021,6.5,forecast,2019-10
+VNM,Vietnam,2022,6.5,forecast,2019-10
+VNM,Vietnam,2023,6.5,forecast,2019-10
+VNM,Vietnam,2024,6.5,forecast,2019-10
+VUT,Vanuatu,2010,1.629,actual,2019-10
+VUT,Vanuatu,2011,1.223,actual,2019-10
+VUT,Vanuatu,2012,1.755,actual,2019-10
+VUT,Vanuatu,2013,1.969,actual,2019-10
+VUT,Vanuatu,2014,2.304,actual,2019-10
+VUT,Vanuatu,2015,0.163,actual,2019-10
+VUT,Vanuatu,2016,3.472,actual,2019-10
+VUT,Vanuatu,2017,4.413,actual,2019-10
+VUT,Vanuatu,2018,3.2,actual,2019-10
+VUT,Vanuatu,2019,3.8,estimate,2019-10
+VUT,Vanuatu,2020,3.1,forecast,2019-10
+VUT,Vanuatu,2021,2.8,forecast,2019-10
+VUT,Vanuatu,2022,2.8,forecast,2019-10
+VUT,Vanuatu,2023,2.9,forecast,2019-10
+VUT,Vanuatu,2024,2.9,forecast,2019-10
+WSM,Samoa,2010,-1.963,actual,2019-10
+WSM,Samoa,2011,5.553,actual,2019-10
+WSM,Samoa,2012,0.439,actual,2019-10
+WSM,Samoa,2013,-1.931,actual,2019-10
+WSM,Samoa,2014,1.197,actual,2019-10
+WSM,Samoa,2015,1.652,actual,2019-10
+WSM,Samoa,2016,7.169,actual,2019-10
+WSM,Samoa,2017,2.705,actual,2019-10
+WSM,Samoa,2018,0.857,actual,2019-10
+WSM,Samoa,2019,3.355,estimate,2019-10
+WSM,Samoa,2020,4.399,forecast,2019-10
+WSM,Samoa,2021,2.188,forecast,2019-10
+WSM,Samoa,2022,2.225,forecast,2019-10
+WSM,Samoa,2023,2.234,forecast,2019-10
+WSM,Samoa,2024,2.234,forecast,2019-10
+YEM,Yemen,2010,7.702,actual,2019-10
+YEM,Yemen,2011,-12.715,actual,2019-10
+YEM,Yemen,2012,2.393,actual,2019-10
+YEM,Yemen,2013,4.824,actual,2019-10
+YEM,Yemen,2014,-0.189,actual,2019-10
+YEM,Yemen,2015,-27.995,actual,2019-10
+YEM,Yemen,2016,-9.375,actual,2019-10
+YEM,Yemen,2017,-5.072,actual,2019-10
+YEM,Yemen,2018,0.752,actual,2019-10
+YEM,Yemen,2019,2.113,estimate,2019-10
+YEM,Yemen,2020,1.984,forecast,2019-10
+YEM,Yemen,2021,13.616,forecast,2019-10
+YEM,Yemen,2022,8.123,forecast,2019-10
+YEM,Yemen,2023,6.545,forecast,2019-10
+YEM,Yemen,2024,3.566,forecast,2019-10
+ZAF,South Africa,2010,3.04,actual,2019-10
+ZAF,South Africa,2011,3.284,actual,2019-10
+ZAF,South Africa,2012,2.213,actual,2019-10
+ZAF,South Africa,2013,2.485,actual,2019-10
+ZAF,South Africa,2014,1.847,actual,2019-10
+ZAF,South Africa,2015,1.194,actual,2019-10
+ZAF,South Africa,2016,0.399,actual,2019-10
+ZAF,South Africa,2017,1.415,actual,2019-10
+ZAF,South Africa,2018,0.787,actual,2019-10
+ZAF,South Africa,2019,0.655,estimate,2019-10
+ZAF,South Africa,2020,1.079,forecast,2019-10
+ZAF,South Africa,2021,1.439,forecast,2019-10
+ZAF,South Africa,2022,1.763,forecast,2019-10
+ZAF,South Africa,2023,1.783,forecast,2019-10
+ZAF,South Africa,2024,1.775,forecast,2019-10
+ZMB,Zambia,2010,10.298,actual,2019-10
+ZMB,Zambia,2011,5.565,actual,2019-10
+ZMB,Zambia,2012,7.598,actual,2019-10
+ZMB,Zambia,2013,5.057,actual,2019-10
+ZMB,Zambia,2014,4.698,actual,2019-10
+ZMB,Zambia,2015,2.92,actual,2019-10
+ZMB,Zambia,2016,3.757,actual,2019-10
+ZMB,Zambia,2017,3.524,actual,2019-10
+ZMB,Zambia,2018,3.674,actual,2019-10
+ZMB,Zambia,2019,2.021,estimate,2019-10
+ZMB,Zambia,2020,1.695,forecast,2019-10
+ZMB,Zambia,2021,1.728,forecast,2019-10
+ZMB,Zambia,2022,1.6,forecast,2019-10
+ZMB,Zambia,2023,1.48,forecast,2019-10
+ZMB,Zambia,2024,1.504,forecast,2019-10
+ZWE,Zimbabwe,2010,19.683,actual,2019-10
+ZWE,Zimbabwe,2011,14.197,actual,2019-10
+ZWE,Zimbabwe,2012,16.658,actual,2019-10
+ZWE,Zimbabwe,2013,1.975,actual,2019-10
+ZWE,Zimbabwe,2014,2.383,actual,2019-10
+ZWE,Zimbabwe,2015,1.791,actual,2019-10
+ZWE,Zimbabwe,2016,0.742,actual,2019-10
+ZWE,Zimbabwe,2017,4.704,actual,2019-10
+ZWE,Zimbabwe,2018,3.497,actual,2019-10
+ZWE,Zimbabwe,2019,-7.077,estimate,2019-10
+ZWE,Zimbabwe,2020,2.721,forecast,2019-10
+ZWE,Zimbabwe,2021,2.522,forecast,2019-10
+ZWE,Zimbabwe,2022,2.504,forecast,2019-10
+ZWE,Zimbabwe,2023,2.16,forecast,2019-10
+ZWE,Zimbabwe,2024,2.16,forecast,2019-10

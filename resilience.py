@@ -7,10 +7,15 @@ Criteria (lower is better for all of them):
 - health:    cumulative excess deaths per million up to a cutoff date (optionally
              roughly age-adjusted), reported COVID deaths per million, or the drop
              in life expectancy 2019 -> worst of 2020-22
-- economy:   cumulative GDP loss 2020-2023 vs. the 2015-2019 trend (table gdp_covid_loss)
+- economy:   cumulative GDP loss 2020-2023 vs. a "no COVID" baseline (table gdp_covid_loss):
+             the IMF's October 2019 forecast (default) or the 2015-2019 trend
 - jobs:      rise in unemployment 2019 -> worst of 2020-22, %-points (table society_covid)
 - education: weeks with schools fully closed by requirement, 2020-22 (OxCGRT C1M = 3)
 - freedom:   average OxCGRT stringency index 2020-2022 (how much restriction it took)
+- recovery:  years in 2020-2024 with real GDP below its 2019 level (table gdp_covid_loss)
+
+Healthcare capacity (table health_capacity, pre-COVID 2015-2019) is an explanatory
+factor, not a criterion: see capacity_correlations().
 """
 
 from __future__ import annotations
@@ -35,6 +40,12 @@ VAX_THRESHOLD = 50.0  # % fully vaccinated for the "vaccination speed" measure
 
 CUTOFFS = ("2020-12-31", "2021-12-31", "2022-12-31", "2023-12-31")
 
+# What GDP would have been without COVID: baseline key -> (column, label)
+GDP_BASELINES = {
+    "imf": ("gdp_loss_imf_pct", "IMF forecast, Oct 2019"),
+    "trend": ("gdp_loss_trend_pct", "Trend 2015–2019"),
+}
+
 HEALTH_MEASURES = {
     "excess_pm": "Excess deaths per million",
     "excess_age_adj_pm": "Age-adjusted excess deaths per million",
@@ -48,6 +59,7 @@ COST_CRITERIA = {
     "jobs": "unemployment_rise_pp",
     "education": "school_weeks_full",
     "freedom": "avg_stringency",
+    "recovery": "gdp_years_below_2019",
 }
 
 CRITERIA_LABELS = {
@@ -56,15 +68,30 @@ CRITERIA_LABELS = {
     "jobs": "Jobs (unemployment rise)",
     "education": "Education (school closures)",
     "freedom": "Freedom (stringency)",
+    "recovery": "Recovery (years GDP below 2019)",
+}
+
+# Pre-COVID healthcare capacity: higher = more capacity (explanatory, not scored)
+CAPACITY_COLUMNS = {
+    "health_spending_pct_gdp": "Health spending (% of GDP)",
+    "health_spending_per_capita_usd": "Health spending per person (US$)",
+    "physicians_per_1000": "Physicians per 1,000 people",
+    "nurses_per_1000": "Nurses & midwives per 1,000 people",
+    "hospital_beds_per_1000": "Hospital beds per 1,000 people",
 }
 
 COLUMN_LABELS = {
     **HEALTH_MEASURES,
-    "gdp_loss_pct": "GDP loss vs. trend 2020–23 (%)",
+    "gdp_loss_pct": "GDP loss 2020–23 vs. no-COVID baseline (%)",
+    "gdp_loss_imf_pct": "GDP loss 2020–23 vs. IMF Oct 2019 forecast (%)",
+    "gdp_loss_trend_pct": "GDP loss 2020–23 vs. 2015–19 trend (%)",
     "unemployment_rise_pp": "Unemployment rise 2019 → 2020–22 (%-points)",
     "school_weeks_full": "Weeks schools fully closed 2020–22",
     "school_weeks_partial_or_full": "Weeks schools partly or fully closed 2020–22",
     "avg_stringency": "Avg. stringency index 2020–22",
+    "gdp_years_below_2019": "Years GDP below 2019 level (2020–24)",
+    "gdp_recovery_year": "Year GDP back at 2019 level",
+    **CAPACITY_COLUMNS,
     "pct_fully_vax": "% fully vaccinated",
     "pct_65plus": "% aged 65+",
     "days_to_50pct_vax": "Days to 50% fully vaccinated",
@@ -109,8 +136,9 @@ def load_gdp_loss(db_path: str = DB_PATH) -> pd.DataFrame:
     """GDP loss vs. pre-COVID trend per country (derived table, see sources.md)."""
     query = """
         SELECT iso_code AS wb_iso,
-               cum_loss_2020_2023_pct_of_trend AS gdp_loss_pct,
-               growth_2020_pct
+               imf_cum_loss_2020_2023_pct AS gdp_loss_imf_pct,
+               cum_loss_2020_2023_pct_of_trend AS gdp_loss_trend_pct,
+               growth_2020_pct, gdp_years_below_2019, gdp_recovery_year
         FROM gdp_covid_loss
         WHERE is_aggregate = 0
     """
@@ -129,8 +157,19 @@ def load_society(db_path: str = DB_PATH) -> pd.DataFrame:
         return pd.read_sql(query, conn)
 
 
+def load_health_capacity(db_path: str = DB_PATH) -> pd.DataFrame:
+    """Pre-COVID healthcare capacity (derived table health_capacity, World Bank)."""
+    query = f"SELECT iso_code AS wb_iso, {', '.join(CAPACITY_COLUMNS)} FROM health_capacity"
+    with closing(sqlite3.connect(db_path)) as conn:
+        return pd.read_sql(query, conn)
+
+
 def country_metrics(
-    daily: pd.DataFrame, gdp: pd.DataFrame, society: pd.DataFrame, cutoff: str
+    daily: pd.DataFrame,
+    gdp: pd.DataFrame,
+    society: pd.DataFrame,
+    capacity: pd.DataFrame,
+    cutoff: str,
 ) -> pd.DataFrame:
     """One row per country with every criterion, measured up to `cutoff`.
 
@@ -184,10 +223,18 @@ def country_metrics(
     metrics = (
         metrics.merge(gdp, on="wb_iso", how="left")
         .merge(society, on="wb_iso", how="left")
+        .merge(capacity, on="wb_iso", how="left")
         .drop(columns="wb_iso")
     )
     metrics["excess_vs_reported"] = metrics["excess_pm"] / metrics["reported_pm"]
     return metrics
+
+
+def with_gdp_baseline(metrics: pd.DataFrame, baseline: str) -> pd.DataFrame:
+    """Set gdp_loss_pct (the economy criterion) from the chosen baseline in GDP_BASELINES.
+    Countries without that baseline get NaN - no silent fallback to the other method."""
+    column, _ = GDP_BASELINES[baseline]
+    return metrics.assign(gdp_loss_pct=metrics[column])
 
 
 def add_age_adjusted_excess(metrics: pd.DataFrame) -> tuple[pd.DataFrame, float, float]:
@@ -307,6 +354,21 @@ def rank_stability(
         pct_in_top=100 * (ranks <= top_n).mean(axis=1),
     )
     return stability.sort_values(["median_rank", "best_rank", "location"]), len(grid)
+
+
+def capacity_correlations(
+    metrics: pd.DataFrame, capacity_columns: list[str], outcome_columns: list[str]
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Spearman rank correlation between capacity measures (rows) and outcomes (columns),
+    plus the number of countries behind each value. Rank-based, so robust to outliers
+    such as US health spending; pairwise, so each cell uses every country with both values."""
+    corr = metrics[capacity_columns + outcome_columns].corr(method="spearman")
+    present = metrics[capacity_columns + outcome_columns].notna().astype(int)
+    counts = present.T @ present
+    return (
+        corr.loc[capacity_columns, outcome_columns],
+        counts.loc[capacity_columns, outcome_columns],
+    )
 
 
 def excess_timeseries(daily: pd.DataFrame, locations: list[str]) -> pd.DataFrame:
