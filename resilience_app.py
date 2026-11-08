@@ -42,6 +42,10 @@ DEFAULT_PEERS = ("Belgium", "Netherlands", "Germany", "France", "Denmark", "Swed
                  "United Kingdom", "Austria", "Switzerland", "Italy", "Spain")
 DEFAULT_TIMELINE = ("New Zealand", "Australia", "Japan", "Belgium", "Sweden", "Denmark")
 DEFAULT_WEIGHTS = {"health": 5, "economy": 2, "jobs": 1, "education": 1, "freedom": 1, "recovery": 1}
+# Markdown files explaining a calculation, shown in the Calculations tab (title -> file).
+CALCULATION_DOCS = {
+    "Unemployment rise (jobs criterion)": "unemployment_calculation.md",
+}
 
 
 # ---------------------------------------------------------------- data (cached)
@@ -170,6 +174,7 @@ tabs = st.tabs([
     ":material/vaccines: Vaccination speed",
     ":material/local_hospital: Healthcare capacity",
     ":material/fact_check: Data quality",
+    ":material/calculate: Calculations",
 ])
 
 # ---------------------------------------------------------------- 1. criteria
@@ -575,3 +580,19 @@ with tabs[7]:
     for title, names in gaps.items():
         with st.expander(f"{title}: {len(names)}"):
             st.write(", ".join(sorted(names)) or "—")
+
+# ---------------------------------------------------------------- 9. calculations
+
+with tabs[8]:
+    doc_title = (
+        st.selectbox("Calculation", list(CALCULATION_DOCS))
+        if len(CALCULATION_DOCS) > 1
+        else next(iter(CALCULATION_DOCS))
+    )
+    doc_path = Path(CALCULATION_DOCS[doc_title])
+    if doc_path.exists():
+        # Read on every run, so edits to the .md file show up after a page refresh.
+        st.markdown(doc_path.read_text(encoding="utf-8"))
+        st.caption(f"Source: `{doc_path}`")
+    else:
+        st.info(f"`{doc_path}` not found.")
