@@ -189,14 +189,10 @@ with tabs[0]:
 | | Reported COVID deaths | ✅ for comparison only | `total_deaths_per_million` |
 | | Life-expectancy drop 2019 → worst of 2020–22 | ✅ alternative health measure | `society_covid` (World Bank) |
 | | Hospital overload | ⚠️ shown, not scored — ICU data for ~40 countries | `icu_patients_per_million` |
-| | Years of life lost | ❌ not available | — |
 | **Economy** | GDP loss 2020–23 vs. a no-COVID baseline: IMF forecast of Oct 2019 (default) or 2015–19 trend | ✅ "economy" criterion | `gdp_covid_loss` (World Bank + IMF) |
 | | Unemployment rise 2019 → worst of 2020–22 | ✅ "jobs" criterion | `society_covid` (World Bank / ILO) |
-| | Government debt, support costs | ❌ debt data for only ~30 of these countries | — |
 | **Society** | Weeks schools fully closed 2020–22 | ✅ "education" criterion | `society_covid` (OxCGRT C1M = 3) |
 | | Restrictions (stringency) | ✅ "freedom" criterion | `stringency_index` (OxCGRT) |
-| | Mobility (actual behaviour) | ❌ Google data missing for ~10% of these countries | — |
-| | Learning loss, mental health | ❌ not available for all countries | — |
 | **Resilience** | Years GDP below its 2019 level (2020–24) | ✅ "recovery" criterion | `gdp_covid_loss` (World Bank) |
 | | Vaccination speed | ✅ shown, not scored | `people_fully_vaccinated_per_hundred` |
 | | Healthcare capacity before COVID (spending, doctors, nurses, beds) | ✅ explanatory, not scored — see *Healthcare capacity* | `health_capacity` (World Bank) |
