@@ -190,10 +190,9 @@ with tabs[0]:
 | **Society** | Weeks schools fully closed 2020–22 | ✅ "education" criterion | `society_covid` (OxCGRT C1M = 3) | `school_weeks_full` |
 | | Restrictions (stringency) | ✅ "freedom" criterion | `covid_data` (OWID, from OxCGRT) | `stringency_index` |
 | **Resilience** | Years GDP below its 2019 level (2020–24) | ✅ "recovery" criterion | `gdp_covid_loss` (World Bank) | `gdp_years_below_2019` |
-| | Vaccination speed | ✅ <span title="Scoring vaccination speed would drop almost half the countries from the ranking, mostly Africa." style="text-decoration: underline dotted; cursor: help">shown, not scored</span> | `covid_data` (OWID) | `people_fully_vaccinated_per_hundred` |
+| | Vaccination speed | ⚠️ shown, not scored — would drop almost half the countries from the ranking, mostly Africa | `covid_data` (OWID) | `people_fully_vaccinated_per_hundred` |
 | | Healthcare capacity before COVID (spending, doctors, nurses, beds) | ✅ explanatory, not scored — see *Healthcare capacity* | `health_capacity` (World Bank) | `health_spending_pct_gdp`, `health_spending_per_capita_usd`, `physicians_per_1000`, `nurses_per_1000`, `hospital_beds_per_1000` |
-""",
-        unsafe_allow_html=True,  # for the hover tooltip (title attribute) on "shown, not scored"
+"""
     )
     st.markdown("##### Coverage in the current peer group")
     coverage = {
