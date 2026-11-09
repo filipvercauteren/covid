@@ -83,7 +83,7 @@ streamlit run app.py
 ```
 
 Compares countries on six criteria (lower is better for each): health (excess deaths per
-million, optionally roughly age-adjusted, or the life-expectancy drop), economy (GDP loss
+million, reported COVID deaths, or the life-expectancy drop), economy (GDP loss
 2020–23 vs. the IMF's pre-COVID forecast of October 2019, or vs. the 2015–19 trend), jobs (unemployment rise), education (weeks schools fully
 closed), freedom (average stringency 2020–22) and recovery (years GDP stayed below its 2019
 level). A separate tab relates pre-COVID healthcare capacity to these outcomes. Tabs: criteria overview, deaths-vs-cost scatter, weighted ranking,

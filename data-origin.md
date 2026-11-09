@@ -20,7 +20,7 @@ are used, and where each value is calculated. URLs and provenance per source are
  ┌────────────────── 2. covid-combo.db (SQLite, 175 MB) ──────────────────┐
  │ RAW TABLES (loaded as-is, cleaned)                                     │
  │  covid_data        ◄ OWID     excess_mortality_cumulative_per_million, │
- │                               total_deaths_per_million, aged_65_older, │
+ │                               total_deaths_per_million,                │
  │                               stringency_index, icu_patients_per_mill.,│
  │                               people_fully_vaccinated_per_hundred, …   │
  │  oxcgrt_daily      ◄ OxCGRT   c1m_school_closing, …                    │
@@ -55,7 +55,7 @@ are used, and where each value is calculated. URLs and provenance per source are
                                     │  (SQL select + filter only, no calculations)
                                     ▼
  ┌──────────────── 3. app-data/*.parquet (0.9 MB, in git) ────────────────┐
- │  daily.parquet           ◄ covid_data: 11 columns, real countries only │
+ │  daily.parquet           ◄ covid_data: 10 columns, real countries only │
  │                            (continent IS NOT NULL, UK nations dropped) │
  │  gdp_loss.parquet        ◄ gdp_covid_loss (aggregates dropped)         │
  │  society.parquet         ◄ society_covid                               │
@@ -68,7 +68,6 @@ are used, and where each value is calculated. URLs and provenance per source are
  │  ★ excess_pm          last cumulative excess ≤ cutoff                  │
  │                       (NaN if > 6 months old)                          │
  │  ★ reported_pm        max total_deaths_per_million                     │
- │  ★ pct_65plus         aged_65_older                                    │
  │  ★ avg_stringency     mean stringency_index 2020 → min(cutoff, 2022)   │
  │  ★ peak_icu_pm        max icu_patients_per_million                     │
  │  ★ pct_fully_vax      max people_fully_vaccinated_per_hundred          │
@@ -76,7 +75,6 @@ are used, and where each value is calculated. URLs and provenance per source are
  │  ★ excess_vs_reported excess_pm / reported_pm                          │
  │   + joined on ISO code: gdp_loss, society, health_capacity columns     │
  │ with_gdp_baseline()       ★ gdp_loss_pct = IMF or trend column (sidebar)│
- │ add_age_adjusted_excess() ★ excess_age_adj_pm  linear fit on % 65+     │
  │ select_peers()            filter: min population, continents, countries│
  │ score_countries()         ★ rank per criterion → 0..1, weighted → 0-100│
  │ rank_stability()          ★ ranking across all weight combinations     │
@@ -85,7 +83,7 @@ are used, and where each value is calculated. URLs and provenance per source are
                                     ▼
  ┌──────────────────────── 5. app.py (Streamlit UI) ──────────────────────┐
  │ Criteria (score) ─► column                                             │
- │   health    ─► excess_pm | excess_age_adj_pm | reported_pm |           │
+ │   health    ─► excess_pm | reported_pm |                               │
  │                life_expectancy_drop_years   (sidebar choice)           │
  │   economy   ─► gdp_loss_pct                                            │
  │   jobs      ─► unemployment_rise_pp                                    │
@@ -105,7 +103,7 @@ are used, and where each value is calculated. URLs and provenance per source are
    years, school-closure weeks, unemployment rise, life-expectancy drop, healthcare
    capacity). They don't depend on anything chosen in the app.
 2. **`resilience.py`**: everything that depends on the sidebar (cutoff date, GDP
-   baseline, peer group, age adjustment, weighted score).
+   baseline, peer group, weighted score).
 
 `export_app_data.py` calculates nothing: it only selects columns and filters out
 aggregate regions.

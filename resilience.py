@@ -5,9 +5,9 @@ covid-combo.db by export_app_data.py). No Streamlit imports,
 so they can be reused from the notebook or tests.
 
 Criteria (lower is better for all of them):
-- health:    cumulative excess deaths per million up to a cutoff date (optionally
-             roughly age-adjusted), reported COVID deaths per million, or the drop
-             in life expectancy 2019 -> worst of 2020-22
+- health:    cumulative excess deaths per million up to a cutoff date, reported
+             COVID deaths per million, or the drop in life expectancy 2019 -> worst
+             of 2020-22
 - economy:   cumulative GDP loss 2020-2023 vs. a "no COVID" baseline (table gdp_covid_loss):
              the IMF's October 2019 forecast (default) or the 2015-2019 trend
 - jobs:      rise in unemployment 2019 -> worst of 2020-22, %-points (table society_covid)
@@ -48,7 +48,6 @@ GDP_BASELINES = {
 
 HEALTH_MEASURES = {
     "excess_pm": "Excess deaths per million",
-    "excess_age_adj_pm": "Age-adjusted excess deaths per million",
     "reported_pm": "Reported COVID deaths per million",
     "life_expectancy_drop_years": "Life-expectancy drop 2019 → 2020–22 (years)",
 }
@@ -93,7 +92,6 @@ COLUMN_LABELS = {
     "gdp_recovery_year": "Year GDP back at 2019 level",
     **CAPACITY_COLUMNS,
     "pct_fully_vax": "% fully vaccinated",
-    "pct_65plus": "% aged 65+",
     "days_to_50pct_vax": "Days to 50% fully vaccinated",
     "peak_icu_pm": "Peak ICU patients per million",
     "excess_vs_reported": "Excess ÷ reported deaths",
@@ -106,7 +104,6 @@ DAILY_COLUMNS = (
     "continent",
     "date",
     "population",
-    "aged_65_older",
     "excess_mortality_cumulative_per_million",
     "total_deaths_per_million",
     "stringency_index",
@@ -162,7 +159,6 @@ def country_metrics(
         iso_code=("iso_code", "first"),
         continent=("continent", "first"),
         population=("population", "max"),
-        pct_65plus=("aged_65_older", "max"),
         reported_pm=("total_deaths_per_million", "max"),
         pct_fully_vax=("people_fully_vaccinated_per_hundred", "max"),
         peak_icu_pm=("icu_patients_per_million", "max"),
@@ -210,23 +206,6 @@ def with_gdp_baseline(metrics: pd.DataFrame, baseline: str) -> pd.DataFrame:
     Countries without that baseline get NaN - no silent fallback to the other method."""
     column, _ = GDP_BASELINES[baseline]
     return metrics.assign(gdp_loss_pct=metrics[column])
-
-
-def add_age_adjusted_excess(metrics: pd.DataFrame) -> tuple[pd.DataFrame, float, float]:
-    """Rough age correction: fit excess_pm = a + b × %65+ across `metrics` and
-    shift every country to the group's average share of over-65s.
-
-    Returns (metrics with excess_age_adj_pm, slope b, correlation). Only a crude
-    correction - age-standardised mortality data would be better.
-    """
-    fit = metrics.dropna(subset=["excess_pm", "pct_65plus"])
-    if len(fit) < 3:
-        return metrics.assign(excess_age_adj_pm=np.nan), float("nan"), float("nan")
-
-    slope, _ = np.polyfit(fit["pct_65plus"], fit["excess_pm"], 1)
-    corr = float(np.corrcoef(fit["pct_65plus"], fit["excess_pm"])[0, 1])
-    adjusted = metrics["excess_pm"] - slope * (metrics["pct_65plus"] - fit["pct_65plus"].mean())
-    return metrics.assign(excess_age_adj_pm=adjusted), float(slope), corr
 
 
 def select_peers(

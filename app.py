@@ -21,7 +21,6 @@ from resilience import (
     GDP_BASELINES,
     HEALTH_MEASURES,
     VAX_THRESHOLD,
-    add_age_adjusted_excess,
     capacity_correlations,
     country_metrics,
     criterion_columns,
@@ -69,12 +68,10 @@ def peer_table(
     min_population: int,
     continents: tuple[str, ...],
     countries: tuple[str, ...],
-) -> tuple[pd.DataFrame, float, float]:
-    """Metrics for the peer group. The age fit uses every country above the
-    population threshold (more stable than fitting on a small peer group)."""
+) -> pd.DataFrame:
+    """Metrics for the peer group."""
     metrics = with_gdp_baseline(select_peers(cached_metrics(cutoff), min_population), gdp_baseline)
-    adjusted, slope, corr = add_age_adjusted_excess(metrics)
-    return select_peers(adjusted, 0, continents, countries), slope, corr
+    return select_peers(metrics, 0, continents, countries)
 
 
 def label(column: str) -> str:
@@ -156,7 +153,7 @@ with st.sidebar:
         default=[c for c in DEFAULT_HIGHLIGHT if c in all_countries],
     )
 
-peers, age_slope, age_corr = peer_table(
+peers = peer_table(
     cutoff, gdp_baseline, int(min_population), peer_continents, peer_countries
 )
 baseline_label = GDP_BASELINES[gdp_baseline][1]
@@ -185,7 +182,6 @@ with tabs[0]:
 | Group | Criterion | Used here | Table (dataset) | Source column |
 |---|---|---|---|---|
 | **Health** | Excess deaths per million | ✅ main measure | `covid_data` (OWID) | `excess_mortality_cumulative_per_million` |
-| | Age-adjusted excess deaths | ⚠️ rough linear correction on % aged 65+ | `covid_data` (OWID) | `aged_65_older` |
 | | Reported COVID deaths | ✅ for comparison only | `covid_data` (OWID) | `total_deaths_per_million` |
 | | Life-expectancy drop 2019 → worst of 2020–22 | ✅ alternative health measure | `society_covid` (World Bank) | `life_expectancy_drop_years` |
 | | Hospital overload | ⚠️ shown, not scored — ICU data for ~40 countries | `covid_data` (OWID) | `icu_patients_per_million` |
@@ -303,11 +299,6 @@ with tabs[1]:
             "unemployment, school closures and stringency 2020–22."
             + (f" Hidden as GDP outliers: {', '.join(hidden)}." if hidden else "")
         )
-        if health_column == "excess_age_adj_pm":
-            st.caption(
-                f"Age adjustment: {age_slope:+.0f} excess deaths/million per extra %-point aged 65+ "
-                f"(correlation {age_corr:.2f} — a weak relationship, so treat the correction as rough)."
-            )
 
 # ---------------------------------------------------------------- 3. ranking
 
@@ -442,7 +433,7 @@ with tabs[4]:
     st.markdown(f"##### Rank on *{HEALTH_MEASURES[health_column].lower()}* by end date (current peer group)")
     rank_columns = {}
     for year_end in CUTOFFS:
-        group, _, _ = peer_table(year_end, gdp_baseline, int(min_population), peer_continents, peer_countries)
+        group = peer_table(year_end, gdp_baseline, int(min_population), peer_continents, peer_countries)
         rank_columns[year_end[:4]] = group.set_index("location")[health_column].rank(method="min")
     ranks = pd.DataFrame(rank_columns)
     focus = ranks.loc[ranks.index.intersection(timeline_countries)]
