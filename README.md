@@ -96,4 +96,4 @@ weight sensitivity, effect of the end date, vaccination speed, data quality.
   without the database. To refresh that data, rebuild the local `covid-combo.db` (gitignored,
   too large for GitHub) with `python build_combo_db.py` (needs `owid-covid-data.csv`; downloads
   the other sources if missing, `--refresh` re-downloads), then run `python export_app_data.py`.
-  See `sources.md` for where the data comes from.
+  See `sources.md` for where the data comes from and `data-origin.md` for how it flows into the app.
