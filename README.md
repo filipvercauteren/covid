@@ -79,7 +79,7 @@ All data retrieved 2026-08-24.
 ## Resilience app: "Who coped best with COVID-19?"
 
 ```bash
-streamlit run resilience_app.py
+streamlit run app.py
 ```
 
 Compares countries on six criteria (lower is better for each): health (excess deaths per
@@ -90,7 +90,8 @@ level). A separate tab relates pre-COVID healthcare capacity to these outcomes. 
 weight sensitivity, effect of the end date, vaccination speed, data quality.
 
 - `resilience.py` — pure data/scoring functions (no Streamlit), reusable from the notebook.
-- `resilience_app.py` — the Streamlit UI.
+- `app.py` — the Streamlit UI (the entry point Streamlit Community Cloud runs).
+- `explorer_app.py` — the older OWID COVID-19 exploration dashboard (`streamlit run explorer_app.py`).
 - Reads `app-data/*.parquet` (committed, ~1 MB), so it runs on Streamlit Community Cloud
   without the database. To refresh that data, rebuild the local `covid-combo.db` (gitignored,
   too large for GitHub) with `python build_combo_db.py` (needs `owid-covid-data.csv`; downloads

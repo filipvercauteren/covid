@@ -1,4 +1,4 @@
-"""Export the data resilience_app.py needs from covid-combo.db to small Parquet files.
+"""Export the data app.py (the resilience app) needs from covid-combo.db to small Parquet files.
 
 covid-combo.db is too large for GitHub (and is git-ignored), so the app reads
 app-data/*.parquet instead; those files are committed. Re-run after rebuilding

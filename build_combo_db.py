@@ -1,4 +1,4 @@
-"""Build covid-combo.db: the SQLite database behind covid_analysis.ipynb and resilience_app.py.
+"""Build covid-combo.db: the SQLite database behind covid_analysis.ipynb and app.py (the resilience app).
 
 Usage:
     python build_combo_db.py              # use local files, download what's missing
