@@ -182,20 +182,20 @@ tabs = st.tabs([
 with tabs[0]:
     st.markdown(
         """
-| Group | Criterion | Used here | Source column |
-|---|---|---|---|
-| **Health** | Excess deaths per million | ✅ main measure | `excess_mortality_cumulative_per_million` |
-| | Age-adjusted excess deaths | ⚠️ rough linear correction on % aged 65+ | `aged_65_older` |
-| | Reported COVID deaths | ✅ for comparison only | `total_deaths_per_million` |
-| | Life-expectancy drop 2019 → worst of 2020–22 | ✅ alternative health measure | `society_covid` (World Bank) |
-| | Hospital overload | ⚠️ shown, not scored — ICU data for ~40 countries | `icu_patients_per_million` |
-| **Economy** | GDP loss 2020–23 vs. a no-COVID baseline: IMF forecast of Oct 2019 (default) or 2015–19 trend | ✅ "economy" criterion | `gdp_covid_loss` (World Bank + IMF) |
-| | Unemployment rise 2019 → worst of 2020–22 | ✅ "jobs" criterion | `society_covid` (World Bank / ILO) |
-| **Society** | Weeks schools fully closed 2020–22 | ✅ "education" criterion | `society_covid` (OxCGRT C1M = 3) |
-| | Restrictions (stringency) | ✅ "freedom" criterion | `stringency_index` (OxCGRT) |
-| **Resilience** | Years GDP below its 2019 level (2020–24) | ✅ "recovery" criterion | `gdp_covid_loss` (World Bank) |
-| | Vaccination speed | ✅ shown, not scored | `people_fully_vaccinated_per_hundred` |
-| | Healthcare capacity before COVID (spending, doctors, nurses, beds) | ✅ explanatory, not scored — see *Healthcare capacity* | `health_capacity` (World Bank) |
+| Group | Criterion | Used here | Table (dataset) | Source column |
+|---|---|---|---|---|
+| **Health** | Excess deaths per million | ✅ main measure | `covid_data` (OWID) | `excess_mortality_cumulative_per_million` |
+| | Age-adjusted excess deaths | ⚠️ rough linear correction on % aged 65+ | `covid_data` (OWID) | `aged_65_older` |
+| | Reported COVID deaths | ✅ for comparison only | `covid_data` (OWID) | `total_deaths_per_million` |
+| | Life-expectancy drop 2019 → worst of 2020–22 | ✅ alternative health measure | `society_covid` (World Bank) | `life_expectancy_drop_years` |
+| | Hospital overload | ⚠️ shown, not scored — ICU data for ~40 countries | `covid_data` (OWID) | `icu_patients_per_million` |
+| **Economy** | GDP loss 2020–23 vs. a no-COVID baseline: IMF forecast of Oct 2019 (default) or 2015–19 trend | ✅ "economy" criterion | `gdp_covid_loss` (World Bank + IMF) | `imf_cum_loss_2020_2023_pct`, `cum_loss_2020_2023_pct_of_trend` |
+| | Unemployment rise 2019 → worst of 2020–22 | ✅ "jobs" criterion | `society_covid` (World Bank / ILO) | `unemployment_rise_pp` |
+| **Society** | Weeks schools fully closed 2020–22 | ✅ "education" criterion | `society_covid` (OxCGRT C1M = 3) | `school_weeks_full` |
+| | Restrictions (stringency) | ✅ "freedom" criterion | `covid_data` (OWID, from OxCGRT) | `stringency_index` |
+| **Resilience** | Years GDP below its 2019 level (2020–24) | ✅ "recovery" criterion | `gdp_covid_loss` (World Bank) | `gdp_years_below_2019` |
+| | Vaccination speed | ✅ shown, not scored | `covid_data` (OWID) | `people_fully_vaccinated_per_hundred` |
+| | Healthcare capacity before COVID (spending, doctors, nurses, beds) | ✅ explanatory, not scored — see *Healthcare capacity* | `health_capacity` (World Bank) | `health_spending_pct_gdp`, `health_spending_per_capita_usd`, `physicians_per_1000`, `nurses_per_1000`, `hospital_beds_per_1000` |
 """
     )
     st.markdown("##### Coverage in the current peer group")
