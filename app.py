@@ -180,7 +180,7 @@ with tabs[0]:
     st.markdown(
         """
 ##### Datasets
-- [**Our World in Data (OWID)** — COVID-19 dataset](https://github.com/owid/covid-19-data):
+- [**Our World in Data (OWID)** — COVID-19 dataset](https://www.kaggle.com/datasets/suphakinthiwong/covid-19-vaccine-efficacy-safety-data/data?select=owid-covid-data.csv) (from Kaggle):
   daily per country — excess and reported deaths, ICU patients, vaccinations, stringency index, population.
 - [**Oxford COVID-19 Government Response Tracker (OxCGRT)**](https://github.com/OxCGRT/covid-policy-dataset):
   daily policy indicators per country, used for school closures (C1M).
