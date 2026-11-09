@@ -198,7 +198,7 @@ with tabs[0]:
 | Group | Criterion | Used here | Table (dataset) | Source column |
 |---|---|---|---|---|
 | **Health** | Excess deaths per million | ✅ main measure | `covid_data` (OWID) | `excess_mortality_cumulative_per_million` |
-| | Reported COVID deaths | ✅ for comparison only | `covid_data` (OWID) | `total_deaths_per_million` |
+| | Reported COVID deaths | ⚙️ selectable alternative (sidebar "Health measure"); also compared with excess deaths in the Data quality tab | `covid_data` (OWID) | `total_deaths_per_million` |
 | | Life-expectancy drop 2019 → worst of 2020–22 | ✅ alternative health measure | `society_covid` (World Bank) | `life_expectancy_drop_years` |
 | | Hospital overload | ⚠️ shown, not scored — ICU data for ~40 countries | `covid_data` (OWID) | `icu_patients_per_million` |
 | **Economy** | GDP loss 2020–23 vs. a no-COVID baseline: IMF forecast of Oct 2019 (default) or 2015–19 trend | ✅ "economy" criterion | `gdp_covid_loss` (World Bank + IMF) | `imf_cum_loss_2020_2023_pct`, `cum_loss_2020_2023_pct_of_trend` |
