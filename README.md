@@ -91,6 +91,8 @@ weight sensitivity, effect of the end date, vaccination speed, data quality.
 
 - `resilience.py` — pure data/scoring functions (no Streamlit), reusable from the notebook.
 - `resilience_app.py` — the Streamlit UI.
-- Needs the local `covid-combo.db` (gitignored). Build it with `python build_combo_db.py`
-  (needs `owid-covid-data.csv`; downloads the other sources if missing, `--refresh` re-downloads).
+- Reads `app-data/*.parquet` (committed, ~1 MB), so it runs on Streamlit Community Cloud
+  without the database. To refresh that data, rebuild the local `covid-combo.db` (gitignored,
+  too large for GitHub) with `python build_combo_db.py` (needs `owid-covid-data.csv`; downloads
+  the other sources if missing, `--refresh` re-downloads), then run `python export_app_data.py`.
   See `sources.md` for where the data comes from.

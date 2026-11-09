@@ -1,7 +1,7 @@
 """Which countries coped best with COVID-19? - Streamlit app.
 
 Run with:  streamlit run resilience_app.py
-Needs covid-combo.db (tables covid_data and gdp_covid_loss), see sources.md.
+Reads app-data/*.parquet, exported from covid-combo.db by export_app_data.py (see sources.md).
 """
 
 from pathlib import Path
@@ -17,7 +17,7 @@ from resilience import (
     COST_CRITERIA,
     CRITERIA_LABELS,
     CUTOFFS,
-    DB_PATH,
+    DATA_DIR,
     GDP_BASELINES,
     HEALTH_MEASURES,
     VAX_THRESHOLD,
@@ -50,15 +50,15 @@ CALCULATION_DOCS = {
 
 # ---------------------------------------------------------------- data (cached)
 
-@st.cache_data(show_spinner="Loading covid-combo.db…")
+@st.cache_data(show_spinner="Loading COVID data…")
 def cached_daily() -> pd.DataFrame:
-    return load_daily(DB_PATH)
+    return load_daily(DATA_DIR)
 
 
 @st.cache_data(show_spinner=False)
 def cached_metrics(cutoff: str) -> pd.DataFrame:
     return country_metrics(
-        cached_daily(), load_gdp_loss(DB_PATH), load_society(DB_PATH), load_health_capacity(DB_PATH), cutoff
+        cached_daily(), load_gdp_loss(DATA_DIR), load_society(DATA_DIR), load_health_capacity(DATA_DIR), cutoff
     )
 
 
@@ -89,8 +89,8 @@ st.set_page_config(
     layout="wide",
 )
 
-if not Path(DB_PATH).exists():
-    st.error(f"`{DB_PATH}` not found. Build it first (see `sources.md`), then reload.")
+if not (Path(DATA_DIR) / "daily.parquet").exists():
+    st.error(f"`{DATA_DIR}/` not found. Run `python export_app_data.py` (see `sources.md`), then reload.")
     st.stop()
 
 "# Who coped best with COVID-19?"

@@ -1,6 +1,7 @@
 """Data and scoring functions for the "which countries coped best?" resilience app.
 
-Pure functions over DataFrames read from covid-combo.db. No Streamlit imports,
+Pure functions over DataFrames read from app-data/*.parquet (exported from
+covid-combo.db by export_app_data.py). No Streamlit imports,
 so they can be reused from the notebook or tests.
 
 Criteria (lower is better for all of them):
@@ -20,13 +21,12 @@ factor, not a criterion: see capacity_correlations().
 
 from __future__ import annotations
 
-import sqlite3
-from contextlib import closing
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-DB_PATH = "covid-combo.db"
+DATA_DIR = "app-data"  # Parquet files written by export_app_data.py from covid-combo.db
 
 # England, Scotland, Wales, Northern Ireland are already included in United Kingdom.
 UK_NATIONS = ("OWID_ENG", "OWID_SCT", "OWID_WLS", "OWID_NIR")
@@ -100,7 +100,7 @@ COLUMN_LABELS = {
     "population": "Population",
 }
 
-_DAILY_COLUMNS = (
+DAILY_COLUMNS = (
     "iso_code",
     "location",
     "continent",
@@ -115,53 +115,28 @@ _DAILY_COLUMNS = (
 )
 
 
-def load_daily(db_path: str = DB_PATH) -> pd.DataFrame:
-    """Country-day rows for real countries only.
-
-    Aggregates (World, continents, EU, income groups) have no continent; the UK
-    nations are dropped because United Kingdom already covers them. Kosovo and
-    Northern Cyprus are kept even though their iso_code starts with OWID_.
-    """
-    placeholders = ",".join("?" * len(UK_NATIONS))
-    query = f"""
-        SELECT {", ".join(_DAILY_COLUMNS)}
-        FROM covid_data
-        WHERE continent IS NOT NULL AND iso_code NOT IN ({placeholders})
-    """
-    with closing(sqlite3.connect(db_path)) as conn:
-        return pd.read_sql(query, conn, params=UK_NATIONS, parse_dates=["date"])
+def _read(name: str, data_dir: str) -> pd.DataFrame:
+    return pd.read_parquet(Path(data_dir) / f"{name}.parquet")
 
 
-def load_gdp_loss(db_path: str = DB_PATH) -> pd.DataFrame:
+def load_daily(data_dir: str = DATA_DIR) -> pd.DataFrame:
+    """Country-day rows for real countries only (see export_app_data.py for the filter)."""
+    return _read("daily", data_dir)
+
+
+def load_gdp_loss(data_dir: str = DATA_DIR) -> pd.DataFrame:
     """GDP loss vs. pre-COVID trend per country (derived table, see sources.md)."""
-    query = """
-        SELECT iso_code AS wb_iso,
-               imf_cum_loss_2020_2023_pct AS gdp_loss_imf_pct,
-               cum_loss_2020_2023_pct_of_trend AS gdp_loss_trend_pct,
-               growth_2020_pct, gdp_years_below_2019, gdp_recovery_year
-        FROM gdp_covid_loss
-        WHERE is_aggregate = 0
-    """
-    with closing(sqlite3.connect(db_path)) as conn:
-        return pd.read_sql(query, conn)
+    return _read("gdp_loss", data_dir)
 
 
-def load_society(db_path: str = DB_PATH) -> pd.DataFrame:
+def load_society(data_dir: str = DATA_DIR) -> pd.DataFrame:
     """School closures, unemployment rise, life-expectancy drop (derived table society_covid)."""
-    query = """
-        SELECT iso_code AS wb_iso, school_weeks_full, school_weeks_partial_or_full,
-               unemployment_rise_pp, life_expectancy_drop_years
-        FROM society_covid
-    """
-    with closing(sqlite3.connect(db_path)) as conn:
-        return pd.read_sql(query, conn)
+    return _read("society", data_dir)
 
 
-def load_health_capacity(db_path: str = DB_PATH) -> pd.DataFrame:
+def load_health_capacity(data_dir: str = DATA_DIR) -> pd.DataFrame:
     """Pre-COVID healthcare capacity (derived table health_capacity, World Bank)."""
-    query = f"SELECT iso_code AS wb_iso, {', '.join(CAPACITY_COLUMNS)} FROM health_capacity"
-    with closing(sqlite3.connect(db_path)) as conn:
-        return pd.read_sql(query, conn)
+    return _read("health_capacity", data_dir)
 
 
 def country_metrics(
