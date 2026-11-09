@@ -179,6 +179,21 @@ tabs = st.tabs([
 with tabs[0]:
     st.markdown(
         """
+##### Datasets
+- [**Our World in Data (OWID)** — COVID-19 dataset](https://github.com/owid/covid-19-data):
+  daily per country — excess and reported deaths, ICU patients, vaccinations, stringency index, population.
+- [**Oxford COVID-19 Government Response Tracker (OxCGRT)**](https://github.com/OxCGRT/covid-policy-dataset):
+  daily policy indicators per country, used for school closures (C1M).
+- [**World Bank — World Development Indicators**](https://data.worldbank.org/):
+  yearly GDP, unemployment, life expectancy and healthcare capacity (spending, doctors, nurses, beds).
+- [**IMF World Economic Outlook, October 2019**](https://www.imf.org/en/Publications/WEO/Issues/2019/10/01/world-economic-outlook-october-2019):
+  GDP growth forecasts made before COVID, the "no COVID" baseline for GDP loss (via DBnomics).
+
+##### Criteria
+"""
+    )
+    st.markdown(
+        """
 | Group | Criterion | Used here | Table (dataset) | Source column |
 |---|---|---|---|---|
 | **Health** | Excess deaths per million | ✅ main measure | `covid_data` (OWID) | `excess_mortality_cumulative_per_million` |
