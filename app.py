@@ -29,6 +29,7 @@ from resilience import (
     load_gdp_loss,
     load_health_capacity,
     load_society,
+    measure_correlations,
     rank_stability,
     score_countries,
     select_peers,
@@ -171,6 +172,7 @@ tabs = st.tabs([
     ":material/timeline: End date matters",
     ":material/vaccines: Vaccination speed",
     ":material/local_hospital: Healthcare capacity",
+    ":material/grid_on: Correlations",
     ":material/fact_check: Data quality",
     ":material/calculate: Calculations",
 ])
@@ -548,9 +550,77 @@ with tabs[6]:
             },
         )
 
-# ---------------------------------------------------------------- 8. data quality
+# ---------------------------------------------------------------- 8. correlations
 
 with tabs[7]:
+    st.markdown(
+        "How do all the measures relate to each other, e.g. **freedom (stringency) vs. excess deaths**? "
+        "Spearman rank correlation between every pair, over the current peer group."
+    )
+    health_options = list(HEALTH_MEASURES)
+    other_options = [
+        *COST_CRITERIA.values(), *CAPACITY_COLUMNS,
+        "pct_fully_vax", "days_to_50pct_vax", "peak_icu_pm",
+    ]
+    corr_default = [*health_options, *COST_CRITERIA.values(), *CAPACITY_COLUMNS]
+    corr_columns = st.multiselect(
+        "Measures", [*health_options, *other_options], default=corr_default, format_func=label,
+        key="corr_columns",
+    )
+    if len(corr_columns) < 2:
+        st.info("Pick at least two measures.")
+    else:
+        full_corr, full_counts = measure_correlations(peers, corr_columns)
+        names = [label(c) for c in corr_columns]
+        heat = full_corr.set_axis(names, axis=0).set_axis(names, axis=1)
+        fig = px.imshow(
+            heat, text_auto=".2f", color_continuous_scale="RdBu_r", zmin=-1, zmax=1, aspect="auto",
+            labels={"color": "Spearman ρ"},
+        )
+        fig.update_layout(
+            height=max(450, 45 * len(corr_columns)),
+            xaxis={"side": "top", "tickangle": -30}, margin={"t": 200},
+        )
+        st.plotly_chart(fig)
+        st.caption(
+            f"{int(full_counts.to_numpy().min())}–{int(full_counts.to_numpy().max())} countries per cell "
+            "(each pair uses the countries that have both values). **Positive (red)**: the two measures "
+            "rise together; **negative (blue)**: one is high where the other is low. Most measures are "
+            "*lower is better*, but healthcare capacity and vaccination % are *higher is better*. "
+            "Correlation is not causation."
+        )
+
+        c1, c2 = st.columns(2)
+        x_corr = c1.selectbox(
+            "Measure on the x axis", corr_columns, format_func=label,
+            index=corr_columns.index("avg_stringency") if "avg_stringency" in corr_columns else 0,
+            key="corr_x",
+        )
+        y_options = [c for c in corr_columns if c != x_corr]
+        y_corr = c2.selectbox(
+            "Measure on the y axis", y_options, format_func=label,
+            index=y_options.index(health_column) if health_column in y_options else 0,
+            key="corr_y",
+        )
+        pair = peers.dropna(subset=[x_corr, y_corr])
+        if len(pair) < 3:
+            st.info("Too few countries have both values.")
+        else:
+            rho = full_corr.loc[x_corr, y_corr]
+            fig = px.scatter(
+                pair, x=x_corr, y=y_corr, color="continent", hover_name="location",
+                text=[loc if loc in highlight else "" for loc in pair["location"]],
+                log_x=x_corr == "health_spending_per_capita_usd",
+                log_y=y_corr == "health_spending_per_capita_usd",
+                labels=COLUMN_LABELS, title=f"Spearman ρ = {rho:.2f}  ({len(pair)} countries)",
+            )
+            fig.update_traces(textposition="top center")
+            fig.update_layout(height=500)
+            st.plotly_chart(fig)
+
+# ---------------------------------------------------------------- 9. data quality
+
+with tabs[8]:
     st.markdown(
         "Pitfall 3: where excess deaths are many times the reported COVID deaths, the official "
         "figures can't be trusted — and countries without death registration are missing entirely."
@@ -584,9 +654,9 @@ with tabs[7]:
         with st.expander(f"{title}: {len(names)}"):
             st.write(", ".join(sorted(names)) or "—")
 
-# ---------------------------------------------------------------- 9. calculations
+# ---------------------------------------------------------------- 10. calculations
 
-with tabs[8]:
+with tabs[9]:
     doc_title = (
         st.selectbox("Calculation", list(CALCULATION_DOCS))
         if len(CALCULATION_DOCS) > 1

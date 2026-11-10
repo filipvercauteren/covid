@@ -316,13 +316,21 @@ def capacity_correlations(
     """Spearman rank correlation between capacity measures (rows) and outcomes (columns),
     plus the number of countries behind each value. Rank-based, so robust to outliers
     such as US health spending; pairwise, so each cell uses every country with both values."""
-    corr = metrics[capacity_columns + outcome_columns].corr(method="spearman")
-    present = metrics[capacity_columns + outcome_columns].notna().astype(int)
-    counts = present.T @ present
+    corr, counts = measure_correlations(metrics, capacity_columns + outcome_columns)
     return (
         corr.loc[capacity_columns, outcome_columns],
         counts.loc[capacity_columns, outcome_columns],
     )
+
+
+def measure_correlations(
+    metrics: pd.DataFrame, columns: list[str]
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Spearman rank correlation between every pair of `columns`, plus the number of
+    countries behind each value. Pairwise: each cell uses every country with both values."""
+    values = metrics[columns]
+    present = values.notna().astype(int)
+    return values.corr(method="spearman"), present.T @ present
 
 
 def excess_timeseries(daily: pd.DataFrame, locations: list[str]) -> pd.DataFrame:
