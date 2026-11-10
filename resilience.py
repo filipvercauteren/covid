@@ -333,6 +333,23 @@ def measure_correlations(
     return values.corr(method="spearman"), present.T @ present
 
 
+def strongest_pairs(corr: pd.DataFrame, counts: pd.DataFrame, min_countries: int = 20) -> pd.DataFrame:
+    """Each distinct pair of measures once (no self-pairs), strongest |correlation| first.
+    Pairs backed by fewer than `min_countries` countries are dropped: with few points
+    a rank correlation can look extreme by chance."""
+    names = list(corr.columns)
+    pairs = pd.DataFrame(
+        [
+            {"a": a, "b": b, "rho": corr.loc[a, b], "n": int(counts.loc[a, b])}
+            for i, a in enumerate(names)
+            for b in names[i + 1:]
+        ],
+        columns=["a", "b", "rho", "n"],
+    )
+    pairs = pairs[pairs["rho"].notna() & (pairs["n"] >= min_countries)]
+    return pairs.reindex(pairs["rho"].abs().sort_values(ascending=False).index).reset_index(drop=True)
+
+
 def excess_timeseries(daily: pd.DataFrame, locations: list[str]) -> pd.DataFrame:
     """Cumulative excess deaths per million over time for the given countries."""
     rows = daily[

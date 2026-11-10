@@ -32,6 +32,7 @@ from resilience import (
     measure_correlations,
     rank_stability,
     score_countries,
+    strongest_pairs,
     select_peers,
     vaccination_timeseries,
     with_gdp_baseline,
@@ -577,6 +578,15 @@ with tabs[7]:
             heat, text_auto=".2f", color_continuous_scale="RdBu_r", zmin=-1, zmax=1, aspect="auto",
             labels={"color": "Spearman ρ"},
         )
+        pairs = strongest_pairs(full_corr, full_counts)
+        if not pairs.empty:
+            top = pairs.iloc[0]
+            i, j = corr_columns.index(top["a"]), corr_columns.index(top["b"])
+            for x, y in ((i, j), (j, i)):  # the pair appears in both halves of the matrix
+                fig.add_shape(
+                    type="rect", x0=x - 0.5, x1=x + 0.5, y0=y - 0.5, y1=y + 0.5,
+                    line={"color": "gold", "width": 4},
+                )
         fig.update_layout(
             height=max(450, 45 * len(corr_columns)),
             xaxis={"side": "top", "tickangle": -30}, margin={"t": 200},
@@ -588,7 +598,37 @@ with tabs[7]:
             "rise together; **negative (blue)**: one is high where the other is low. Most measures are "
             "*lower is better*, but healthcare capacity and vaccination % are *higher is better*. "
             "Correlation is not causation."
+            + (f" The **gold frame** marks the strongest pair: {label(top['a'])} and {label(top['b'])} "
+               f"(ρ = {top['rho']:.2f})." if not pairs.empty else "")
         )
+
+        def describe(pair: pd.Series) -> str:
+            return f"**{label(pair['a'])}** and **{label(pair['b'])}**: ρ = {pair['rho']:.2f} ({pair['n']} countries)"
+
+        with st.container(border=True):
+            st.markdown("##### Takeaways (for the measures selected above)")
+            if pairs.empty:
+                st.write("No pair has enough countries (at least 20) with both values.")
+            else:
+                lines = [
+                    "**Strongest positive** (rise together): "
+                    + "; ".join(describe(p) for _, p in pairs[pairs["rho"] > 0].head(3).iterrows()),
+                    "**Strongest negative** (one high, the other low): "
+                    + "; ".join(describe(p) for _, p in pairs[pairs["rho"] < 0].head(3).iterrows()),
+                ]
+                if {"avg_stringency", health_column} <= set(corr_columns):
+                    freedom = full_corr.loc["avg_stringency", health_column]
+                    strength = "no real" if abs(freedom) < 0.2 else "a weak" if abs(freedom) < 0.4 else "a clear"
+                    lines.append(
+                        f"**Freedom vs. health:** stringency and {HEALTH_MEASURES[health_column].lower()} "
+                        f"correlate at ρ = {freedom:.2f}, which is {strength} relationship."
+                    )
+                lines.append(
+                    "**Handle with care:** most measures also track national wealth (capacity, vaccination "
+                    "speed, death registration), so many strong pairs say 'rich vs. poor', not cause and effect. "
+                    "Pairs with fewer than 20 countries are left out of this list."
+                )
+                st.markdown("\n".join(f"- {line}" for line in lines))
 
         c1, c2 = st.columns(2)
         x_corr = c1.selectbox(
