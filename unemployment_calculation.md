@@ -1,7 +1,7 @@
 # How the unemployment rise is calculated
 
 *Jobs criterion — column `unemployment_rise_pp` in table `society_covid`,
-calculated by `social_changes()` in `build_combo_db.py`.*
+calculated by `social_changes()` in `build_resilience_db.py`.*
 
 The calculation is a chain of five pandas operations. Each one works on **all countries at once**,
 with no loop per country. Below it is run on real data for three countries, plus one aggregate,

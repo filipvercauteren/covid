@@ -1,7 +1,7 @@
 """Data and scoring functions for the "which countries coped best?" resilience app.
 
 Pure functions over DataFrames read from app-data/*.parquet (exported from
-covid-combo.db by export_app_data.py). No Streamlit imports,
+covid-resilience.db by export_app_data.py). No Streamlit imports,
 so they can be reused from the notebook or tests.
 
 Criteria (lower is better for all of them):
@@ -26,7 +26,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-DATA_DIR = "app-data"  # Parquet files written by export_app_data.py from covid-combo.db
+DATA_DIR = "app-data"  # Parquet files written by export_app_data.py from covid-resilience.db
 
 # England, Scotland, Wales, Northern Ireland are already included in United Kingdom.
 UK_NATIONS = ("OWID_ENG", "OWID_SCT", "OWID_WLS", "OWID_NIR")

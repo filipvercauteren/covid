@@ -1,7 +1,7 @@
 """Which countries coped best with COVID-19? - Streamlit app.
 
 Run with:  streamlit run app.py
-Reads app-data/*.parquet, exported from covid-combo.db by export_app_data.py (see sources.md).
+Reads app-data/*.parquet, exported from covid-resilience.db by export_app_data.py (see sources.md).
 """
 
 from pathlib import Path

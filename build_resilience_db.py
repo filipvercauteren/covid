@@ -1,9 +1,9 @@
-"""Build covid-combo.db: the SQLite database behind covid_analysis.ipynb and app.py (the resilience app).
+"""Build covid-resilience.db: the SQLite database behind covid_analysis.ipynb and app.py (the resilience app).
 
 Usage:
-    python build_combo_db.py              # use local files, download what's missing
-    python build_combo_db.py --refresh    # re-download every downloadable source
-    python build_combo_db.py --db other.db
+    python build_resilience_db.py              # use local files, download what's missing
+    python build_resilience_db.py --refresh    # re-download every downloadable source
+    python build_resilience_db.py --db other.db
 
 Tables (see sources.md for URLs and provenance):
     covid_data                    owid-covid-data.csv                (local file, required)
@@ -43,7 +43,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-DB_PATH = "covid-combo.db"
+DB_PATH = "covid-resilience.db"
 
 OWID_RAW = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data"
 COVID_CSV = "owid-covid-data.csv"
@@ -103,7 +103,7 @@ SOCIETY_YEARS = (2020, 2021, 2022)
 # OxCGRT C1M school closing: 0 none, 1 recommended, 2 required for some levels, 3 required for all levels
 SCHOOL_PARTIAL, SCHOOL_FULL = 2, 3
 
-USER_AGENT = "covid-combo-db-builder"
+USER_AGENT = "covid-resilience-db-builder"
 
 
 # ---------------------------------------------------------------- downloading

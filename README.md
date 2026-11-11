@@ -93,7 +93,7 @@ weight sensitivity, effect of the end date, vaccination speed, data quality.
 - `app.py` — the Streamlit UI (the entry point Streamlit Community Cloud runs).
 - `explorer_app.py` — the older OWID COVID-19 exploration dashboard (`streamlit run explorer_app.py`).
 - Reads `app-data/*.parquet` (committed, ~1 MB), so it runs on Streamlit Community Cloud
-  without the database. To refresh that data, rebuild the local `covid-combo.db` (gitignored,
-  too large for GitHub) with `python build_combo_db.py` (needs `owid-covid-data.csv`; downloads
+  without the database. To refresh that data, rebuild the local `covid-resilience.db` (gitignored,
+  too large for GitHub) with `python build_resilience_db.py` (needs `owid-covid-data.csv`; downloads
   the other sources if missing, `--refresh` re-downloads), then run `python export_app_data.py`.
   See `sources.md` for where the data comes from and `data-origin.md` for how it flows into the app.

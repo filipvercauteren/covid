@@ -15,9 +15,9 @@ are used, and where each value is calculated. URLs and provenance per source are
  │ worldbank-health.csv         World Bank API, yearly                  │
  │ imf-weo-2019-10-gdp-growth   IMF forecast Oct 2019 (via DBnomics)    │
  └──────────────────────────────────┬───────────────────────────────────┘
-                                    │  python build_combo_db.py
+                                    │  python build_resilience_db.py
                                     ▼
- ┌────────────────── 2. covid-combo.db (SQLite, 175 MB) ──────────────────┐
+ ┌────────────────── 2. covid-resilience.db (SQLite, 175 MB) ──────────────────┐
  │ RAW TABLES (loaded as-is, cleaned)                                     │
  │  covid_data        ◄ OWID     excess_mortality_cumulative_per_million, │
  │                               total_deaths_per_million,                │
@@ -29,7 +29,7 @@ are used, and where each value is calculated. URLs and provenance per source are
  │  health_annual     ◄ WB       health spending, physicians, nurses, beds│
  │  imf_weo_2019_forecast ◄ IMF  forecast_real_gdp_growth_pct             │
  │                                                                        │
- │ DERIVED TABLES  (★ = calculated in build_combo_db.py)                  │
+ │ DERIVED TABLES  (★ = calculated in build_resilience_db.py)                  │
  │  gdp_covid_loss  ◄ gdp_annual + imf_weo_2019_forecast                  │
  │    ★ cum_loss_2020_2023_pct_of_trend   gdp_loss_for_country()          │
  │        trend g = (GDP2019/GDP2015)^(1/4) − 1, extended over 2020-23,   │
@@ -99,7 +99,7 @@ are used, and where each value is calculated. URLs and provenance per source are
 
 ## Where calculations happen
 
-1. **`build_combo_db.py`**: fixed calculations per country and year (GDP loss, recovery
+1. **`build_resilience_db.py`**: fixed calculations per country and year (GDP loss, recovery
    years, school-closure weeks, unemployment rise, life-expectancy drop, healthcare
    capacity). They don't depend on anything chosen in the app.
 2. **`resilience.py`**: everything that depends on the sidebar (cutoff date, GDP
@@ -111,6 +111,6 @@ aggregate regions.
 ## Refreshing the data
 
 ```bash
-python build_combo_db.py      # rebuild covid-combo.db (--refresh re-downloads sources)
+python build_resilience_db.py      # rebuild covid-resilience.db (--refresh re-downloads sources)
 python export_app_data.py     # rewrite app-data/*.parquet for the app
 ```

@@ -1,10 +1,10 @@
-"""Export the data app.py (the resilience app) needs from covid-combo.db to small Parquet files.
+"""Export the data app.py (the resilience app) needs from covid-resilience.db to small Parquet files.
 
-covid-combo.db is too large for GitHub (and is git-ignored), so the app reads
+covid-resilience.db is too large for GitHub (and is git-ignored), so the app reads
 app-data/*.parquet instead; those files are committed. Re-run after rebuilding
 the database:
 
-    python build_combo_db.py
+    python build_resilience_db.py
     python export_app_data.py              # or: --db other.db --out other-dir
 """
 
@@ -19,7 +19,7 @@ import pandas as pd
 
 from resilience import CAPACITY_COLUMNS, DATA_DIR, DAILY_COLUMNS, UK_NATIONS
 
-DB_PATH = "covid-combo.db"
+DB_PATH = "covid-resilience.db"
 
 
 def _daily_query() -> tuple[str, tuple[str, ...]]:
