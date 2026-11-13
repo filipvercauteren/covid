@@ -25,6 +25,11 @@ and a real DOI/URL.
   smaller set of locations than the main OWID dataset. Source:
   [github.com/owid/covid-19-data](https://github.com/owid/covid-19-data).
 
+- **build_deck.py** — Builds the short Dutch presentation (7 slides) as a PDF with headless
+  Chrome: `python build_deck.py ["COVID Resilience (NL, kort).pdf"]`. All numbers come from
+  `resilience.py` and `covid-resilience.db` (run `build_resilience_db.py` first), so the deck
+  can be rebuilt whenever the data changes. Slide text lives in the `slide_*` functions.
+
 - **primary_sources.json** — Machine-readable citation registry. Each entry:
   `claim, source_title, authors, journal, year, doi_or_url, trust_tier, exact_quote_or_stat, notes`.
   Covers the Lancet Infectious Diseases lives-saved model (Watson et al. 2022), four
