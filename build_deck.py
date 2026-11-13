@@ -35,6 +35,7 @@ WEIGHTS = {"health": 2, "economy": 1, "education": 1}
 GITHUB = "https://github.com/filipvercauteren/covid/blob"
 BRANCH = f"{GITHUB}/feature/COVID-2-covid-resilience"
 PINNED = f"{GITHUB}/e990b9d89f50bff7b12196748c609c2f2f41c8fe"  # commit the line-number links point at
+GH_URL = "https://github.com/filipvercauteren/covid"
 APP_URL = "https://covid-resilience.streamlit.app/"
 # Reported-deaths control (slide 7): leave out countries whose excess deaths exceed this multiple of reported deaths
 CONTROL_RATIO = 3
@@ -147,6 +148,7 @@ h1{font-size:40px;margin:10px 0 22px;line-height:1.12;font-weight:700;letter-spa
 .foot{position:absolute;left:76px;bottom:30px;font-size:14px;color:#6b7185}
 .note{font-size:17px;line-height:1.5;color:#2b3550}
 a{color:#2f6f9f;font-weight:700}
+a::after{content:" ↗";font-weight:400}
 code{font-family:"DejaVu Sans Mono",monospace;font-size:14px;background:#f1eee7;padding:1px 5px;border-radius:3px}
 .mono{font-family:"DejaVu Sans Mono",monospace;color:#4a5270;font-size:13.5px;line-height:1.35;display:block}
 .ai{position:absolute;left:76px;bottom:30px;font-size:13px;color:#6b7185;letter-spacing:.08em}
@@ -174,11 +176,11 @@ def slide(inner):
 # ---------------------------------------------------------------- slides
 
 def slide_title():
-    return slide("""
+    return slide(f"""
 <div class="k" style="margin-top:130px">COVID-veerkracht</div>
 <h1 style="font-size:64px;max-width:900px;margin-top:20px">Welke landen kwamen<br>het best door COVID-19?</h1>
-<p class="note" style="font-size:22px;margin:10px 0 0;white-space:nowrap">3 criteria, open data van Our World in Data, Oxford en de Wereldbank, en 1 transparante gewogen score.</p>
-<p class="note" style="font-size:17px;color:#4a5270;margin:10px 0 0">COVID-periode: 11/03/2020 – 05/05/2023</p>
+<p class="note" style="font-size:22px;margin:10px 0 0;white-space:nowrap">3 criteria, 3 datasets van Our World in Data, Oxford en de Wereldbank, en 1 transparante gewogen score.</p>
+<p class="note" style="font-size:17px;margin:22px 0 0">Live: <a href="{APP_URL}">{APP_URL}</a> &nbsp;·&nbsp; Code: {link(GH_URL, "README.md")}</p>
 <div class="ai"><b>AI-GEGENEREERD</b> &nbsp; Analyse, code en slides gegenereerd door Claude (Anthropic AI)</div>""")
 
 
@@ -198,7 +200,7 @@ def slide_question(db):
   <p>Weken dat scholen volledig gesloten waren, 2020–22</p></div>
 </div>
 <p class="note" style="margin-top:20px;font-size:16px;color:#4a5270">Drie criteria, lager is overal beter. Einddatum en gewichten zijn aanpasbaar in de app.</p>
-<p class="note" style="margin-top:-6px;font-size:13.5px;color:#6b7185"><b>Waarom de einddatum aanpassen?</b> Landen die het virus vroeg buiten hielden (Nieuw-Zeeland, Australië) scoren veel beter bij einde 2021 dan bij einde 2023. Einde 2023 is de eerlijkste standaard.</p>
+<p class="note" style="margin-top:-6px;font-size:13.5px;color:#6b7185"><b>Waarom de einddatum aanpassen?</b> De COVID-periode loopt van 11/03/2020 tot 05/05/2023. Landen die het virus vroeg buiten hielden (Nieuw-Zeeland, Australië) scoren veel beter bij einde 2021 dan bij einde 2023. Einde 2023 is de eerlijkste standaard.</p>
 <div class="dropped"><div class="t">Van 6 naar 3 criteria</div>
  <p class="note" style="font-size:16px;margin:4px 0 10px">We startten met zes criteria en lieten er drie vallen om de complexiteit te beperken. Ze blijven wel als context zichtbaar in de app, maar tellen niet mee in de score.</p>
  <div class="row" style="gap:14px">
@@ -264,7 +266,7 @@ def slide_path(r, db):
  <div class="arrow">→</div>
  <div class="card" style="flex:.9"><h3>3 · Parquet</h3><p>{fmt(parquet_mb, 1)} MB in git (de database is te groot voor GitHub)</p></div>
  <div class="arrow">→</div>
- <div class="card dark" style="flex:1.1"><h3>4 · Live in de app</h3><p>{link("resilience.py ↗", "resilience.py")}:<br>één rij per land →<br>rangen → gewogen score</p></div>
+ <div class="card dark" style="flex:1.1"><h3>4 · Live in de app</h3><p>{link("resilience.py", "resilience.py")}:<br>één rij per land →<br>rangen → gewogen score</p></div>
 </div>
 <div class="row" style="margin-top:22px">
  <div class="card" style="flex:1;text-align:center"><div style="font-size:46px;font-weight:700;color:#c4501b">{fmt(db["daily_rows"])}</div><p>dagrijen uit OWID<br>({db["countries"]} landen en gebieden)</p></div>
@@ -342,9 +344,9 @@ def slide_gdp(r, db):
   <p>België 2020–23: <b>{fmt(loss, 1)}% verlies</b>. Negatief = beter dan verwacht (Ierland: {fmt(ireland["gdp_loss_pct"], 1)}%).</p>
   <p style="color:#4a5270">Nadeel: de trend overschat het verlies voor landen die voor COVID snel groeiden.</p></div></div>
 </div>
-<div class="card" style="margin-top:6px;padding:10px 22px"><div class="f"><i>g</i> = (BBP<sub>2019</sub> / BBP<sub>2015</sub>)<sup>1/4</sup> − 1 &nbsp;&nbsp; <i>F</i>(<i>y</i>) = BBP<sub>2019</sub> × (1 + <i>g</i>)<sup><i>y</i>−2019</sup>
-&nbsp;&nbsp; Verlies % = <span class="fr"><span>{sigma} <i>F</i>(<i>y</i>) − {sigma} <i>A</i>(<i>y</i>)</span><span>{sigma} <i>F</i>(<i>y</i>)</span></span> × 100</div>
-<div style="font-size:13.5px;color:#6b7185">g = gemiddelde jaarlijkse BBP-groei 2015 tot 2019 (4 jaar, dus exponent 1/4) · F = verwacht, A = werkelijk BBP (constante 2015 US$), gesommeerd over 2020 tot 2023</div></div>
+<div class="card" style="margin-top:6px;padding:10px 22px"><div class="f"><i>g</i> = (BBP<sub>2019</sub> / BBP<sub>2015</sub>)<sup>1/4</sup> − 1 &nbsp;&nbsp; <i>V</i>(<i>y</i>) = BBP<sub>2019</sub> × (1 + <i>g</i>)<sup><i>y</i>−2019</sup>
+&nbsp;&nbsp; Verlies % = <span class="fr"><span>{sigma} <i>V</i>(<i>y</i>) − {sigma} <i>W</i>(<i>y</i>)</span><span>{sigma} <i>V</i>(<i>y</i>)</span></span> × 100</div>
+<div style="font-size:13.5px;color:#6b7185">g = gemiddelde jaarlijkse BBP-groei 2015 tot 2019 (4 jaar, dus exponent 1/4) · V = verwacht, W = werkelijk BBP (constante 2015 US$), gesommeerd over 2020 tot 2023</div></div>
 <div class="foot">Tabel {link("gdp_covid_loss", "build_resilience_db.py", 165)} · gdp_loss_for_country() in build_resilience_db.py · Wereldbank</div>""")
 
 
@@ -357,10 +359,9 @@ def slide_conclusion(r):
 <h1>Wat je moet onthouden</h1>
 <div class="row" style="flex-wrap:wrap">
  <div class="card" style="flex:1 1 46%"><h2 style="font-size:19px">Slechts {r["n_rank"]} van {r["n_un"]} VN-lidstaten</h2><p>Oversterfte bestaat alleen waar sterfte goed wordt geregistreerd: vooral Europa, Noord-Amerika en delen van Azië. Afrika en een groot deel van Azië ontbreken.</p></div>
- <div class="card" style="flex:1 1 46%"><h2 style="font-size:19px">Controle met gemelde sterfte</h2><p>Gemelde sterfte onderschat soms zwaar (Egypte: {fmt(ratio["Egypt"])}×, Oezbekistan: {fmt(ratio["Uzbekistan"])}× minder dan de oversterfte). Sluit je die landen uit ({r["control_n"]} blijven over), dan blijven {r["control_overlap"]} van de 10 in de top 10.</p></div>
+ <div class="card" style="flex:1 1 46%"><h2 style="font-size:19px">Controle met gemelde sterfte</h2><p><b>Het probleem met gemelde COVID-doden:</b> ze tellen alleen sterfgevallen die getest, vastgesteld en gemeld zijn. Landen met weinig testen of zwakke registratie lijken daardoor veel beter dan ze zijn (Egypte: {fmt(ratio["Egypt"])}×, Oezbekistan: {fmt(ratio["Uzbekistan"])}× minder dan de oversterfte). Oversterfte vergelijkt álle sterfgevallen met wat normaal is, ongeacht de oorzaak. Sluit je die landen uit ({r["control_n"]} blijven over), dan blijven {r["control_overlap"]} van de 10 in de top 10.</p></div>
 </div>
-<div class="card dark" style="margin-top:18px"><p><b>Conclusie:</b> tot eind 2023 komen {enumerate_nl([nl(c) for c in scored.head(3)["location"]])} het best uit de bus volgens drie expliciete criteria. {stable} blijven in de meeste gewichtscombinaties in de top 10.</p>
-<p>Probeer het live: <a href="{APP_URL}">{APP_URL}</a> &nbsp;·&nbsp; {link("Check de code op GitHub ↗", "README.md")}</p></div>
+<div class="card dark" style="margin-top:18px"><p><b>Conclusie:</b> tot eind 2023 komen {enumerate_nl([nl(c) for c in scored.head(3)["location"]])} het best uit de bus volgens drie expliciete criteria. {stable} blijven in de meeste gewichtscombinaties in de top 10.</p></div>
 <div class="ai"><b>AI-GEGENEREERD</b> &nbsp; Analyse, code en slides gegenereerd door Claude (Anthropic AI)</div>""")
 
 
