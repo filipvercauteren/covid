@@ -19,7 +19,6 @@ URLs were checked to be reachable on 2026-11-03.
 | `society_covid` | — | **Derived** from `oxcgrt_daily` and `social_annual` (see below) | 2026-11-03 |
 | `health_annual` | `worldbank-health.csv` | World Bank — health spending, physicians, nurses, hospital beds | 2026-11-03 |
 | `health_capacity` | — | **Derived** from `health_annual` (see below) | 2026-11-03 |
-| `imf_weo_2019_forecast` | `imf-weo-2019-10-gdp-growth.csv` | IMF World Economic Outlook, October 2019 (via DBnomics) | 2026-11-08 |
 
 ### Our World in Data (OWID)
 
@@ -72,14 +71,6 @@ Not a published dataset — calculated from `gdp_annual`:
 
 Contains non-COVID shocks too (energy crisis 2022, wars, oil booms).
 
-IMF-baseline columns in the same table (the default in the app):
-
-- Forecast GDP `F_y = GDP_2019 × Π (1 + g_t/100)` for t = 2020…y, where `GDP_2019` is the actual
-  World Bank level and `g_t` the IMF October 2019 growth forecast (`imf_weo_2019_forecast`)
-- `imf_gap_vs_forecast_2020_pct` … `_2023_pct` — actual vs. forecast per year
-- `imf_cum_loss_2020_2023_pct` — (Σ F − Σ actual) / Σ F × 100 over 2020–2023
-- NULL when the IMF has no complete 2020–2023 forecast for the country (no fallback to the trend)
-
 Recovery columns in the same table:
 
 - `gdp_years_below_2019` — number of years in 2020–2024 with real GDP below its 2019 level (0–5)
@@ -124,22 +115,11 @@ Same API pattern: `https://api.worldbank.org/v2/country/all/indicator/<code>?for
 Per country and indicator, the latest value in 2015–2019 (pre-COVID capacity), plus the year it is from
 (`<column>_year`). Used as an explanatory factor in the app, not as a score criterion.
 
-### IMF World Economic Outlook, October 2019 — pre-COVID GDP forecasts
+### IMF World Economic Outlook — no longer used
 
-- Indicator: `NGDP_RPCH` — gross domestic product, constant prices, % change (real GDP growth)
-- Edition: WEO October 2019, published before COVID was known, so its 2020–2024 forecasts serve
-  as a "no COVID" baseline. Most countries have actuals up to 2018; 2019 is an estimate.
-- Downloaded from DBnomics (imf.org blocks automated downloads):
-  https://api.db.nomics.world/v22/series/IMF/WEO:2019-10?dimensions=%7B%22weo-subject%22%3A%5B%22NGDP_RPCH%22%5D%7D&observations=1&metadata=true&limit=1000
-- Original: https://www.imf.org/en/Publications/WEO/Issues/2019/10/01/world-economic-outlook-october-2019
-- Table `imf_weo_2019_forecast`: `iso_code`, `country`, `year` (2010–2024),
-  `forecast_real_gdp_growth_pct`, `value_type`, `vintage`. 194 countries. Kosovo is `UVK` here
-  (World Bank: `XKX`, OWID: `OWID_KOS`).
-- "Real" = inflation-adjusted, not "actual": every value is the IMF's October 2019 figure.
-  `value_type` = `actual` (≤ 2018, as known in 2019 — later revised), `estimate` (2019) or
-  `forecast` (≥ 2020). This is the general rule for this edition; the IMF's per-country
-  "estimates start after" year isn't in the DBnomics data, so a few late-reporting countries
-  have estimates labelled as actual. What really happened: `gdp_annual.gdp_growth_pct`.
+An earlier version of the app used the IMF's October 2019 growth forecast as a second "no COVID"
+baseline for the GDP loss. It was dropped to keep the analysis simple: the app now uses only the
+2015–19 World Bank trend, so the IMF table, download and the `imf_*` columns are gone.
 
 Not added because coverage is too incomplete for the countries analysed: Google COVID-19
 Community Mobility Reports (missing ~10%), World Bank government debt `GC.DOD.TOTL.GD.ZS`

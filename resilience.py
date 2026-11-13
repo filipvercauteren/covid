@@ -4,16 +4,16 @@ Pure functions over DataFrames read from app-data/*.parquet (exported from
 covid-resilience.db by export_app_data.py). No Streamlit imports,
 so they can be reused from the notebook or tests.
 
+Countries: the 193 UN member states (see UN_MEMBER_ISO).
+
 Criteria (lower is better for all of them):
-- health:    cumulative excess deaths per million up to a cutoff date, reported
-             COVID deaths per million, or the drop in life expectancy 2019 -> worst
-             of 2020-22
-- economy:   cumulative GDP loss 2020-2023 vs. a "no COVID" baseline (table gdp_covid_loss):
-             the IMF's October 2019 forecast (default) or the 2015-2019 trend
-- jobs:      rise in unemployment 2019 -> worst of 2020-22, %-points (table society_covid)
+- health:    cumulative excess deaths per million up to a cutoff date (only countries with
+             a recent excess-mortality figure get a score, i.e. good death registration)
+- economy:   cumulative GDP loss 2020-2023 vs. the 2015-2019 trend (table gdp_covid_loss)
 - education: weeks with schools fully closed by requirement, 2020-22 (OxCGRT C1M = 3)
-- freedom:   average OxCGRT stringency index 2020-2022 (how much restriction it took)
-- recovery:  years in 2020-2024 with real GDP below its 2019 level (table gdp_covid_loss)
+
+Other measures (reported deaths, stringency, unemployment rise, GDP recovery, life expectancy)
+are still computed, but only as context in the Correlations and Data quality tabs.
 
 Healthcare capacity (table health_capacity, pre-COVID 2015-2019) is an explanatory
 factor, not a criterion: see capacity_correlations().
@@ -28,10 +28,26 @@ import pandas as pd
 
 DATA_DIR = "app-data"  # Parquet files written by export_app_data.py from covid-resilience.db
 
-# England, Scotland, Wales, Northern Ireland are already included in United Kingdom.
-UK_NATIONS = ("OWID_ENG", "OWID_SCT", "OWID_WLS", "OWID_NIR")
-# OWID invents codes where no ISO code exists; the World Bank uses XKX for Kosovo.
-OWID_TO_WORLD_BANK_ISO = {"OWID_KOS": "XKX"}
+# The 193 UN member states, as ISO 3166-1 alpha-3 codes (all of them are in OWID, the World Bank and
+# OxCGRT under these codes, so no code mapping is needed). Territories, the UK nations, Taiwan,
+# Kosovo, the Vatican and Palestine are not UN members and are left out.
+UN_MEMBER_ISO = (
+    "AFG", "AGO", "ALB", "AND", "ARE", "ARG", "ARM", "ATG", "AUS", "AUT", "AZE", "BDI", "BEL",
+    "BEN", "BFA", "BGD", "BGR", "BHR", "BHS", "BIH", "BLR", "BLZ", "BOL", "BRA", "BRB", "BRN",
+    "BTN", "BWA", "CAF", "CAN", "CHE", "CHL", "CHN", "CIV", "CMR", "COD", "COG", "COL", "COM",
+    "CPV", "CRI", "CUB", "CYP", "CZE", "DEU", "DJI", "DMA", "DNK", "DOM", "DZA", "ECU", "EGY",
+    "ERI", "ESP", "EST", "ETH", "FIN", "FJI", "FRA", "FSM", "GAB", "GBR", "GEO", "GHA", "GIN",
+    "GMB", "GNB", "GNQ", "GRC", "GRD", "GTM", "GUY", "HND", "HRV", "HTI", "HUN", "IDN", "IND",
+    "IRL", "IRN", "IRQ", "ISL", "ISR", "ITA", "JAM", "JOR", "JPN", "KAZ", "KEN", "KGZ", "KHM",
+    "KIR", "KNA", "KOR", "KWT", "LAO", "LBN", "LBR", "LBY", "LCA", "LIE", "LKA", "LSO", "LTU",
+    "LUX", "LVA", "MAR", "MCO", "MDA", "MDG", "MDV", "MEX", "MHL", "MKD", "MLI", "MLT", "MMR",
+    "MNE", "MNG", "MOZ", "MRT", "MUS", "MWI", "MYS", "NAM", "NER", "NGA", "NIC", "NLD", "NOR",
+    "NPL", "NRU", "NZL", "OMN", "PAK", "PAN", "PER", "PHL", "PLW", "PNG", "POL", "PRK", "PRT",
+    "PRY", "QAT", "ROU", "RUS", "RWA", "SAU", "SDN", "SEN", "SGP", "SLB", "SLE", "SLV", "SMR",
+    "SOM", "SRB", "SSD", "STP", "SUR", "SVK", "SVN", "SWE", "SWZ", "SYC", "SYR", "TCD", "TGO",
+    "THA", "TJK", "TKM", "TLS", "TON", "TTO", "TUN", "TUR", "TUV", "TZA", "UGA", "UKR", "URY",
+    "USA", "UZB", "VCT", "VEN", "VNM", "VUT", "WSM", "YEM", "ZAF", "ZMB", "ZWE",
+)
 
 FIRST_VACCINE_DATE = pd.Timestamp("2020-12-08")  # first dose outside trials (UK)
 STRINGENCY_LAST_DATE = pd.Timestamp("2022-12-31")  # OxCGRT stopped tracking here
@@ -40,34 +56,29 @@ VAX_THRESHOLD = 50.0  # % fully vaccinated for the "vaccination speed" measure
 
 CUTOFFS = ("2020-12-31", "2021-12-31", "2022-12-31", "2023-12-31")
 
-# What GDP would have been without COVID: baseline key -> (column, label)
-GDP_BASELINES = {
-    "imf": ("gdp_loss_imf_pct", "IMF forecast, Oct 2019"),
-    "trend": ("gdp_loss_trend_pct", "Trend 2015–2019"),
-}
-
 HEALTH_MEASURES = {
     "excess_pm": "Excess deaths per million",
-    "reported_pm": "Reported COVID deaths per million",
-    "life_expectancy_drop_years": "Life-expectancy drop 2019 → 2020–22 (years)",
 }
 
-# criterion -> column; the health column is chosen by the user
+# criterion -> column; the health column is excess_pm
 COST_CRITERIA = {
     "economy": "gdp_loss_pct",
-    "jobs": "unemployment_rise_pp",
     "education": "school_weeks_full",
-    "freedom": "avg_stringency",
-    "recovery": "gdp_years_below_2019",
 }
 
 CRITERIA_LABELS = {
-    "health": "Health (deaths)",
+    "health": "Health (excess deaths)",
     "economy": "Economy (GDP loss)",
-    "jobs": "Jobs (unemployment rise)",
     "education": "Education (school closures)",
-    "freedom": "Freedom (stringency)",
-    "recovery": "Recovery (years GDP below 2019)",
+}
+
+# Measures that are not scored: context for the Correlations and Data quality tabs
+EXTRA_MEASURES = {
+    "reported_pm": "Reported COVID deaths per million",
+    "avg_stringency": "Avg. stringency index 2020–22",
+    "unemployment_rise_pp": "Unemployment rise 2019 → 2020–22 (%-points)",
+    "gdp_years_below_2019": "Years GDP below 2019 level (2020–24)",
+    "life_expectancy_drop_years": "Life-expectancy drop 2019 → 2020–22 (years)",
 }
 
 # Pre-COVID healthcare capacity: higher = more capacity (explanatory, not scored)
@@ -81,14 +92,10 @@ CAPACITY_COLUMNS = {
 
 COLUMN_LABELS = {
     **HEALTH_MEASURES,
-    "gdp_loss_pct": "GDP loss 2020–23 vs. no-COVID baseline (%)",
-    "gdp_loss_imf_pct": "GDP loss 2020–23 vs. IMF Oct 2019 forecast (%)",
-    "gdp_loss_trend_pct": "GDP loss 2020–23 vs. 2015–19 trend (%)",
-    "unemployment_rise_pp": "Unemployment rise 2019 → 2020–22 (%-points)",
+    **EXTRA_MEASURES,
+    "gdp_loss_pct": "GDP loss 2020–23 vs. 2015–19 trend (%)",
     "school_weeks_full": "Weeks schools fully closed 2020–22",
     "school_weeks_partial_or_full": "Weeks schools partly or fully closed 2020–22",
-    "avg_stringency": "Avg. stringency index 2020–22",
-    "gdp_years_below_2019": "Years GDP below 2019 level (2020–24)",
     "gdp_recovery_year": "Year GDP back at 2019 level",
     **CAPACITY_COLUMNS,
     "pct_fully_vax": "% fully vaccinated",
@@ -122,7 +129,7 @@ def load_daily(data_dir: str = DATA_DIR) -> pd.DataFrame:
 
 
 def load_gdp_loss(data_dir: str = DATA_DIR) -> pd.DataFrame:
-    """GDP loss vs. pre-COVID trend per country (derived table, see sources.md)."""
+    """GDP loss vs. the 2015-2019 trend per country (derived table, see sources.md)."""
     return _read("gdp_loss", data_dir)
 
 
@@ -148,7 +155,7 @@ def country_metrics(
     - excess_pm: last cumulative excess deaths/million on or before the cutoff;
       NaN when that value is older than EXCESS_MAX_STALENESS (not comparable)
     - avg_stringency: mean over 2020-01-01 .. min(cutoff, 2022-12-31)
-    - gdp_loss_pct, society columns: fixed periods (see module docstring),
+    - gdp_loss_pct (trend baseline), society columns: fixed periods (see module docstring),
       independent of the cutoff
     """
     cutoff_ts = pd.Timestamp(cutoff)
@@ -190,22 +197,14 @@ def country_metrics(
         days_to_50pct_vax=(reached_threshold - FIRST_VACCINE_DATE).dt.days,
     ).reset_index()
 
-    metrics["wb_iso"] = metrics["iso_code"].replace(OWID_TO_WORLD_BANK_ISO)
     metrics = (
-        metrics.merge(gdp, on="wb_iso", how="left")
-        .merge(society, on="wb_iso", how="left")
-        .merge(capacity, on="wb_iso", how="left")
-        .drop(columns="wb_iso")
+        metrics.merge(gdp, on="iso_code", how="left")
+        .merge(society, on="iso_code", how="left")
+        .merge(capacity, on="iso_code", how="left")
+        .assign(gdp_loss_pct=lambda m: m["gdp_loss_trend_pct"])
     )
     metrics["excess_vs_reported"] = metrics["excess_pm"] / metrics["reported_pm"]
     return metrics
-
-
-def with_gdp_baseline(metrics: pd.DataFrame, baseline: str) -> pd.DataFrame:
-    """Set gdp_loss_pct (the economy criterion) from the chosen baseline in GDP_BASELINES.
-    Countries without that baseline get NaN - no silent fallback to the other method."""
-    column, _ = GDP_BASELINES[baseline]
-    return metrics.assign(gdp_loss_pct=metrics[column])
 
 
 def select_peers(

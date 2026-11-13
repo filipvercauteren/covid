@@ -13,7 +13,6 @@ are used, and where each value is calculated. URLs and provenance per source are
  │ worldbank-gdp.csv            World Bank API, yearly                  │
  │ worldbank-social.csv         World Bank API, yearly                  │
  │ worldbank-health.csv         World Bank API, yearly                  │
- │ imf-weo-2019-10-gdp-growth   IMF forecast Oct 2019 (via DBnomics)    │
  └──────────────────────────────────┬───────────────────────────────────┘
                                     │  python build_resilience_db.py
                                     ▼
@@ -27,15 +26,12 @@ are used, and where each value is calculated. URLs and provenance per source are
  │  gdp_annual        ◄ WB       gdp_constant_2015_usd, gdp_growth_pct    │
  │  social_annual     ◄ WB       unemployment_pct, life_expectancy_years  │
  │  health_annual     ◄ WB       health spending, physicians, nurses, beds│
- │  imf_weo_2019_forecast ◄ IMF  forecast_real_gdp_growth_pct             │
  │                                                                        │
  │ DERIVED TABLES  (★ = calculated in build_resilience_db.py)                  │
- │  gdp_covid_loss  ◄ gdp_annual + imf_weo_2019_forecast                  │
+ │  gdp_covid_loss  ◄ gdp_annual                                          │
  │    ★ cum_loss_2020_2023_pct_of_trend   gdp_loss_for_country()          │
  │        trend g = (GDP2019/GDP2015)^(1/4) − 1, extended over 2020-23,   │
  │        loss = (Σ trend − Σ actual) / Σ trend                           │
- │    ★ imf_cum_loss_2020_2023_pct        imf_baseline_loss()             │
- │        GDP2019 grown with IMF forecast growth 2020-23, same loss formula│
  │    ★ gdp_years_below_2019              gdp_recovery()                  │
  │        number of years 2020-24 with GDP < 2019                         │
  │  society_covid   ◄ oxcgrt_daily + social_annual                        │
@@ -55,10 +51,10 @@ are used, and where each value is calculated. URLs and provenance per source are
                                     │  (SQL select + filter only, no calculations)
                                     ▼
  ┌──────────────── 3. app-data/*.parquet (0.9 MB, in git) ────────────────┐
- │  daily.parquet           ◄ covid_data: 10 columns, real countries only │
- │                            (continent IS NOT NULL, UK nations dropped) │
- │  gdp_loss.parquet        ◄ gdp_covid_loss (aggregates dropped)         │
- │  society.parquet         ◄ society_covid                               │
+ │  daily.parquet           ◄ covid_data: 10 columns, the 193 UN member   │
+ │                            states only (UN_MEMBER_ISO in resilience.py)│
+ │  gdp_loss.parquet        ◄ gdp_covid_loss (UN members only)            │
+ │  society.parquet         ◄ society_covid (UN members only)             │
  │  health_capacity.parquet ◄ health_capacity                             │
  └──────────────────────────────────┬─────────────────────────────────────┘
                                     │  resilience.py load_*()
@@ -73,8 +69,8 @@ are used, and where each value is calculated. URLs and provenance per source are
  │  ★ pct_fully_vax      max people_fully_vaccinated_per_hundred          │
  │  ★ days_to_50pct_vax  first date ≥ 50% − 2020-12-08                    │
  │  ★ excess_vs_reported excess_pm / reported_pm                          │
- │   + joined on ISO code: gdp_loss, society, health_capacity columns     │
- │ with_gdp_baseline()       ★ gdp_loss_pct = IMF or trend column (sidebar)│
+ │   + left join on ISO code: gdp_loss, society, health_capacity columns  │
+ │     (gdp_loss_pct = the 2015-19 trend column)                          │
  │ select_peers()            filter: min population, continents, countries│
  │ score_countries()         ★ rank per criterion → 0..1, weighted → 0-100│
  │ rank_stability()          ★ ranking across all weight combinations     │
@@ -82,15 +78,12 @@ are used, and where each value is calculated. URLs and provenance per source are
  └──────────────────────────────────┬─────────────────────────────────────┘
                                     ▼
  ┌──────────────────────── 5. app.py (Streamlit UI) ──────────────────────┐
- │ Criteria (score) ─► column                                             │
- │   health    ─► excess_pm | reported_pm |                               │
- │                life_expectancy_drop_years   (sidebar choice)           │
- │   economy   ─► gdp_loss_pct                                            │
- │   jobs      ─► unemployment_rise_pp                                    │
- │   education ─► school_weeks_full                                       │
- │   freedom   ─► avg_stringency                                          │
- │   recovery  ─► gdp_years_below_2019                                    │
- │ Shown, not scored: peak_icu_pm, pct_fully_vax, health_capacity columns │
+ │ Criteria (score, default weight) ─► column                             │
+ │   health    (2) ─► excess_pm  (only countries with a recent figure)    │
+ │   economy   (1) ─► gdp_loss_pct (2015-19 trend baseline)               │
+ │   education (1) ─► school_weeks_full                                   │
+ │ Shown, not scored: reported_pm, avg_stringency, unemployment_rise_pp,  │
+ │   gdp_years_below_2019, peak_icu_pm, pct_fully_vax, health_capacity    │
  │ Tabs: Criteria · Deaths vs. cost · Ranking · Weight sensitivity ·      │
  │       End date matters · Vaccination speed · Healthcare capacity ·     │
  │       Data quality · Calculations                                      │
@@ -102,11 +95,10 @@ are used, and where each value is calculated. URLs and provenance per source are
 1. **`build_resilience_db.py`**: fixed calculations per country and year (GDP loss, recovery
    years, school-closure weeks, unemployment rise, life-expectancy drop, healthcare
    capacity). They don't depend on anything chosen in the app.
-2. **`resilience.py`**: everything that depends on the sidebar (cutoff date, GDP
-   baseline, peer group, weighted score).
+2. **`resilience.py`**: everything that depends on the sidebar (cutoff date, peer group, weighted score).
 
-`export_app_data.py` calculates nothing: it only selects columns and filters out
-aggregate regions.
+`export_app_data.py` calculates nothing: it only selects columns and keeps the 193 UN
+member states.
 
 ## Refreshing the data
 

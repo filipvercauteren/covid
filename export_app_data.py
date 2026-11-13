@@ -17,55 +17,42 @@ from pathlib import Path
 
 import pandas as pd
 
-from resilience import CAPACITY_COLUMNS, DATA_DIR, DAILY_COLUMNS, UK_NATIONS
+from resilience import CAPACITY_COLUMNS, DATA_DIR, DAILY_COLUMNS, UN_MEMBER_ISO
 
 DB_PATH = "covid-resilience.db"
 
 
-def _daily_query() -> tuple[str, tuple[str, ...]]:
-    """Country-day rows for real countries only.
+def _in_un(column: str = "iso_code") -> tuple[str, tuple[str, ...]]:
+    """SQL condition and parameters that keep only the 193 UN member states.
 
-    Aggregates (World, continents, EU, income groups) have no continent; the UK
-    nations are dropped because United Kingdom already covers them. Kosovo and
-    Northern Cyprus are kept even though their iso_code starts with OWID_.
+    Aggregates (World, continents, EU, income groups), territories, the UK nations,
+    Taiwan, Kosovo, the Vatican and Palestine all drop out because their code is not in the list.
     """
-    placeholders = ",".join("?" * len(UK_NATIONS))
-    query = f"""
-        SELECT {", ".join(DAILY_COLUMNS)}
-        FROM covid_data
-        WHERE continent IS NOT NULL AND iso_code NOT IN ({placeholders})
-    """
-    return query, UK_NATIONS
+    return f"{column} IN ({','.join('?' * len(UN_MEMBER_ISO))})", UN_MEMBER_ISO
+
+
+def _query(select: str, table: str, column: str = "iso_code", extra: str = "") -> tuple[str, tuple[str, ...]]:
+    condition, params = _in_un(column)
+    return f"SELECT {select} FROM {table} WHERE {condition}{extra}", params
 
 
 QUERIES: dict[str, tuple[str, tuple[str, ...]]] = {
-    "daily": _daily_query(),
-    # GDP loss vs. pre-COVID trend per country (derived table, see sources.md)
-    "gdp_loss": (
-        """
-        SELECT iso_code AS wb_iso,
-               imf_cum_loss_2020_2023_pct AS gdp_loss_imf_pct,
-               cum_loss_2020_2023_pct_of_trend AS gdp_loss_trend_pct,
-               growth_2020_pct, gdp_years_below_2019, gdp_recovery_year
-        FROM gdp_covid_loss
-        WHERE is_aggregate = 0
-        """,
-        (),
+    "daily": _query(", ".join(DAILY_COLUMNS), "covid_data"),
+    # GDP loss vs. the 2015-2019 trend per country (derived table, see sources.md)
+    "gdp_loss": _query(
+        "iso_code, cum_loss_2020_2023_pct_of_trend AS gdp_loss_trend_pct, growth_2020_pct, "
+        "gdp_years_below_2019, gdp_recovery_year",
+        "gdp_covid_loss",
+        extra=" AND is_aggregate = 0",
     ),
     # School closures, unemployment rise, life-expectancy drop (derived table society_covid)
-    "society": (
-        """
-        SELECT iso_code AS wb_iso, school_weeks_full, school_weeks_partial_or_full,
-               unemployment_rise_pp, life_expectancy_drop_years
-        FROM society_covid
-        """,
-        (),
+    "society": _query(
+        "iso_code, school_weeks_full, school_weeks_partial_or_full, unemployment_rise_pp, "
+        "life_expectancy_drop_years",
+        "society_covid",
     ),
     # Pre-COVID healthcare capacity (derived table health_capacity, World Bank)
-    "health_capacity": (
-        f"SELECT iso_code AS wb_iso, {', '.join(CAPACITY_COLUMNS)} FROM health_capacity",
-        (),
-    ),
+    "health_capacity": _query(f"iso_code, {', '.join(CAPACITY_COLUMNS)}", "health_capacity"),
 }
 
 

@@ -82,12 +82,14 @@ All data retrieved 2026-08-24.
 streamlit run app.py
 ```
 
-Compares countries on six criteria (lower is better for each): health (excess deaths per
-million, reported COVID deaths, or the life-expectancy drop), economy (GDP loss
-2020–23 vs. the IMF's pre-COVID forecast of October 2019, or vs. the 2015–19 trend), jobs (unemployment rise), education (weeks schools fully
-closed), freedom (average stringency 2020–22) and recovery (years GDP stayed below its 2019
-level). A separate tab relates pre-COVID healthcare capacity to these outcomes. Tabs: criteria overview, deaths-vs-cost scatter, weighted ranking,
-weight sensitivity, effect of the end date, vaccination speed, data quality.
+Compares the 193 UN member states on three criteria (lower is better for each), weighted 2-1-1 by
+default: health (cumulative excess deaths per million), economy (GDP loss 2020–23 vs. the 2015–19
+growth trend) and education (weeks schools fully closed). Only countries with a recent excess-mortality
+figure (about 70 of the 193) get a score. Reported COVID deaths, stringency, unemployment rise, GDP
+recovery and healthcare capacity are shown as context (Correlations, Healthcare capacity and Data
+quality tabs), not scored. Tabs: criteria overview, deaths-vs-cost scatter, weighted ranking,
+weight sensitivity, effect of the end date, vaccination speed, healthcare capacity, correlations,
+data quality, calculations.
 
 - `resilience.py` — pure data/scoring functions (no Streamlit), reusable from the notebook.
 - `app.py` — the Streamlit UI (the entry point Streamlit Community Cloud runs).

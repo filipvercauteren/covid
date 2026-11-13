@@ -11,8 +11,8 @@ Tables (see sources.md for URLs and provenance):
     locations                     locations.csv                      (downloaded if missing)
     ve_primary_series, ve_booster VIEW-hub VE studies .xlsx          (downloaded if missing)
     gdp_annual                    worldbank-gdp.csv / World Bank API (downloaded if missing)
-    gdp_covid_loss                derived from gdp_annual (+ IMF forecast): GDP loss vs.
-                                  2015-2019 trend and vs. IMF Oct 2019 forecast, recovery time
+    gdp_covid_loss                derived from gdp_annual: GDP loss 2020-2023 vs. the
+                                  2015-2019 trend, recovery time
     oxcgrt_daily                  OxCGRT national policy indicators  (downloaded if missing)
     social_annual                 worldbank-social.csv / World Bank API: unemployment,
                                   life expectancy                    (downloaded if missing)
@@ -21,9 +21,6 @@ Tables (see sources.md for URLs and provenance):
     health_annual                 worldbank-health.csv / World Bank API: health spending,
                                   physicians, nurses, hospital beds  (downloaded if missing)
     health_capacity               derived: latest pre-COVID (2015-2019) value per country
-    imf_weo_2019_forecast         imf-weo-2019-10-gdp-growth.csv / DBnomics mirror of the IMF
-                                  World Economic Outlook, October 2019: real GDP growth
-                                  forecasts made before COVID      (downloaded if missing)
 
 The database is written to a temporary file first and only replaces the
 existing one when every step succeeded.
@@ -56,21 +53,6 @@ VIEWHUB_URL = f"https://view-hub.org/sites/default/files/2026-01/{VIEWHUB_XLSX}"
 GDP_CSV = "worldbank-gdp.csv"
 SOCIAL_CSV = "worldbank-social.csv"
 HEALTH_CSV = "worldbank-health.csv"
-IMF_FORECAST_CSV = "imf-weo-2019-10-gdp-growth.csv"
-# IMF blocks automated downloads from imf.org; DBnomics mirrors every WEO edition.
-IMF_WEO_VINTAGE = "2019-10"
-IMF_GROWTH_SUBJECT = "NGDP_RPCH"  # Gross domestic product, constant prices, percent change
-IMF_FORECAST_URL = (
-    f"https://api.db.nomics.world/v22/series/IMF/WEO:{IMF_WEO_VINTAGE}"
-    "?dimensions=%7B%22weo-subject%22%3A%5B%22" + IMF_GROWTH_SUBJECT + "%22%5D%7D"
-    "&observations=1&metadata=true&limit=1000"
-)
-IMF_FORECAST_YEARS = (2010, 2024)
-# General rule for WEO October 2019. The IMF records per country where estimates start
-# (some countries report later), but DBnomics doesn't carry that field.
-IMF_LAST_ACTUAL_YEAR = 2018
-IMF_ESTIMATE_YEAR = 2019
-IMF_TO_WORLD_BANK_ISO = {"UVK": "XKX"}  # Kosovo
 OXCGRT_CSV = "OxCGRT_compact_national_v1.csv"
 OXCGRT_URL = f"https://raw.githubusercontent.com/OxCGRT/covid-policy-dataset/main/data/{OXCGRT_CSV}"
 
@@ -163,57 +145,6 @@ def ensure_world_bank_csv(path: str, indicators: dict[str, str], refresh: bool) 
     return data
 
 
-def imf_value_type(year: int) -> str:
-    """What an IMF WEO October 2019 figure is for a given year."""
-    if year <= IMF_LAST_ACTUAL_YEAR:
-        return "actual"
-    if year == IMF_ESTIMATE_YEAR:
-        return "estimate"
-    return "forecast"
-
-
-def fetch_imf_forecast() -> pd.DataFrame:
-    """IMF WEO October 2019 real GDP growth per country/year, from DBnomics.
-
-    Long format: iso_code, country, year, forecast_real_gdp_growth_pct, value_type, vintage.
-    "Real" = inflation-adjusted (constant prices), not "actual". Every value is what
-    the IMF published in October 2019: value_type says whether that was actual data
-    (as known then, before later revisions), an estimate or a forecast. What really
-    happened is in gdp_annual.gdp_growth_pct (World Bank).
-    """
-    print(f"  downloading {IMF_FORECAST_URL}")
-    payload = json.loads(fetch_bytes(IMF_FORECAST_URL))
-    series = payload["series"]
-    if series["num_found"] > len(series["docs"]):
-        raise RuntimeError("DBnomics returned a partial result - raise the limit parameter.")
-
-    country_names = payload["dataset"]["dimensions_values_labels"]["weo-country"]
-    first, last = IMF_FORECAST_YEARS
-    rows = [
-        {
-            "iso_code": doc["dimensions"]["weo-country"],
-            "country": country_names.get(doc["dimensions"]["weo-country"]),
-            "year": int(period),
-            "forecast_real_gdp_growth_pct": value if isinstance(value, (int, float)) else np.nan,
-            "value_type": imf_value_type(int(period)),
-            "vintage": IMF_WEO_VINTAGE,
-        }
-        for doc in series["docs"]
-        for period, value in zip(doc["period"], doc["value"])
-        if first <= int(period) <= last
-    ]
-    return pd.DataFrame(rows).sort_values(["iso_code", "year"])
-
-
-def ensure_imf_forecast_csv(refresh: bool) -> pd.DataFrame:
-    target = Path(IMF_FORECAST_CSV)
-    if target.exists() and not refresh:
-        return pd.read_csv(target)
-    forecast = fetch_imf_forecast()
-    forecast.to_csv(target, index=False)
-    return forecast
-
-
 # ---------------------------------------------------------------- transforms
 
 def clean_viewhub_sheet(df: pd.DataFrame) -> pd.DataFrame:
@@ -288,52 +219,15 @@ def gdp_recovery(gdp: pd.Series) -> dict[str, float]:
     }
 
 
-def imf_baseline_loss(gdp: pd.DataFrame, imf_forecast: pd.DataFrame) -> pd.DataFrame:
-    """GDP shortfall vs. the IMF's pre-COVID forecast (WEO October 2019), per country.
-
-    Start from the actual 2019 level (World Bank, today's revised figures) and grow
-    it with the IMF's forecast growth rates for 2020-2023:
-
-    forecast GDP  F_y  = GDP_2019 * prod_{t=2020..y} (1 + g_t / 100)
-    gap per year       = GDP_y / F_y - 1
-    cumulative loss    = (sum F_y - sum GDP_y) / sum F_y        over 2020-2023
-
-    Countries without a complete IMF forecast for 2020-2023 are left out (NaN),
-    never silently filled with another baseline.
-    """
-    years = list(LOSS_YEARS)
-    growth = (
-        imf_forecast.assign(iso_code=imf_forecast["iso_code"].replace(IMF_TO_WORLD_BANK_ISO))
-        .query("value_type == 'forecast'")
-        .pivot_table(index="iso_code", columns="year", values="forecast_real_gdp_growth_pct")
-        .reindex(columns=years)
-        .dropna()
-    )
-    levels = gdp.pivot_table(index="iso_code", columns="year", values="gdp_constant_2015_usd")
-    common = growth.index.intersection(levels.index[levels[[TREND_END, *years]].notna().all(axis=1)])
-
-    forecast = (1 + growth.loc[common] / 100).cumprod(axis=1).mul(levels.loc[common, TREND_END], axis=0)
-    actual = levels.loc[common, years]
-    gaps = 100 * (actual / forecast - 1)
-    return pd.DataFrame(
-        {
-            **{f"imf_gap_vs_forecast_{y}_pct": gaps[y] for y in years},
-            "imf_cum_loss_2020_2023_pct": 100 * (forecast.sum(axis=1) - actual.sum(axis=1)) / forecast.sum(axis=1),
-        }
-    )
-
-
-def gdp_covid_loss(gdp: pd.DataFrame, imf_forecast: pd.DataFrame) -> pd.DataFrame:
-    """Per country: GDP loss vs. the 2015-2019 trend and vs. the IMF October 2019
-    forecast, plus recovery time."""
+def gdp_covid_loss(gdp: pd.DataFrame) -> pd.DataFrame:
+    """Per country: GDP loss 2020-2023 vs. the 2015-2019 trend, plus recovery time."""
     columns = ["year", "gdp_constant_2015_usd", "gdp_growth_pct"]
-    trend_loss = (
+    return (
         gdp.groupby(["iso_code", "country", "is_aggregate"])[columns]
         .apply(gdp_loss_for_country)
         .dropna(how="all")
         .reset_index()
     )
-    return trend_loss.join(imf_baseline_loss(gdp, imf_forecast), on="iso_code")
 
 
 def clean_oxcgrt(raw: pd.DataFrame) -> pd.DataFrame:
@@ -423,7 +317,6 @@ def load_tables(refresh: bool) -> dict[str, pd.DataFrame]:
     gdp = ensure_world_bank_csv(GDP_CSV, GDP_INDICATORS, refresh)
     social = ensure_world_bank_csv(SOCIAL_CSV, SOCIAL_INDICATORS, refresh)
     health = ensure_world_bank_csv(HEALTH_CSV, HEALTH_INDICATORS, refresh)
-    imf_forecast = ensure_imf_forecast_csv(refresh)
     oxcgrt = clean_oxcgrt(pd.read_csv(ensure_file(OXCGRT_CSV, OXCGRT_URL, refresh), low_memory=False))
     return {
         "covid_data": pd.read_csv(COVID_CSV, parse_dates=["date"]),
@@ -436,13 +329,12 @@ def load_tables(refresh: bool) -> dict[str, pd.DataFrame]:
         "ve_primary_series": clean_viewhub_sheet(pd.read_excel(viewhub, sheet_name="Primary Series Studies")),
         "ve_booster": clean_viewhub_sheet(pd.read_excel(viewhub, sheet_name="Booster Studies")),
         "gdp_annual": gdp,
-        "gdp_covid_loss": gdp_covid_loss(gdp, imf_forecast),
+        "gdp_covid_loss": gdp_covid_loss(gdp),
         "oxcgrt_daily": oxcgrt,
         "social_annual": social,
         "society_covid": society_covid(oxcgrt, social),
         "health_annual": health,
         "health_capacity": health_capacity(health),
-        "imf_weo_2019_forecast": imf_forecast,
     }
 
 
@@ -459,7 +351,6 @@ INDEXES = (
     "CREATE INDEX idx_society_iso ON society_covid(iso_code)",
     "CREATE INDEX idx_health_iso_year ON health_annual(iso_code, year)",
     "CREATE INDEX idx_health_capacity_iso ON health_capacity(iso_code)",
-    "CREATE INDEX idx_imf_forecast_iso_year ON imf_weo_2019_forecast(iso_code, year)",
 )
 
 
